@@ -1,8 +1,9 @@
 <?php
 
-// Requiert les fichiers nécessaire au fonctionnement de cette page
-require '../src/DAO/DAO.php';
-require "../src/DAO/PostDAO.php";
+// On appelle l'autoloader pour éviter la répétitions des require
+require '../config/Autoloader.php';
+use \Mich\Blog\config\Autoloader;
+Autoloader::register(); 
 
 use \Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
 
