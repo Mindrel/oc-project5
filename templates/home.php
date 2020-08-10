@@ -4,8 +4,9 @@
 require '../src/DAO/DAO.php';
 require "../src/DAO/PostDAO.php";
 
-?>
+use \Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
 
+?>
 <!DOCTYPE html>
 
 <html lang="fr">

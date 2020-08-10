@@ -1,5 +1,10 @@
 <?php
 
+namespace Mich\Blog\src\DAO; // Permet d'éviter les collisions de classe (deux classes du même nom dans le même projet) en créant une zone spécifique à l'utilisation de cette classe (ne peut être utilisée ailleurs)
+
+use PDO; // Nécessaire sans quoi le namespace bloque l'accès à cet objet
+use Exception; // Nécessaire sans quoi le namespace bloque l'accès à cet objet
+
 // Connexion à la base de données
 abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
 {
