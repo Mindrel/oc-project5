@@ -1,6 +1,6 @@
 <?php
 
-class Post extends Database
+class PostDAO extends DAO
 {
     // Récupère tous les posts
     public function getPosts()

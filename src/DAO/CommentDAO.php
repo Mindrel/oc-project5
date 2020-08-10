@@ -1,6 +1,6 @@
 <?php
 
-class Comment extends Database
+class CommentDAO extends DAO
 {   
     // Récupère tous les commentaires par post
     public function getCommentsFromPost($postId)

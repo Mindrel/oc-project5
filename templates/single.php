@@ -1,8 +1,8 @@
 <?php
 //On inclut less fichiers dont on a besoin
-require 'Database.php';
-require 'post.php';
-require 'Comment.php';
+require '../src/DAO/DAO.php';
+require "../src/DAO/PostDAO.php";
+require '../src/DAO/CommentDAO.php';
 
 ?>
 
@@ -19,7 +19,7 @@ require 'Comment.php';
         <h1>Mon blog</h1>
         <p>En construction</p>
         <?php
-        $post = new post();
+        $post = new PostDAO();
         $posts = $post->getpost($_GET["postId"]);
         $post = $posts->fetch()
         ?>
@@ -38,7 +38,7 @@ require 'Comment.php';
         <div id="comments" class="text-left" style="margin-left: 50px">
             <h3>Commentaires</h3>
             <?php
-            $comment = new Comment();
+            $comment = new CommentDAO();
             $comments = $comment->getCommentsFromPost($_GET["postId"]);
             while ($comment = $comments->fetch()) {
             ?>

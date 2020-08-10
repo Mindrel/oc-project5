@@ -1,7 +1,7 @@
 <?php
 
 // Connexion à la base de données
-abstract class Database // Abstraite pour qu'on ne puisse pas l'instancier
+abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
 {
     // Paramètres de connexion
     const DB_HOST = "mysql:host=localhost;dbname=projet5;charset=utf8;port=3308";

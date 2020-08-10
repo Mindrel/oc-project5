@@ -1,8 +1,8 @@
 <?php
 
 // Requiert les fichiers nécessaire au fonctionnement de cette page
-require "Database.php";
-require "Post.php";
+require '../src/DAO/DAO.php';
+require "../src/DAO/PostDAO.php";
 
 ?>
 
@@ -21,7 +21,7 @@ require "Post.php";
         <p>En construction</p>
         <?php
         // On affiche tous les posts
-        $post = new Post();
+        $post = new PostDAO();
         $posts = $post->getPosts();
 
         while ($post = $posts->fetch()) {
