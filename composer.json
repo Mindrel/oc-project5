@@ -1,5 +1,7 @@
 {
-    "require":{
-        "twig/twig":"2.0"
+    "autoload": {
+        "psr-4": { 
+            "Mich\\Blog\\src\\": "src/"
+        }
     }
 }
