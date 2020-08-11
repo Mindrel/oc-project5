@@ -6,6 +6,7 @@ namespace Mich\Blog\config;
 
 use Exception;
 use Mich\Blog\src\controller\FrontController;
+use Mich\Blog\src\controller\ErrorController;
 
 class Router
 {
@@ -13,6 +14,7 @@ class Router
     public function __construct()
     {
         $this->frontController = new FrontController();
+        $this->errorController = new ErrorController();
     }
 
     public function run()
@@ -24,13 +26,15 @@ class Router
                 if ($_GET["route"] === "post") {
                     $this->frontController->post($_GET["postId"]);
                 } else {
-                    echo "page inconnue";
+                    $this->errorController->errorNotFound();
                 }
+
             } else {
                 $this->frontController->home();
             }
+
         } catch (Exception $e) {
-            echo "erreur";
+            $this->errorController->errorServer();
         }
     }
 }
