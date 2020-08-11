@@ -19,15 +19,15 @@ class FrontController
     // Gère l'affichage de la page d'accueil : Affiche tous les post
     public function home()
     {
-        $posts = $this->post->getPosts();
+        $posts = $this->postDAO->getPosts();
         require "../templates/home.php";
     }
 
     // Gère l'affichage de la page du post demandé et les com associés
     public function post($postId)
     {
-        $posts = $this->post->getpost($postId);
-        $comments = $this->comment->getCommentsFromPost($postId);
+        $posts = $this->postDAO->getpost($postId);
+        $comments = $this->commentDAO->getCommentsFromPost($postId);
         require "../templates/single.php";
     }
 }
