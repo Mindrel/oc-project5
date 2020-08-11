@@ -19,8 +19,6 @@ use Mich\Blog\src\DAO\CommentDAO; // idem
         <h1>Mon blog</h1>
         <p>En construction</p>
         <?php
-        $post = new PostDAO();
-        $posts = $post->getpost($_GET["postId"]);
         $post = $posts->fetch()
         ?>
         <div>
@@ -38,8 +36,6 @@ use Mich\Blog\src\DAO\CommentDAO; // idem
         <div id="comments" class="text-left" style="margin-left: 50px">
             <h3>Commentaires</h3>
             <?php
-            $comment = new CommentDAO();
-            $comments = $comment->getCommentsFromPost($_GET["postId"]);
             while ($comment = $comments->fetch()) {
             ?>
                 <h4><?= htmlspecialchars($comment->nickname); ?></h4>
