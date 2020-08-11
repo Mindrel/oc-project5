@@ -1,8 +1,5 @@
 <?php
 
-// On appelle l'autoloader pour éviter la répétitions des require
-require '../vendor/autoload.php';
-
 use Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
 
 ?>
@@ -27,7 +24,7 @@ use Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet
         while ($post = $posts->fetch()) {
         ?>
             <div>
-                <h2><a href="single.php?postId=<?= htmlspecialchars($post->id); ?>"><?= htmlspecialchars($post->title); ?></a></h2>
+                <h2><a href="../public/index.php?route=post&postId=<?= htmlspecialchars($post->id); ?>"><?= htmlspecialchars($post->title); ?></a></h2>
                 <p><?= htmlspecialchars($post->content); ?></p>
                 <p><?= htmlspecialchars($post->author); ?></p>
                 <p>Créé le : <?= htmlspecialchars($post->creation_date); ?></p>

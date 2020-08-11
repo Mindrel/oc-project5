@@ -8,11 +8,6 @@ use Exception; // Nécessaire sans quoi le namespace bloque l'accès à cet obje
 // Connexion à la base de données
 abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
 {
-    // Paramètres de connexion
-    const DB_HOST = "mysql:host=localhost;dbname=projet5;charset=utf8;port=3308";
-    const DB_USER = "root";
-    const DB_PASS = "";
-
     // Propriété qui va stocker via la méthode checkConnection() la connexion s'il y en a une (éviter les multiples reconnexions si plusieurs requêtes sur la même page)
     private $connection;
 
@@ -32,7 +27,7 @@ abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
     {
         // Tentative de connexion à la BDD
         try {
-            $this->connection = new PDO(self::DB_HOST, self::DB_USER, self::DB_PASS); // self fait référence à la classe (et $this à l'objet). On pourrait remplacer self par le nom de la classe (Database) mais lm'avantage c'est que si le nom de la classe change on n'a pas de modif supplémentaire
+            $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS); // Param de connexion se trouvent dans config/dev.php 
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // On renvoie la connexion
             return $this->connection;

@@ -1,8 +1,5 @@
 <?php
 
-// On appelle l'autoloader pour éviter la répétitions des require
-require '../vendor/autoload.php';
-
 use Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
 use Mich\Blog\src\DAO\CommentDAO; // idem
 
@@ -34,7 +31,7 @@ use Mich\Blog\src\DAO\CommentDAO; // idem
         <?php
         $posts->closeCursor();
         ?>
-        <a href="home.php">Retour à l'accueil</a>
+        <a href="../public/index.php">Retour à l'accueil</a>
 
         <div id="comments" class="text-left" style="margin-left: 50px">
             <h3>Commentaires</h3>
