@@ -1,6 +1,7 @@
 {
     "autoload": {
         "psr-4": { 
+            "Mich\\Blog\\config\\": "config/",
             "Mich\\Blog\\src\\": "src/"
         }
     }

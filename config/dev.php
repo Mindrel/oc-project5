@@ -1,5 +1,7 @@
 <?php
 
+// Paramètres de connexion pour la phase de développement (prod.php pour la config en production)
+
 const HOST = "localhost";
 const DB_NAME = "projet5";
 const CHARSET = "utf8";
