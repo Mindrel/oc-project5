@@ -26,7 +26,7 @@ class FrontController
     // Gère l'affichage de la page du post demandé et les com associés
     public function post($postId)
     {
-        $post = $this->postDAO->getpost($postId);
+        $post = $this->postDAO->getPost($postId);
         $comments = $this->commentDAO->getCommentsFromPost($postId);
         require "../templates/single.php";
     }
