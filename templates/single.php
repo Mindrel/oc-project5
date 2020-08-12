@@ -1,12 +1,7 @@
-<?php
-
-// Vue d'un post
-
-use Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
-use Mich\Blog\src\DAO\CommentDAO; // idem
-
-?>
 <!DOCTYPE html>
+
+<!-- Vue d'un post -->
+
 <html lang="fr">
 
 <head>
@@ -18,19 +13,13 @@ use Mich\Blog\src\DAO\CommentDAO; // idem
     <div>
         <h1>Mon blog</h1>
         <p>En construction</p>
-        <?php
-        $post = $posts->fetch()
-        ?>
         <div>
-            <h2><?= htmlspecialchars($post->title); ?></h2>
-            <p><?= htmlspecialchars($post->content); ?></p>
-            <p><?= htmlspecialchars($post->author); ?></p>
-            <p>Créé le : <?= htmlspecialchars($post->creation_date); ?></p>
+            <h2><?= htmlspecialchars($post->getTitle()); ?></h2>
+            <p><?= htmlspecialchars($post->getContent()); ?></p>
+            <p><?= htmlspecialchars($post->getAuthor()); ?></p>
+            <p>Créé le : <?= htmlspecialchars($post->getCreationDate()); ?></p>
         </div>
         <br>
-        <?php
-        $posts->closeCursor();
-        ?>
         <a href="../public/index.php">Retour à l'accueil</a>
 
         <div id="comments" class="text-left" style="margin-left: 50px">
@@ -41,7 +30,7 @@ use Mich\Blog\src\DAO\CommentDAO; // idem
                 <h4><?= htmlspecialchars($comment->nickname); ?></h4>
                 <p><?= htmlspecialchars($comment->content); ?></p>
                 <p>Posté le
-                    <?= htmlspecialchars($comment->creation_date); ?>
+                    <?= htmlspecialchars($comment->creationDate); ?>
                 </p>
             <?php
             }

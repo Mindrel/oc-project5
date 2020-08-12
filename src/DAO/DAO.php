@@ -44,13 +44,11 @@ abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
         // S'il s'agit d'une requête préparée il est nécessaire de préciser les paramètres
         if ($parameters) {
             $result = $this->checkConnection()->prepare($sql);
-            $result->setFetchMode(PDO::FETCH_CLASS, get_called_class()); // setFetchMode() définit le mode de récupération par défaut de fetch() (ici ça retourne une instance car constante FETCH_CLASS) et get_called_class() permet de récupérer le nom de la classe depuis laquelle une méthode a été appelée.
             $result->execute($parameters);
             return $result;
         }
         // par défaut il n'y a pas de paramètres pour une requête query
         $result = $this->checkConnection()->query($sql);
-        $result->setFetchMode(PDO::FETCH_CLASS, static::class); // static::class même rôle que get_called_class(), c'est pour l'exemple.
         return $result;
     }
 }
