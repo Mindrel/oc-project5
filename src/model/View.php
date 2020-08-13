@@ -9,7 +9,7 @@ class View
     private $file;
     private $title;
 
-    // Génère la vue
+    // Génère la vue à partir du template et remplit la partie dynamique
     public function render($template, $data = [])
     {
         $this->file = "../templates/" . $template . ".php";
