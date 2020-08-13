@@ -1,32 +1,19 @@
-<!DOCTYPE html>
+<!-- Vue page d'accueil -->
 
-<!-- Vue des post -->
+<?php $this->title = "Accueil PROJET 5"; ?>
 
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8" />
-    <title>PROJET 5</title>
-</head>
-
-<body>
+<h1>PROJET 5</h1>
+<p>En construction</p>
+<?php
+foreach ($posts as $post) {
+?>
     <div>
-        <h1>PROJET 5</h1>
-        <p>En construction</p>
-        <?php
-        foreach ($posts as $post) {
-        ?>
-            <div>
-                <h2><a href="../public/index.php?route=post&postId=<?= htmlspecialchars($post->getId()); ?>"><?= htmlspecialchars($post->getTitle()); ?></a></h2>
-                <p><?= htmlspecialchars($post->getContent()); ?></p>
-                <p><?= htmlspecialchars($post->getAuthor()); ?></p>
-                <p>Créé le : <?= htmlspecialchars($post->getCreationDate()); ?></p>
-            </div>
-            <br />
-        <?php
-        }
-        ?>
+        <h2><a href="../public/index.php?route=post&postId=<?= htmlspecialchars($post->getId()); ?>"><?= htmlspecialchars($post->getTitle()); ?></a></h2>
+        <p><?= htmlspecialchars($post->getContent()); ?></p>
+        <p><?= htmlspecialchars($post->getAuthor()); ?></p>
+        <p>Créé le : <?= htmlspecialchars($post->getCreationDate()); ?></p>
     </div>
-</body>
-
-</html>
+    <br />
+<?php
+}
+?>
