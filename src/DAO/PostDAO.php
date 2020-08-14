@@ -43,4 +43,12 @@ class PostDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($post);
     }
-}
+
+    // Ajout d'un post
+    public function addPost($post)
+    {
+        extract($post);
+        $sql = "INSERT INTO p5_post (title, content, author, creation_date) VALUES (?, ?, ?, NOW())";
+        $this->createQuery($sql, [$title, $content, $author]);
+    }
+}   

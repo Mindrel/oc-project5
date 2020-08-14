@@ -4,6 +4,7 @@
 
 <h1>PROJET 5</h1>
 <p>En construction</p>
+<a href="../public/index.php?route=addPost">Nouveau post</a>
 <?php
 foreach ($posts as $post) {
 ?>
