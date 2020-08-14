@@ -5,6 +5,7 @@
 namespace Mich\Blog\src\DAO; // Permet d'éviter les collisions de classe (deux classes du même nom dans le même projet) en créant une zone spécifique à l'utilisation de cette classe (ne peut être utilisée ailleurs)
 
 use Mich\Blog\src\model\Post;
+use Mich\Blog\config\Parameter;
 
 class PostDAO extends DAO
 {
@@ -45,10 +46,9 @@ class PostDAO extends DAO
     }
 
     // Ajout d'un post
-    public function addPost($post)
+    public function addPost(Parameter $post)
     {
-        extract($post);
         $sql = "INSERT INTO p5_post (title, content, author, creation_date) VALUES (?, ?, ?, NOW())";
-        $this->createQuery($sql, [$title, $content, $author]);
+        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $post->get("author")]);
     }
 }   

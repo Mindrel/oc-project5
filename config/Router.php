@@ -14,6 +14,7 @@ class Router
     private $frontController;
     private $backController;
     private $errorController;
+    private $request;
 
     // Le constructor évite la répétition de l'instanciation (appelée avec $this ci-dessous)
     public function __construct()
@@ -21,20 +22,23 @@ class Router
         $this->frontController = new FrontController();
         $this->backController = new BackController();
         $this->errorController = new ErrorController();
+        $this->request = new Request();
     }
 
     public function run()
-    {
+    { 
+        $route = $this->request->getGet()->get("route"); // Evite la répétition des $_GET
+      
         try {
 
-            if (isset($_GET["route"])) {
-                
-                if ($_GET["route"] === "post") { // Si route post on charge le post ayant l'ID demandé
-                    $this->frontController->post($_GET["postId"]);  
+            if (isset($route)) {
+
+                if ($route === "post") { // Si route post on charge le post ayant l'ID demandé
+                    $this->frontController->post($this->request->getGet()->get("postId"));  
                 } 
                 
-                else if ($_GET["route"] === "addPost") { // Si route addPost on déclenche l'ajout d'un post
-                    $this->backController->addPost($_POST);
+                else if ($route === "addPost") { // Si route addPost on déclenche l'ajout d'un post
+                    $this->backController->addPost($this->request->getPost());
                 } 
                 
                 else {
