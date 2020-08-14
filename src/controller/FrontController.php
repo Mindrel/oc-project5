@@ -4,7 +4,7 @@
 
 namespace Mich\Blog\src\controller;
 
-class FrontController
+class FrontController extends Controller
 {
     // Gère l'affichage de la page d'accueil : Affiche tous les post
     public function home()

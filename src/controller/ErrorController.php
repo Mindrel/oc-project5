@@ -4,7 +4,7 @@
 
 namespace Mich\Blog\src\controller;
 
-class ErrorController
+class ErrorController extends Controller
 {
      public function errorNotFound()
     {

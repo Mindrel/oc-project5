@@ -4,7 +4,7 @@
 
 namespace Mich\Blog\src\controller;
 
-class BackController
+class BackController extends Controller
 {
     public function addPost($post)
     {
