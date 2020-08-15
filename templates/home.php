@@ -4,6 +4,7 @@
 
 <h1>PROJET 5</h1>
 <p>En construction</p>
+<?= $this->session->show("add_post"); // Démarre session utilisateur lors de l'ajout post ?> 
 <a href="../public/index.php?route=addPost">Nouveau post</a>
 <?php
 foreach ($posts as $post) {
