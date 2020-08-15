@@ -51,4 +51,16 @@ class PostDAO extends DAO
         $sql = "INSERT INTO p5_post (title, content, author, creation_date) VALUES (?, ?, ?, NOW())";
         $this->createQuery($sql, [$post->get("title"), $post->get("content"), $post->get("author")]);
     }
-}   
+
+    // Modification d'un post
+    public function editPost(Parameter $post, $postId)
+    {
+        $sql = "UPDATE p5_post SET title=:title, content=:content, author=:author WHERE id=:postId";
+        $this->createQuery($sql, [
+            "title" => $post->get("title"),
+            "content" => $post->get("content"),
+            "author" => $post->get("author"),
+            "postId" => $postId
+        ]);
+    }
+}

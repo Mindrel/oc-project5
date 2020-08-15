@@ -39,7 +39,11 @@ class Router
                 
                 else if ($route === "addPost") { // Si route addPost on déclenche l'ajout d'un post
                     $this->backController->addPost($this->request->getPost());
-                } 
+                }
+
+                else if ($route === "editPost") { // Si editPost on déclenche modification d'un post
+                    $this->backController->editPost($this->request->getPost(), $this->request->getGet()->get("postId"));
+                }
                 
                 else {
                     $this->errorController->errorNotFound();
