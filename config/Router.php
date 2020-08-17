@@ -28,21 +28,21 @@ class Router
     public function run()
     { 
         $route = $this->request->getGet()->get("route"); // Evite la répétition des $_GET
-      
+       
         try {
 
             if (isset($route)) {
 
-                if ($route === "post") { // Si route post on charge le post ayant l'ID demandé
-                    $this->frontController->post($this->request->getGet()->get("postId"));  
+                if ($route === "article") { // Si route article on charge l'article ayant l'ID demandé
+                    $this->frontController->article($this->request->getGet()->get("articleId"));
                 } 
                 
-                else if ($route === "addPost") { // Si route addPost on déclenche l'ajout d'un post
-                    $this->backController->addPost($this->request->getPost());
+                else if ($route === "addArticle") { // Si route addArticle on déclenche l'ajout d'un article
+                    $this->backController->addArticle($this->request->getPost());
                 }
 
-                else if ($route === "editPost") { // Si editPost on déclenche modification d'un post
-                    $this->backController->editPost($this->request->getPost(), $this->request->getGet()->get("postId"));
+                else if ($route === "editArticle") { // Si editArticle on déclenche modification d'un article
+                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get("articleId"));
                 }
                 
                 else {
@@ -54,7 +54,7 @@ class Router
             }
 
         } catch (Exception $e) {
-            $this->errorController->errorServer();
+           $this->errorController->errorServer();
         }
     }
 }

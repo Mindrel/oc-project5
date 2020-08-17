@@ -6,22 +6,22 @@ namespace Mich\Blog\src\controller;
 
 class FrontController extends Controller
 {
-    // Gère l'affichage de la page d'accueil : Affiche tous les post
+    // Gère l'affichage de la page d'accueil : Affiche tous les articles
     public function home()
     {
-        $posts = $this->postDAO->getPosts();
+        $articles = $this->articleDAO->getArticles();
         return $this->view->render("home", [
-            "posts" => $posts
+            "articles" => $articles
         ]);
     }
 
-    // Gère l'affichage de la page du post demandé et les com associés
-    public function post($postId)
+    // Gère l'affichage de la page de l'article demandé et les com associés
+    public function article($articleId)
     {
-        $post = $this->postDAO->getPost($postId);
-        $comments = $this->commentDAO->getCommentsFromPost($postId);
+        $article = $this->articleDAO->getArticle($articleId);
+        $comments = $this->commentDAO->getCommentsFromArticle($articleId);
         return $this->view->render("single", [
-            "post" => $post,
+            "article" => $article,
             "comments" => $comments
         ]);
     }

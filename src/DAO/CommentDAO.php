@@ -18,11 +18,11 @@ class CommentDAO extends DAO
         return $comment;
     }
 
-    // Récupère tous les commentaires par post
-    public function getCommentsFromPost($postId)
+    // Récupère tous les commentaires par article
+    public function getCommentsFromArticle($articleId)
     {
-        $sql = "SELECT id, nickname, content, creation_date FROM p5_comment WHERE post_id = ? ORDER BY creation_date DESC";
-        $result = $this->createQuery($sql, [$postId]);
+        $sql = "SELECT id, nickname, content, creation_date FROM p5_comment WHERE article_id = ? ORDER BY creation_date DESC";
+        $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row) {
             $commentId = $row["id"];

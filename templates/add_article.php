@@ -1,11 +1,11 @@
-<!-- Vue ajout d'un post -->
+<!-- Vue ajout d'un article -->
 
-<?php $this->title = "PROJET 5 : Nouveau post"; ?>
+<?php $this->title = "PROJET 5 : Nouvel article"; ?>
 
 <h1>Mon blog</h1>
 <p>En construction</p>
 <div>
-    <form method="post" action="index.php?route=addPost">
+    <form method="post" action="../public/index.php?route=addArticle">
         <label for="title">Titre</label><br />
         <input type="text" id="title" name="title" /><br />
 

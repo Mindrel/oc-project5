@@ -1,10 +1,10 @@
 <?php
 
-// Modèle comprenant toutes les propriétés et méthodes relatives aux post (séparé de tout ce qui concerne la connexion à la bdd)
+// Modèle comprenant toutes les propriétés et méthodes relatives aux articles (séparé de tout ce qui concerne la connexion à la bdd)
 
 namespace Mich\Blog\src\model;
 
-class Post
+class Article
 {
     private $id;
     private $title;

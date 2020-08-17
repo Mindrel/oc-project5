@@ -8,31 +8,31 @@ use Mich\Blog\config\Parameter;
 
 class BackController extends Controller
 {   
-    // Ajout d'un post
-    public function addPost(Parameter $post)
+    // Ajout d'un article
+    public function addArticle(Parameter $post)
     {
         if ($post->get("submit")) {
-            $this->postDAO->addPost($post);
-            $this->session->set("add_post", "Le nouveau post a bien été ajouté");
-            header("Location: index.php");
+            $this->articleDAO->addArticle($post);
+            $this->session->set("add_article", "Le nouvel article a bien été ajouté");
+            header("Location: ../public/index.php");
         }
-        return $this->view->render("add_post", [
+        return $this->view->render("add_article", [
             "post" => $post
         ]);
     }
 
-    // Modification d'un post
-    public function editPost(Parameter $post, $postId)
+    // Modification d'un article
+    public function editArticle(Parameter $post, $articleId)
     {
-        $article = $this->postDAO->getPost($postId); // Récupère d'abord le contenu du post
+        $article = $this->articleDAO->getArticle($articleId); // Récupère d'abord le contenu de l'article
 
         if ($post->get("submit")) {
-            $this->postDAO->editPost($post, $postId);
-            $this->session->set("edit_post", "Le post a bien été modifié");
-            header("Location: index.php");
+            $this->articleDAO->editArticle($post, $articleId);
+            $this->session->set("edit_article", "L'article a bien été modifié");
+            header("Location: ../public/index.php");
         }
-        return $this->view->render("edit_post", [
-            "post" => $article
+        return $this->view->render("edit_article", [
+            "article" => $article
         ]);
     }
 }

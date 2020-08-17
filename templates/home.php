@@ -5,19 +5,19 @@
 <h1>PROJET 5</h1>
 <p>En construction</p>
 
-<?= $this->session->show("add_post"); // Affiche message lors de l'ajout post ?> 
-<?= $this->session->show("edit_post"); // Affiche message lors de la modif post ?>
+<?= $this->session->show("add_article"); // Affiche message lors de l'ajout article ?> 
+<?= $this->session->show("edit_article"); // Affiche message lors de la modif article ?>
 
-<a href="index.php?route=addPost">Nouveau post</a>
+<a href="../public/index.php?route=addArticle">Nouvel article</a>
 
 <?php
-foreach ($posts as $post) {
+foreach ($articles as $article) {
 ?>
     <div>
-        <h2><a href="../public/index.php?route=post&postId=<?= htmlspecialchars($post->getId()); ?>"><?= htmlspecialchars($post->getTitle()); ?></a></h2>
-        <p><?= htmlspecialchars($post->getContent()); ?></p>
-        <p><?= htmlspecialchars($post->getAuthor()); ?></p>
-        <p>Créé le : <?= htmlspecialchars($post->getCreationDate()); ?></p>
+        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a></h2>
+        <p><?= htmlspecialchars($article->getContent()); ?></p>
+        <p><?= htmlspecialchars($article->getAuthor()); ?></p>
+        <p>Créé le : <?= htmlspecialchars($article->getCreationDate()); ?></p>
     </div>
     <br />
 <?php

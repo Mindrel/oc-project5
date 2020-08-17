@@ -5,13 +5,13 @@
 namespace Mich\Blog\src\controller;
 
 use Mich\Blog\src\DAO\CommentDAO;
-use Mich\Blog\src\DAO\PostDAO; // use le namespace nécessaire sans quoi l'objet PostDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\PostDAO car évite la répétition)
+use Mich\Blog\src\DAO\ArticleDAO; // use le namespace nécessaire sans quoi l'objet ArticleDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\ArticleDAO car évite la répétition)
 use Mich\Blog\src\model\View;
 use Mich\Blog\config\Request;
 
 abstract class Controller // Abstrait car ne sera jamais instancié
 {
-    protected $postDAO; // On utilise l'héritage dans nos classes filles
+    protected $articleDAO; // On utilise l'héritage dans nos classes filles
     protected $commentDAO;
     protected $view;
     private $request;
@@ -22,7 +22,7 @@ abstract class Controller // Abstrait car ne sera jamais instancié
     // Constructor pour éviter les répétitions d'instanciation
     public function __construct()
     {
-        $this->postDAO = new PostDAO();
+        $this->articleDAO = new ArticleDAO();
         $this->commentDAO = new CommentDAO();
         $this->view = new View();
         $this->request = new Request();

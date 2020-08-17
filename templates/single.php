@@ -1,26 +1,26 @@
-<!-- Vue d'un post -->
+<!-- Vue d'un article -->
 
-<?php $this->title = "Post"; ?>
+<?php $this->title = "Article"; ?>
 
 <h1>Mon blog</h1>
 <p>En construction</p>
 
 <div>
-    <h2><?= htmlspecialchars($post->getTitle()); ?></h2>
-    <p><?= htmlspecialchars($post->getContent()); ?></p>
-    <p><?= htmlspecialchars($post->getAuthor()); ?></p>
-    <p>Créé le : <?= htmlspecialchars($post->getCreationDate()); ?></p>
+    <h2><?= htmlspecialchars($article->getTitle()); ?></h2>
+    <p><?= htmlspecialchars($article->getContent()); ?></p>
+    <p><?= htmlspecialchars($article->getAuthor()); ?></p>
+    <p>Créé le : <?= htmlspecialchars($article->getCreationDate()); ?></p>
 </div>
 
 <br />
 
 <div class="actions">
-    <a href="index.php?route=editPost&postId=<?= $post->getId(); ?>">Modifier</a>
+    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
 </div>
 
 <br />
 
-<a href="index.php">Retour à l'accueil</a>
+<a href="../public/index.php">Retour à l'accueil</a>
 
 <div id="comments" class="text-left" style="margin-left: 50px">
     <h3>Commentaires</h3>
