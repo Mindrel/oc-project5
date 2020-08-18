@@ -63,4 +63,13 @@ class ArticleDAO extends DAO
             "articleId" => $articleId
         ]);
     }
+
+    // Suppression d'un article et des commentaires associés
+    public function deleteArticle($articleId)
+    {
+        $sql = "DELETE FROM p5_comment WHERE article_id = ?";
+        $this->createQuery($sql, [$articleId]);
+        $sql = "DELETE FROM p5_article WHERE id = ?";
+        $this->createQuery($sql, [$articleId]);
+    }
 }

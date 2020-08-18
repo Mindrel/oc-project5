@@ -6,16 +6,17 @@
 <p>En construction</p>
 
 <div>
-    <h2><?= htmlspecialchars($article->getTitle()); ?></h2>
-    <p><?= htmlspecialchars($article->getContent()); ?></p>
-    <p><?= htmlspecialchars($article->getAuthor()); ?></p>
-    <p>Créé le : <?= htmlspecialchars($article->getCreationDate()); ?></p>
+    <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
+    <p><?= htmlspecialchars($article->getContent()) ?></p>
+    <p><?= htmlspecialchars($article->getAuthor()) ?></p>
+    <p>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></p>
 </div>
 
 <br />
 
 <div class="actions">
-    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId() ?>">Modifier</a>
+    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId() ?>">Supprimer</a>
 </div>
 
 <br />
@@ -27,10 +28,10 @@
     <?php
     foreach ($comments as $comment) {
     ?>
-        <h4><?= htmlspecialchars($comment->getNickname()); ?></h4>
-        <p><?= htmlspecialchars($comment->getContent()); ?></p>
+        <h4><?= htmlspecialchars($comment->getNickname()) ?></h4>
+        <p><?= htmlspecialchars($comment->getContent()) ?></p>
         <p>Posté le
-            <?= htmlspecialchars($comment->getCreationDate()); ?>
+            <?= htmlspecialchars($comment->getCreationDate()) ?>
         </p>
     <?php
     }

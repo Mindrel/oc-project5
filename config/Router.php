@@ -44,6 +44,10 @@ class Router
                 else if ($route === "editArticle") { // Si editArticle on déclenche modification d'un article
                     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get("articleId"));
                 }
+
+                else if ($route === "deleteArticle") { // Si deleteArticle on déclenche suppression article
+                    $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
+                }
                 
                 else {
                     $this->errorController->errorNotFound();
