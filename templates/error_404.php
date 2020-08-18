@@ -1,3 +1,3 @@
-<?php $this->title = "Erreur 404"; ?>
+<?php $this->title = "Erreur 404" ?>
 
-<?= "Page non trouvée"; ?>
+<?= "Page non trouvée" ?>

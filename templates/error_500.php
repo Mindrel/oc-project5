@@ -1,3 +1,3 @@
-<?php $this->title = "Erreur 500"; ?>
+<?php $this->title = "Erreur 500" ?>
 
-<?= "Problème serveur"; ?>
+<?= "Problème serveur" ?>
