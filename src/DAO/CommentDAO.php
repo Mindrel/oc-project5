@@ -4,6 +4,7 @@
 
 namespace Mich\Blog\src\DAO; // Permet d'éviter les collisions de classe (deux classes du même nom dans le même projet) en créant une zone spécifique à l'utilisation de cette classe (ne peut être utilisée ailleurs)
 
+use Mich\Blog\config\Parameter;
 use Mich\Blog\src\model\Comment;
 
 class CommentDAO extends DAO
@@ -30,5 +31,12 @@ class CommentDAO extends DAO
         }
         $result->closeCursor();
         return $comments;
+    }
+
+    // Ajout d'un commentaire
+    public function addComment(Parameter $post, $articleId)
+    {
+        $sql = "INSERT INTO p5_comment (nickname, content, creation_date, article_id) VALUES (?, ?, NOW(), ?)";
+        $this->createQuery($sql, [$post->get("nickname"), $post->get("content"), $articleId]);
     }
 }

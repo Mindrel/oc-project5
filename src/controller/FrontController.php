@@ -4,6 +4,8 @@
 
 namespace Mich\Blog\src\controller;
 
+use Mich\Blog\config\Parameter;
+
 class FrontController extends Controller
 {
     // Gère l'affichage de la page d'accueil : Affiche tous les articles
@@ -24,5 +26,15 @@ class FrontController extends Controller
             "article" => $article,
             "comments" => $comments
         ]);
+    }
+
+    // Ajout d'un commentaire
+    public function addComment(Parameter $post, $articleId)
+    {
+        if ($post->get("submit")) {
+            $this->commentDAO->addComment($post, $articleId);
+            $this->session->set("add_comment", "Le nouveau commentaire a bien été ajouté");
+            header("Location: ../public/index.php?route=article&articleId=" . $articleId);
+        }
     }
 }

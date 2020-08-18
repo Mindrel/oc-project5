@@ -48,6 +48,10 @@ class Router
                 else if ($route === "deleteArticle") { // Si deleteArticle on déclenche suppression article
                     $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
                 }
+
+                else if ($route === "addComment") {
+                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get("articleId"));
+                }
                 
                 else {
                     $this->errorController->errorNotFound();
