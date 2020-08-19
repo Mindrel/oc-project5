@@ -56,6 +56,10 @@ class Router
                 else if ($route === "flagComment") { // Si flagComment signale commentaire
                     $this->frontController->flagComment($this->request->getGet()->get("commentId"));
                 }
+
+                else if ($route === "deleteComment") { // Si deleteComment supprime commentaire
+                    $this->backController->deleteComment($this->request->getGet()->get("commentId"));
+                }
                 
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();

@@ -10,6 +10,7 @@
 <?= $this->session->show("delete_article") // Affiche message lors de la suppression article ?>
 <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
 <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
+<?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
 
 <a href="../public/index.php?route=addArticle">Nouvel article</a>
 
