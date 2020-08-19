@@ -10,6 +10,7 @@ class Comment
     private $nickname;
     private $content;
     private $creationDate;
+    private $flag;
 
     public function getId()
     {
@@ -49,5 +50,15 @@ class Comment
     public function setCreationDate($creationDate)
     {
         $this->creationDate = $creationDate;
+    }
+
+    public function isFlag()
+    {
+        return $this->flag;
+    }
+
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
     }
 }

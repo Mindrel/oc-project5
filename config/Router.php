@@ -49,11 +49,15 @@ class Router
                     $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
                 }
 
-                else if ($route === "addComment") {
+                else if ($route === "addComment") { // Si addComment ajoute commentaire
                     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get("articleId"));
                 }
+
+                else if ($route === "flagComment") { // Si flagComment signale commentaire
+                    $this->frontController->flagComment($this->request->getGet()->get("commentId"));
+                }
                 
-                else {
+                else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();
                 }
 
@@ -62,6 +66,7 @@ class Router
             }
 
         } catch (Exception $e) {
+           $_SESSION["error"] = $e->getMessage();
            $this->errorController->errorServer();
         }
     }
