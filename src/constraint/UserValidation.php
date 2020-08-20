@@ -1,12 +1,12 @@
 <?php
 
-// Valide seulement si les données du commentaire sont conformes
+// Valide si seulement les données nouvel user sont conformes
 
 namespace Mich\Blog\src\constraint;
 
 use Mich\Blog\config\Parameter;
 
-class CommentValidation extends Validation
+class UserValidation extends Validation
 {
     private $errors = [];
     private $constraint;
@@ -29,14 +29,13 @@ class CommentValidation extends Validation
         if ($name === "nickname") {
             $error = $this->checkNickname($name, $value);
             $this->addError($name, $error);
-        } else if ($name === "content") {
-            $error = $this->checkContent($name, $value);
+        } else if ($name === "pass") {
+            $error = $this->checkPass($name, $value);
             $this->addError($name, $error);
         }
     }
 
-    private function addError($name, $error)
-    {
+    private function addError($name, $error) {
         if ($error) {
             $this->errors += [
                 $name => $error
@@ -44,29 +43,31 @@ class CommentValidation extends Validation
         }
     }
 
-    private function checkNickname($name, $value)
-    {
+    private function checkNickname($name, $value) {
         if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank("pseudo", $value);
         }
 
-        if ($this->constraint->minLength($name, $value, 2)) {
-            return $this->constraint->minLength("pseudo", $value, 2);
+        if ($this->constraint->minLength($name, $value, 4)) {
+            return $this->constraint->minLength("pseudo", $value, 4);
         }
 
-        if ($this->constraint->maxLength($name, $value, 255)) {
-            return $this->constraint->maxLength("pseudo", $value, 255);
+        if ($this->constraint->maxLength($name, $value, 40)) {
+            return $this->constraint->maxLength("pseudo", $value, 40);
         }
     }
 
-    private function checkContent($name, $value)
-    {
+    private function checkPass($name, $value) {
         if ($this->constraint->notBlank($name, $value)) {
-            return $this->constraint->notBlank("message", $value);
+            return $this->constraint->notBlank("mot de passe", $value);
         }
 
-        if ($this->constraint->minLength($name, $value, 2)) {
-            return $this->constraint->minLength("message", $value, 2);
+        if ($this->constraint->minLength($name, $value, 6)) {
+            return $this->constraint->minLength("mot de passe", $value, 6);
+        }
+
+        if ($this->constraint->maxLength($name, $value, 100)) {
+            return $this->constraint->maxLength("mot de passe", $value, 100);
         }
     }
 }

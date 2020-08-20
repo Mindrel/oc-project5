@@ -6,7 +6,7 @@ namespace Mich\Blog\src\constraint;
 
 class Validation
 {
-    // Méthode appelée depuis le contrôleur et renvoie vers la classe ArticleValidation
+    // Méthode appelée depuis le contrôleur et renvoie vers la classe concernée
     public function validate($data, $name)
     {
         if ($name === "Article") {
@@ -18,6 +18,12 @@ class Validation
         else if ($name === "Comment") {
             $commentValidation = new CommentValidation();
             $errors = $commentValidation->check($data);
+            return $errors;
+        }
+
+        else if ($name === "User") {
+            $userValidation = new UserValidation();
+            $errors = $userValidation->check($data);
             return $errors;
         }
     }
