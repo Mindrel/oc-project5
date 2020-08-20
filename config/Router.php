@@ -60,6 +60,10 @@ class Router
                 else if ($route === "deleteComment") { // Si deleteComment supprime commentaire
                     $this->backController->deleteComment($this->request->getGet()->get("commentId"));
                 }
+
+                else if ($route === "register") { // Si route register alors on lance l'inscription
+                    $this->frontController->register($this->request->getPost());
+                }
                 
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();
