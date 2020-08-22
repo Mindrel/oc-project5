@@ -8,15 +8,24 @@ use Mich\Blog\config\Parameter;
 
 class BackController extends Controller
 {
+    // Accès espace admin et y apparaissent tous les articles
+    public function administration()
+    {
+        $articles = $this->articleDAO->getArticles();
+        return $this->view->render("administration", [
+            "articles" => $articles
+        ]);
+    }
+
     // Ajout d'un article
     public function addArticle(Parameter $post)
     {
         if ($post->get("submit")) {
             $errors = $this->validation->validate($post, "Article"); // Processus de validation des données
             if (!$errors) {
-                $this->articleDAO->addArticle($post);
+                $this->articleDAO->addArticle($post, $this->session->get("id")); // 2ème param récup id de l'user connecté (admin)
                 $this->session->set("add_article", "Le nouvel article a bien été ajouté");
-                header("Location: ../public/index.php");
+                header("Location: ../public/index.php?route=administration");
             }
             return $this->view->render("add_article", [
                 "post" => $post,
@@ -34,9 +43,9 @@ class BackController extends Controller
         if ($post->get("submit")) {
             $errors = $this->validation->validate($post, "Article");
             if (!$errors) {
-                $this->articleDAO->editArticle($post, $articleId);
+                $this->articleDAO->editArticle($post, $articleId, $this->session->get("id")); // 3ème param récup id user connecté (admin)
                 $this->session->set("edit_article", "L'article a bien été modifié");
-                header("Location: ../public/index.php");
+                header("Location: ../public/index.php?route=administration");
             }
             return $this->view->render("edit_article", [
                 "post" => $post,
@@ -58,7 +67,7 @@ class BackController extends Controller
     {
         $this->articleDAO->deleteArticle($articleId);
         $this->session->set("delete_article", "L'article a bien été supprimé");
-        header("Location: ../public/index.php");
+        header("Location: ../public/index.php?route=administration");
     }
 
     // Suppression d'un commentaire

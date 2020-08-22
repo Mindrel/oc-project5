@@ -81,8 +81,12 @@ class Router
                     $this->backController->logout();
                 }
                 
-                else if ($route === "deleteAccount") {
+                else if ($route === "deleteAccount") { // Suppression compte utilisateur
                     $this->backController->deleteAccount();
+                }
+
+                else if ($route ==="administration") { // Accès espace admin
+                    $this->backController->administration();
                 }
 
                 else { // Si la route est différente des précedentes alors error not found

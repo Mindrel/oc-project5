@@ -14,13 +14,6 @@
 
 <br />
 
-<div class="actions">
-    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId() ?>">Modifier</a>
-    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId() ?>">Supprimer</a>
-</div>
-
-<br />
-
 <a href="../public/index.php">Retour à l'accueil</a>
 
 <div id="comments" class="text-left" style="margin-left: 50px">

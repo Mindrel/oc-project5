@@ -16,7 +16,7 @@ class ArticleDAO extends DAO
         $article->setId($row["id"]);
         $article->setTitle($row["title"]);
         $article->setContent($row["content"]);
-        $article->setAuthor($row["author"]);
+        $article->setAuthor($row["nickname"]);
         $article->setCreationDate($row["creation_date"]);
         return $article;
     }
@@ -24,7 +24,7 @@ class ArticleDAO extends DAO
     // Récupère tous les articles
     public function getArticles()
     {
-        $sql = "SELECT id, title, content, author, creation_date FROM p5_article ORDER BY id DESC";
+        $sql = "SELECT p5_article.id, p5_article.title, p5_article.content, p5_user.nickname, p5_article.creation_date FROM p5_article INNER JOIN p5_user ON p5_article.user_id = p5_user.id ORDER BY p5_article.id DESC";
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row) {
@@ -38,7 +38,7 @@ class ArticleDAO extends DAO
     // Récupère un seul article
     public function getArticle($articleId)
     {
-        $sql = "SELECT id, title, content, author, creation_date FROM p5_article WHERE id = ?";
+        $sql = "SELECT p5_article.id, p5_article.title, p5_article.content, p5_user.nickname, p5_article.creation_date FROM p5_article INNER JOIN p5_user ON p5_article.user_id = p5_user.id WHERE p5_article.id = ?";
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();
@@ -46,20 +46,20 @@ class ArticleDAO extends DAO
     }
 
     // Ajout d'un article
-    public function addArticle(Parameter $post)
+    public function addArticle(Parameter $post, $userId)
     {
-        $sql = "INSERT INTO p5_article (title, content, author, creation_date) VALUES (?, ?, ?, NOW())";
-        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $post->get("author")]);
+        $sql = "INSERT INTO p5_article (title, content, creation_date, user_id) VALUES (?, ?, NOW(), ?)";
+        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $userId]);
     }
 
     // Modification d'un article
-    public function editArticle(Parameter $post, $articleId)
+    public function editArticle(Parameter $post, $articleId, $userId)
     {
-        $sql = "UPDATE p5_article SET title=:title, content=:content, author=:author WHERE id=:articleId";
+        $sql = "UPDATE p5_article SET title = :title, content = :content, user_id = :user_id WHERE id = :articleId";
         $this->createQuery($sql, [
             "title" => $post->get("title"),
             "content" => $post->get("content"),
-            "author" => $post->get("author"),
+            "user_id" => $userId,
             "articleId" => $articleId
         ]);
     }

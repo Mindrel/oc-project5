@@ -5,9 +5,6 @@
 <h1>PROJET 5</h1>
 <p>En construction</p>
 
-<?= $this->session->show("add_article") // Affiche message lors de l'ajout article ?> 
-<?= $this->session->show("edit_article") // Affiche message lors de la modif article ?>
-<?= $this->session->show("delete_article") // Affiche message lors de la suppression article ?>
 <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
 <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
 <?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
@@ -30,8 +27,6 @@ if ($this->session->get("nickname")) { // Si connecté
     <?php
     }
     ?>
-
-    <a href="../public/index.php?route=addArticle">Nouvel article</a>
 
 <?php
 } else { // Sinon pas connecté
