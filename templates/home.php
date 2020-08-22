@@ -12,6 +12,7 @@
 <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
 <?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
 <?= $this->session->show("register"); // Message apparaît si nouvel utilisateur inscrit ?>
+<?= $this->session->show("login"); // Message apparaît si utilisateur connecté?>
 
 <a href="../public/index.php?route=register">Inscription</a>
 <a href="../public/index.php?route=login">Connexion</a>

@@ -64,6 +64,10 @@ class Router
                 else if ($route === "register") { // Si route register alors on lance l'inscription
                     $this->frontController->register($this->request->getPost());
                 }
+
+                else if ($route === "login") {
+                    $this->frontController->login($this->request->getPost());
+                }
                 
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();

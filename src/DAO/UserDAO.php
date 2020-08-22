@@ -25,4 +25,17 @@ class UserDAO extends DAO
             return "<p>Le pseudo existe déjà</p>";
         }
     }
+
+    // Vérification des identifiants utilisateur lors connexion
+    public function login(Parameter $post)
+    {
+        $sql = "SELECT id, pass FROM p5_user WHERE nickname = ?";
+        $data = $this->createQuery($sql, [$post->get("nickname")]);
+        $result = $data->fetch();
+        $isPasswordValid = password_verify($post->get("pass"), $result["pass"]);
+        return [
+            "result" => $result,
+            "isPasswordValid" => $isPasswordValid
+        ];
+    }
 }
