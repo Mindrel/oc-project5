@@ -80,6 +80,10 @@ class Router
                 else if ($route === "logout") { // Déconnexion utilisateur
                     $this->backController->logout();
                 }
+                
+                else if ($route === "deleteAccount") {
+                    $this->backController->deleteAccount();
+                }
 
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();

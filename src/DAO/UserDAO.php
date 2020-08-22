@@ -45,4 +45,11 @@ class UserDAO extends DAO
         $sql = "UPDATE p5_user SET pass = ? WHERE nickname = ?";
         $this->createQuery($sql, [password_hash($post->get("pass"), PASSWORD_BCRYPT), $nickname]);
     }
+
+    // Suppression d'un compte utilisateur
+    public function deleteAccount($nickname)
+    {
+        $sql = "DELETE FROM p5_user WHERE nickname = ?";
+        $this->createQuery($sql, [$nickname]);
+    }
 }

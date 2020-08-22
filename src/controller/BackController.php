@@ -89,9 +89,26 @@ class BackController extends Controller
     // Déconnexion utilisateur
     public function logout()
     {
+        $this->logoutOrDelete("logout");
+    }
+
+    // Suppression compte utilisateur
+    public function deleteAccount()
+    {
+        $this->userDAO->deleteAccount($this->session->get("nickname"));
+        $this->logoutOrDelete("delete_account");
+    }
+
+    // Méthodes logout() et deleteAccount() similaires, évite la répétition de code dans ces deux méthodes
+    public function logoutOrDelete($param)
+    {
         $this->session->stop();
         $this->session->start();
-        $this->session->set("logout", "À bientôt !");
+        if ($param === "logout") {
+            $this->session->set($param, "À bientôt !");
+        } else {
+            $this->session->set($param, "Votre compte a bien été supprimé");
+        }
         header("Location: ../public/index.php");
     }
 }

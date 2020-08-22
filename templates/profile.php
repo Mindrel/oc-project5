@@ -15,7 +15,8 @@ $this->title = "Mon profil";
 <div>
     <h2><?= $this->session->get("nickname") ?></h2>
     <p><?= $this->session->get("id") ?></p>
-    <a href="../public/index.php?route=updatePassword">Modifier son mot de passe</a>
+    <a href="../public/index.php?route=updatePassword">Modifier le mot de passe</a>
+    <a href="../public/index.php?route=deleteAccount">Supprimer ce compte utilisateur</a>
 </div>
 
 <br />
