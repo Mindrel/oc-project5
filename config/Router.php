@@ -65,7 +65,7 @@ class Router
                     $this->frontController->register($this->request->getPost());
                 }
 
-                else if ($route === "login") { // Connexion
+                else if ($route === "login") { // Connexion utilisateur
                     $this->frontController->login($this->request->getPost());
                 }
 
@@ -75,6 +75,10 @@ class Router
 
                 else if ($route === "updatePassword") { // Modif mot de passe utilisateur
                     $this->backController->updatePassword($this->request->getPost());
+                }
+
+                else if ($route === "logout") { // Déconnexion utilisateur
+                    $this->backController->logout();
                 }
 
                 else { // Si la route est différente des précedentes alors error not found

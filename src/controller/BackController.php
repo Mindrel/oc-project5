@@ -85,4 +85,13 @@ class BackController extends Controller
         }
         return $this->view->render("update_password");
     }
+
+    // Déconnexion utilisateur
+    public function logout()
+    {
+        $this->session->stop();
+        $this->session->start();
+        $this->session->set("logout", "À bientôt !");
+        header("Location: ../public/index.php");
+    }
 }

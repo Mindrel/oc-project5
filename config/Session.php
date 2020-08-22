@@ -39,6 +39,12 @@ class Session
         unset($_SESSION[$name]);
     }
 
+    // Nécessaire pour message déco utilisateur car déco stop session (session start dans l'index en temps normal)
+    public function start()
+    {
+        session_start();
+    }
+
     public function stop()
     {
         session_destroy();
