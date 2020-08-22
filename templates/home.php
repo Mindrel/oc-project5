@@ -14,9 +14,24 @@
 <?= $this->session->show("register"); // Message apparaît si nouvel utilisateur inscrit ?>
 <?= $this->session->show("login"); // Message apparaît si utilisateur connecté?>
 
+<?php
+if ($this->session->get("nickname")) {
+?>
+
+<a href="../public/index.php?route=logout">Déconnexion</a>
+<a href="../public/index.php?route=profile">Profil</a>
+<a href="../public/index.php?route=addArticle">Nouvel article</a>
+
+<?php
+} else {
+?>
+
 <a href="../public/index.php?route=register">Inscription</a>
 <a href="../public/index.php?route=login">Connexion</a>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+
+<?php
+}
+?>
 
 <?php
 foreach ($articles as $article) {

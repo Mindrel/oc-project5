@@ -38,4 +38,11 @@ class UserDAO extends DAO
             "isPasswordValid" => $isPasswordValid
         ];
     }
+
+    // Modification du mot de passe utilisateur
+    public function updatePassword(Parameter $post, $nickname)
+    {
+        $sql = "UPDATE p5_user SET pass = ? WHERE nickname = ?";
+        $this->createQuery($sql, [password_hash($post->get("pass"), PASSWORD_BCRYPT), $nickname]);
+    }
 }

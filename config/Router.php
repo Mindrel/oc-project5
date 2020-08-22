@@ -65,10 +65,18 @@ class Router
                     $this->frontController->register($this->request->getPost());
                 }
 
-                else if ($route === "login") {
+                else if ($route === "login") { // Connexion
                     $this->frontController->login($this->request->getPost());
                 }
-                
+
+                else if ($route === "profile") { // Accès profil utilisateur
+                    $this->backController->profile();
+                }
+
+                else if ($route === "updatePassword") { // Modif mot de passe utilisateur
+                    $this->backController->updatePassword($this->request->getPost());
+                }
+
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();
                 }

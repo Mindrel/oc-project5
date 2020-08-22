@@ -10,7 +10,7 @@ $this->title  = "Connexion";
 
 <p>En construction</p>
 
-<?= $this->session->show("error_login") ?>
+<?= $this->session->show("error_login") // Message si erreur login ou password ?>
 
 <div>
     <form method="post" action="../public/index.php?route=login">
