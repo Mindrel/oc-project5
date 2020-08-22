@@ -17,15 +17,24 @@
 <?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
 
 <?php
-if ($this->session->get("nickname")) {
+if ($this->session->get("nickname")) { // Si connecté
 ?>
 
-<a href="../public/index.php?route=logout">Déconnexion</a>
-<a href="../public/index.php?route=profile">Profil</a>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+    <a href="../public/index.php?route=logout">Déconnexion</a>
+    <a href="../public/index.php?route=profile">Profil</a>
+
+    <?php
+    if ($this->session->get("role") === "admin") { // N'apparaît que si user admin
+    ?>
+    <a href="../public/index.php?route=administration">Administration</a>
+    <?php
+    }
+    ?>
+
+    <a href="../public/index.php?route=addArticle">Nouvel article</a>
 
 <?php
-} else {
+} else { // Sinon pas connecté
 ?>
 
 <a href="../public/index.php?route=register">Inscription</a>

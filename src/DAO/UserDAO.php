@@ -11,8 +11,9 @@ class UserDAO extends DAO
     // Création nouvel utilisateur
     public function register(Parameter $post)
     {
-        $sql = "INSERT INTO p5_user (nickname, pass, creation_date) VALUES (?, ?, NOW())";
-        $this->createQuery($sql, [$post->get("nickname"), password_hash($post->get("pass"), PASSWORD_BCRYPT)]);
+        $this->checkUser($post);
+        $sql = "INSERT INTO p5_user (nickname, pass, creation_date, role_id) VALUES (?, ?, NOW(), ?)";
+        $this->createQuery($sql, [$post->get("nickname"), password_hash($post->get("pass"), PASSWORD_BCRYPT), 2]);
     }
 
     // Vérification de l'existence de l'utilisateur
@@ -26,10 +27,10 @@ class UserDAO extends DAO
         }
     }
 
-    // Vérification des identifiants utilisateur lors connexion
+    // Vérification des identifiants utilisateur lors connexion + Vérif du rôle (admin ou user) pour accéder ensuite à l'administration du site
     public function login(Parameter $post)
     {
-        $sql = "SELECT id, pass FROM p5_user WHERE nickname = ?";
+        $sql = "SELECT p5_user.id, p5_user.role_id, p5_user.pass, p5_role.name FROM p5_user INNER JOIN p5_role ON p5_role.id = p5_user.role_id WHERE nickname = ?";
         $data = $this->createQuery($sql, [$post->get("nickname")]);
         $result = $data->fetch();
         $isPasswordValid = password_verify($post->get("pass"), $result["pass"]);
