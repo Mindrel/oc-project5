@@ -8,14 +8,17 @@ use Mich\Blog\config\Parameter;
 
 class BackController extends Controller
 {
-    // Accès espace admin et y apparaissent tous les articles
+    // Accès espace admin et y apparaissent tous les articles, commentaires, utilisateurs
     public function administration()
     {
         $articles = $this->articleDAO->getArticles();
         $comments = $this->commentDAO->getAllComments();
+        $users = $this->userDAO->getUsers();
+
         return $this->view->render("administration", [
             "articles" => $articles,
-            "comments" => $comments
+            "comments" => $comments,
+            "users" => $users
         ]);
     }
 
@@ -129,5 +132,13 @@ class BackController extends Controller
             $this->session->set($param, "Votre compte a bien été supprimé");
         }
         header("Location: ../public/index.php");
+    }
+
+    // Suppression utilisateur depuis espace admin
+    public function deleteUser($userId)
+    {
+        $this->userDAO->deleteUser($userId);
+        $this->session->set("delete_user", "L'utilisateur a bien été supprimé");
+        header("Location: ../public/index.php?route=administration");
     }
 }

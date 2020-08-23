@@ -89,6 +89,10 @@ class Router
                     $this->backController->deleteAccount();
                 }
 
+                else if ($route === "deleteUser") { // Suppression utilisateur depuis espace admin
+                    $this->backController->deleteUser($this->request->getGet()->get("userId"));
+                }
+
                 else if ($route ==="administration") { // Accès espace admin
                     $this->backController->administration();
                 }

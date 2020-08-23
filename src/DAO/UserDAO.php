@@ -5,9 +5,35 @@
 namespace Mich\Blog\src\DAO;
 
 use Mich\Blog\config\Parameter;
+use Mich\Blog\src\model\User;
 
 class UserDAO extends DAO
 {
+    // Permet de convertir chaque champ de la table en propriété de l'objet
+    private function buildObject($row)
+    {
+        $user = new User();
+        $user->setId($row["id"]);
+        $user->setNickname($row["nickname"]);
+        $user->setCreationDate($row["creation_date"]);
+        $user->setRole($row["name"]);
+        return $user;
+    }
+
+    // Récupère les utilisateurs 
+    public function getUsers()
+    {
+        $sql = "SELECT p5_user.id, p5_user.nickname, p5_user.creation_date, p5_role.name FROM p5_user INNER JOIN p5_role ON p5_user.role_id = p5_role.id ORDER BY p5_user.id DESC";
+        $result = $this->createQuery($sql);
+        $users = [];
+        foreach ($result as $row) {
+            $userId = $row["id"];
+            $users[$userId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $users;
+    }
+
     // Création nouvel utilisateur
     public function register(Parameter $post)
     {
@@ -52,5 +78,12 @@ class UserDAO extends DAO
     {
         $sql = "DELETE FROM p5_user WHERE nickname = ?";
         $this->createQuery($sql, [$nickname]);
+    }
+
+    // Suppression utilisateur depuis espace admin
+    public function deleteUser($userId)
+    {
+        $sql = "DELETE FROM p5_user WHERE id = ?";
+        $this->createQuery($sql, [$userId]);
     }
 }

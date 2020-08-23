@@ -10,13 +10,14 @@ class User
     private $nickname;
     private $pass;
     private $creationDate;
+    private $role;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function setId()
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -26,7 +27,7 @@ class User
         return $this->nickname;
     }
 
-    public function setNickname()
+    public function setNickname($nickname)
     {
         $this->nickname = $nickname;
     }
@@ -36,18 +37,28 @@ class User
         return $this->pass;
     }
 
-    public function setPass()
+    public function setPass($pass)
     {
         $this->pass = $pass;
     }
 
     public function getCreationDate()
     {
-        return $this->$creationDate;
+        return $this->creationDate;
     }
 
-    public function setCreationDate()
+    public function setCreationDate($creationDate)
     {
         $this->creationDate = $creationDate;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
     }
 }

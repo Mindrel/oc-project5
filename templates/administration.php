@@ -15,6 +15,7 @@ $this->title = "Administration"
 <?= $this->session->show("delete_article") // Affiche message lors de la suppression article ?>
 <?= $this->session->show("unflag_comment") // Affiche message lors suppression signalement ?>
 <?= $this->session->show("delete_comment") // Affiche message lors suppression commentaire ?>
+<?= $this->session->show("delete_user") // Affiche message lors suppression utilisateur ?>
 
 <h2>Articles</h2>
 
@@ -91,5 +92,48 @@ $this->title = "Administration"
 </table>
 
 <h2>Utilisateurs</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</td>
+            <th>Pseudo</td>
+            <th>Date</td>
+            <th>Rôle</td>
+            <th>Actions</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php
+        foreach ($users as $user) {
+        ?>
+
+        <tr>
+            <td><?= htmlspecialchars($user->getId()) ?></td>
+            <td><?= htmlspecialchars($user->getNickname()) ?></td>
+            <td>Créé le : <?= htmlspecialchars($user->getCreationDate()) ?></td>
+            <td><?= htmlspecialchars($user->getRole()) ?></td>
+            <td>
+
+            <?php
+            if ($user->getRole() != "admin") {
+            ?>
+                <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId() ?>">Supprimer</a>
+            <?php
+            } else {
+            ?>
+                Suppression impossible
+            <?php
+            }
+            ?>
+            </td>
+        </tr>
+
+        <?php
+        }
+        ?>
+    </tbody>
+</table>
 
 <a href="../public/index.php">Retour à l'accueil</a>

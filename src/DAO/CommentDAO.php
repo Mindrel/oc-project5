@@ -9,6 +9,7 @@ use Mich\Blog\src\model\Comment;
 
 class CommentDAO extends DAO
 {   
+    // Permet de convertir chaque champ de la table en propriété de l'objet
     private function buildObject($row)
     {
         $comment = new Comment();
