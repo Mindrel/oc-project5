@@ -11,6 +11,7 @@ $this->title = "Mon profil";
 <p>En construction</p>
 
 <?= $this->session->show("update_password") // Message apparaît après modif password ?>
+<?= $this->session->show("not_admin") // Apparaît si tentative d'action nécessitant d'être admin ?>
 
 <div>
     <h2><?= $this->session->get("nickname") ?></h2>

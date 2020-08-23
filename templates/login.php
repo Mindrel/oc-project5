@@ -11,6 +11,7 @@ $this->title  = "Connexion";
 <p>En construction</p>
 
 <?= $this->session->show("error_login") // Message si erreur login ou password ?>
+<?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?>
 
 <div>
     <form method="post" action="../public/index.php?route=login">
