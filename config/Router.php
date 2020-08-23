@@ -56,6 +56,10 @@ class Router
                 else if ($route === "flagComment") { // Si flagComment signale commentaire
                     $this->frontController->flagComment($this->request->getGet()->get("commentId"));
                 }
+                
+                else if ($route ==="unflagComment") { // Enlève le signalement d'un com via l'espace admin
+                    $this->backController->unflagComment($this->request->getGet()->get("commentId"));
+                }
 
                 else if ($route === "deleteComment") { // Si deleteComment supprime commentaire
                     $this->backController->deleteComment($this->request->getGet()->get("commentId"));
@@ -69,6 +73,10 @@ class Router
                     $this->frontController->login($this->request->getPost());
                 }
 
+                else if ($route === "logout") { // Déconnexion utilisateur
+                    $this->backController->logout();
+                }
+                
                 else if ($route === "profile") { // Accès profil utilisateur
                     $this->backController->profile();
                 }
@@ -77,10 +85,6 @@ class Router
                     $this->backController->updatePassword($this->request->getPost());
                 }
 
-                else if ($route === "logout") { // Déconnexion utilisateur
-                    $this->backController->logout();
-                }
-                
                 else if ($route === "deleteAccount") { // Suppression compte utilisateur
                     $this->backController->deleteAccount();
                 }

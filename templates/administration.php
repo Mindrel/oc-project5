@@ -13,6 +13,8 @@ $this->title = "Administration"
 <?= $this->session->show("add_article") // Affiche message lors de l'ajout article ?> 
 <?= $this->session->show("edit_article") // Affiche message lors de la modif article ?>
 <?= $this->session->show("delete_article") // Affiche message lors de la suppression article ?>
+<?= $this->session->show("unflag_comment") // Affiche message lors suppression signalement ?>
+<?= $this->session->show("delete_comment") // Affiche message lors suppression commentaire ?>
 
 <h2>Articles</h2>
 
@@ -54,6 +56,39 @@ $this->title = "Administration"
 </table>
 
 <h2>Commentaires signalés</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</td>
+            <th>Pseudo</td>
+            <th>Message</td>
+            <th>Date</td>
+            <th>Actions</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <?php
+        foreach ($comments as $comment) {
+        ?>
+
+        <tr>
+            <td><?= htmlspecialchars($comment->getId()) ?></td>
+            <td><?= htmlspecialchars($comment->getNickname()) ?></td>
+            <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
+            <td>Créé le : <?= htmlspecialchars($comment->getCreationDate()) ?></td>
+            <td>
+                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId() ?>">Enlever le signalement</a>
+                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId() ?>">Supprimer le commentaire</a>
+            </td>
+        </tr>
+
+        <?php
+        }
+        ?>
+    </tbody>
+</table>
 
 <h2>Utilisateurs</h2>
 

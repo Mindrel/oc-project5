@@ -12,8 +12,10 @@ class BackController extends Controller
     public function administration()
     {
         $articles = $this->articleDAO->getArticles();
+        $comments = $this->commentDAO->getAllComments();
         return $this->view->render("administration", [
-            "articles" => $articles
+            "articles" => $articles,
+            "comments" => $comments
         ]);
     }
 
@@ -75,7 +77,15 @@ class BackController extends Controller
     {
         $this->commentDAO->deleteComment($commentId);
         $this->session->set("delete_comment", "Le commentaire a bien été supprimé");
-        header("Location: ../public/index.php");
+        header("Location: ../public/index.php?route=administration");
+    }
+
+    // Enlève le signalement commentaire via l'espace admin
+    public function unflagComment($commentId)
+    {
+        $this->commentDAO->unflagComment($commentId);
+        $this->session->set("unflag_comment", "Le commentaire n'est plus signalé");
+        header("Location: ../public/index.php?route=administration");
     }
 
     // Accès au profil utilisateur
