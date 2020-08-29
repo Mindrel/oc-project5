@@ -1,9 +1,7 @@
 <?php
-
 // Vue espace admin
 
 $this->title = "Administration"
-
 ?>
 
 <h1>Mon blog</h1>
@@ -35,23 +33,21 @@ $this->title = "Administration"
 
     <tbody>
         <?php
-        foreach ($articles as $article) {
+        foreach ($articles as $article) :
         ?>
-
-        <tr>
-            <td><?= htmlspecialchars($article->getId()) ?></td>
-            <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()) ?>"><?= htmlspecialchars($article->getTitle()) ?></a></td>
-            <td><?= substr(htmlspecialchars($article->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
-            <td><?= htmlspecialchars($article->getAuthor()) ?></td>
-            <td>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></td>
-            <td>
-                <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId() ?>">Modifier</a>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId() ?>">Supprimer</a>
-            </td>
-        </tr>
-
+            <tr>
+                <td><?= htmlspecialchars($article->getId()) ?></td>
+                <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()) ?>"><?= htmlspecialchars($article->getTitle()) ?></a></td>
+                <td><?= substr(htmlspecialchars($article->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
+                <td><?= htmlspecialchars($article->getAuthor()) ?></td>
+                <td>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></td>
+                <td>
+                    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId() ?>">Modifier</a>
+                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId() ?>">Supprimer</a>
+                </td>
+            </tr>
         <?php
-        }
+        endforeach;
         ?>
     </tbody>
 </table>
@@ -71,22 +67,20 @@ $this->title = "Administration"
 
     <tbody>
         <?php
-        foreach ($comments as $comment) {
+        foreach ($comments as $comment) :
         ?>
-
-        <tr>
-            <td><?= htmlspecialchars($comment->getId()) ?></td>
-            <td><?= htmlspecialchars($comment->getNickname()) ?></td>
-            <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
-            <td>Créé le : <?= htmlspecialchars($comment->getCreationDate()) ?></td>
-            <td>
-                <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId() ?>">Enlever le signalement</a>
-                <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId() ?>">Supprimer le commentaire</a>
-            </td>
-        </tr>
-
+            <tr>
+                <td><?= htmlspecialchars($comment->getId()) ?></td>
+                <td><?= htmlspecialchars($comment->getNickname()) ?></td>
+                <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
+                <td>Créé le : <?= htmlspecialchars($comment->getCreationDate()) ?></td>
+                <td>
+                    <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId() ?>">Enlever le signalement</a>
+                    <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId() ?>">Supprimer le commentaire</a>
+                </td>
+            </tr>
         <?php
-        }
+        endforeach;
         ?>
     </tbody>
 </table>
@@ -106,32 +100,30 @@ $this->title = "Administration"
 
     <tbody>
         <?php
-        foreach ($users as $user) {
+        foreach ($users as $user) :
         ?>
+            <tr>
+                <td><?= htmlspecialchars($user->getId()) ?></td>
+                <td><?= htmlspecialchars($user->getNickname()) ?></td>
+                <td>Créé le : <?= htmlspecialchars($user->getCreationDate()) ?></td>
+                <td><?= htmlspecialchars($user->getRole()) ?></td>
+                <td>
 
-        <tr>
-            <td><?= htmlspecialchars($user->getId()) ?></td>
-            <td><?= htmlspecialchars($user->getNickname()) ?></td>
-            <td>Créé le : <?= htmlspecialchars($user->getCreationDate()) ?></td>
-            <td><?= htmlspecialchars($user->getRole()) ?></td>
-            <td>
-
-            <?php
-            if ($user->getRole() != "admin") {
-            ?>
-                <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId() ?>">Supprimer</a>
-            <?php
-            } else {
-            ?>
-                Suppression impossible
-            <?php
-            }
-            ?>
-            </td>
-        </tr>
-
+                    <?php
+                    if ($user->getRole() != "admin") :
+                    ?>
+                        <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId() ?>">Supprimer</a>
+                    <?php
+                    else :
+                    ?>
+                        Suppression impossible
+                    <?php
+                    endif;
+                    ?>
+                </td>
+            </tr>
         <?php
-        }
+        endforeach;
         ?>
     </tbody>
 </table>

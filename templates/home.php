@@ -1,6 +1,8 @@
-<!-- Vue page d'accueil -->
+<?php 
+// Vue page d'accueil
 
-<?php $this->title = "Accueil PROJET 5" ?>
+$this->title = "Accueil PROJET 5" 
+?>
 
 <h1>PROJET 5</h1>
 <p>En construction</p>
@@ -14,33 +16,33 @@
 <?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
 
 <?php
-if ($this->session->get("nickname")) { // Si connecté
+if ($this->session->get("nickname")) : // Si connecté
 ?>
 
     <a href="../public/index.php?route=logout">Déconnexion</a>
     <a href="../public/index.php?route=profile">Profil</a>
 
     <?php
-    if ($this->session->get("role") === "admin") { // N'apparaît que si user admin
+    if ($this->session->get("role") === "admin") : // N'apparaît que si user admin
     ?>
-    <a href="../public/index.php?route=administration">Administration</a>
+        <a href="../public/index.php?route=administration">Administration</a>
     <?php
-    }
+    endif;
     ?>
 
 <?php
-} else { // Sinon pas connecté
+else : // Sinon pas connecté
 ?>
 
-<a href="../public/index.php?route=register">Inscription</a>
-<a href="../public/index.php?route=login">Connexion</a>
+    <a href="../public/index.php?route=register">Inscription</a>
+    <a href="../public/index.php?route=login">Connexion</a>
 
 <?php
-}
+endif;
 ?>
 
 <?php
-foreach ($articles as $article) {
+foreach ($articles as $article) :
 ?>
     <div>
         <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()) ?>"><?= htmlspecialchars($article->getTitle()) ?></a></h2>
@@ -50,5 +52,5 @@ foreach ($articles as $article) {
     </div>
     <br />
 <?php
-}
+endforeach;
 ?>

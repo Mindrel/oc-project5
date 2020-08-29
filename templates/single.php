@@ -1,6 +1,8 @@
-<!-- Vue d'un article -->
+<?php 
+// Vue d'un article
 
-<?php $this->title = "Article"; ?>
+$this->title = "Article"; 
+?>
 
 <h1>Mon blog</h1>
 <p>En construction</p>
@@ -23,7 +25,7 @@
 
     <h3>Commentaires</h3>
     <?php
-    foreach ($comments as $comment) {
+    foreach ($comments as $comment) :
     ?>
         <h4><?= htmlspecialchars($comment->getNickname()) ?></h4>
         <p><?= htmlspecialchars($comment->getContent()) ?></p>
@@ -31,19 +33,19 @@
             <?= htmlspecialchars($comment->getCreationDate()) ?>
         </p>
         <?php
-        if ($comment->isFlag()) {
+        if ($comment->isFlag()) :
         ?>
             <p>Ce commentaire a déjà été signalé</p>
         <?php
-        } else {
+        else :
         ?>
             <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>">Signaler le commentaire</a></p>
         <?php
-        }
+        endif;
         ?>
         <br />
     <?php
-    }
+    endforeach;
     ?>
 
 </div>
