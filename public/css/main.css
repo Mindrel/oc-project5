@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 20px;
     outline: none; /* Supprime bordure sur un élément actif */
     box-sizing: border-box;
 }
 
 body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
     color: #212529;
 }
 
@@ -20,20 +20,43 @@ li {
     list-style-type: none;
 }
 
-h1, h2, h3 {
+h1, h3, h4 {
     font-family: "Nunito", sans-serif;
     text-transform: uppercase;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 4rem;
+    line-height: 3.5rem;
+}
+
+h2, h4 {
+    font-size: 1.5rem;
 }
 
 h2 {
-    font-size: 48px;
+    font-weight: normal;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 3rem;
+}
+
+.white-divider {
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.white-divider-line {
+    width: 120px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.white-divider-icon {
+    margin: 0 10px;
 }
 

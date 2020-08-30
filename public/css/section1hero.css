@@ -1,0 +1,18 @@
+/***** Section 1 : Hero *****/
+
+#hero {
+    background: url("../img/background.png") #CA8835 no-repeat bottom; 
+    color: #FFFFFF;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 310px 0;
+}
+
+.hero-avatar {
+    width: 240px;
+    margin-bottom: 40px;
+}

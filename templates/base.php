@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../public/css/main.css" />
     <link rel="stylesheet" href="../public/css/header.css" />
+    <link rel="stylesheet" href="../public/css/section1hero.css" />
     <title><?= $title ?></title>
 </head>
 
@@ -46,8 +47,23 @@
         </div>
     </header>
 
-    <section>
-        <img src="../public/img/avatar.svg" alt="avatar" />
+    <!-- Section 1 : Hero -->
+    <section id="hero">
+        <div class="container hero-container">
+            <img src="../public/img/avatar.svg" alt="avatar" class="hero-avatar" />
+
+            <h1>Michel Martin</h1>
+            
+            <!-- Séparateur blanc -->
+            <div class="white-divider">
+                <div class="white-divider-line"></div>
+                <div class="white-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="white-divider-line"></div>
+            </div>
+
+            <h2>Développeur Web Junior - Étudiant OpenClassrooms</h2>
+        </div>
+
 
     </section>
 
