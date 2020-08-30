@@ -1,0 +1,76 @@
+header {
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+}
+
+.header-container {
+    height: 100px;
+}
+
+.header-container, .header-container nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    width: 290px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-logo-text strong, 
+.header-logo-text span {
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.header-logo-text p {
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo-text p:first-child strong { /* Michel Martin */
+    letter-spacing: 3.2px;
+    transform: translateX(2px);
+}
+
+.header-logo-text p:nth-child(2) strong, /* Junior Web Developer */
+.header-logo-text p:nth-child(2) strong span { /* Junior */
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+.header-logo-text-spe, .header-logo-right-brace { /* Junior */
+    color: #CA8835;
+}
+
+.header-logo-left-brace, .header-logo-right-brace { /* Accolades */
+    font-size: 54px;
+    transform: translateY(-6px);
+}
+
+header nav ul {
+    width: 375px;
+}
+
+header nav a {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 250ms;
+}
+
+header nav a:hover {
+    color: #CA8835;
+    transition: color 250ms;
+}
