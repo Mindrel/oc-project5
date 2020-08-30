@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../public/css/main.css" />
     <link rel="stylesheet" href="../public/css/header.css" />
     <link rel="stylesheet" href="../public/css/section1hero.css" />
+    <link rel="stylesheet" href="../public/css/section2hello.css" />
     <title><?= $title ?></title>
 </head>
 
@@ -53,9 +54,9 @@
             <img src="../public/img/avatar.svg" alt="avatar" class="hero-avatar" />
 
             <h1>Michel Martin</h1>
-            
-            <!-- Séparateur blanc -->
+
             <div class="white-divider">
+                <!-- Séparateur blanc -->
                 <div class="white-divider-line"></div>
                 <div class="white-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="white-divider-line"></div>
@@ -63,8 +64,30 @@
 
             <h2>Développeur Web Junior - Étudiant OpenClassrooms</h2>
         </div>
+    </section>
 
+    <!-- Section 2 : Hello (présentation) -->
+    <section id="hello">
+        <div class="container hello-container">
+            <h3>Hello</h3>
 
+            <div class="dark-divider">
+                <!-- Séparateur sombre -->
+                <div class="dark-divider-line"></div>
+                <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="dark-divider-line"></div>
+            </div>
+
+            <div class="hello-text">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
+                </p>
+
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
+                </p>
+            </div>
+        </div>
     </section>
 
 

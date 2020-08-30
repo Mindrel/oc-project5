@@ -8,7 +8,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
-    color: #212529;
+    color: #2C3E50;
 }
 
 .container {
@@ -40,23 +40,32 @@ h2 {
 
 h3 {
     font-size: 3rem;
+    font-weight: 700;
+    line-height: 2.5rem;
 }
 
-.white-divider {
+.white-divider, .dark-divider {
     font-size: 2.2rem;
     display: flex;
     align-items: center;
     margin: 20px 0;
 }
 
-.white-divider-line {
+.white-divider-line, .dark-divider-line {
     width: 120px;
     height: 5px;
-    background-color: #FFFFFF;
     border-radius: 10px;
 }
 
-.white-divider-icon {
+.white-divider-icon, .dark-divider-icon {
     margin: 0 10px;
+}
+
+.white-divider-line {
+    background-color: #FFFFFF;
+}
+
+.dark-divider-line {
+    background-color: #2C3E50;
 }
 
