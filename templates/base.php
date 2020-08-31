@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../public/css/header.css" />
     <link rel="stylesheet" href="../public/css/section1hero.css" />
     <link rel="stylesheet" href="../public/css/section2hello.css" />
+    <link rel="stylesheet" href="../public/css/section3projects.css" />
+    <link rel="stylesheet" href="../public/css/footer" />
     <title><?= $title ?></title>
 </head>
 
@@ -41,8 +43,8 @@
                 <ul>
                     <li><a href="../public/index.php">Hello :)</a></li>
                     <li><a href="#">Projets</a></li>
-                    <li><a href="#">Contact</a></li>
                     <li><a href="#">Le blog</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -55,8 +57,8 @@
 
             <h1>Michel Martin</h1>
 
+            <!-- Séparateur blanc -->
             <div class="white-divider">
-                <!-- Séparateur blanc -->
                 <div class="white-divider-line"></div>
                 <div class="white-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="white-divider-line"></div>
@@ -68,11 +70,11 @@
 
     <!-- Section 2 : Hello (présentation) -->
     <section id="hello">
-        <div class="container hello-container">
-            <h3>Hello</h3>
+        <div class="container hello-section-container">
+            <h3>Bonjour !</h3>
 
+            <!-- Séparateur sombre -->
             <div class="dark-divider">
-                <!-- Séparateur sombre -->
                 <div class="dark-divider-line"></div>
                 <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="dark-divider-line"></div>
@@ -81,15 +83,157 @@
             <div class="hello-text">
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates animi accusamus molestiae autem deserunt repellendus ex veniam quod impedit, quaerat cumque molestias iusto! Nobis repellat perferendis quidem perspiciatis voluptatibus? Laudantium!
                 </p>
 
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid rem quisquam praesentium porro autem dolore quis ut commodi, dolorum maxime et quas quia sint totam incidunt voluptatum impedit iure culpa.
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- Section 3 : Projets -->
+    <section id="projects" class="colored-section">
+        <div class="container projects-section-container">
+            <h3>Mes super projets</h3>
+
+            <!-- Séparateur blanc -->
+            <div class="white-divider">
+                <div class="white-divider-line"></div>
+                <div class="white-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="white-divider-line"></div>
+            </div>
+            
+            <!-- Galerie de projets -->
+            <ul class="projects-gallery">
+                <li>
+                    <figure>
+                        <img src="../public/img/1.jpg" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="../public/img/2.jpg" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="../public/img/3.jpg" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="../public/img/4.jpg" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="../public/img/5.jpg" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li>
+                    <figure>
+                        <img src="../public/img/soon.jpg" />
+                        <figcaption>
+                            <p>Prochainement...</p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 4 : Dernier article du blog -->
+    <section id="latest-article">
+        <div class="container latest-article-section-container">
+            <h3>Dernier article du blog</h3>
+
+            <!-- Séparateur sombre -->
+            <div class="dark-divider">
+                <div class="dark-divider-line"></div>
+                <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="dark-divider-line"></div>
+            </div>
+
+            <article>
+                <header>
+                    <h4></h4>
+                </header>
+                
+                <section>
+
+                </section>
+                
+                <footer>
+
+                </footer>
+            </article>
+
+            <a href="#">Accéder au blog</a>
+        </div>
+    </section>
+
+    <!-- Section 5 : Contact -->
+    <section id="contact" class="colored-section">
+        <div class="container contact-section-container">
+            <h3>Contactez-moi</h3>
+
+            <!-- Séparateur blanc -->
+            <div class="white-divider">
+                <div class="white-divider-line"></div>
+                <div class="white-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="white-divider-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h4>Titre</h4>
+
+                <p>bla bla bla</p>
+            </div>
+
+            <div>
+                <h4>Titre</h4>
+
+                <p>bla bla bla</p>
+            </div>
+
+            <div>
+                <h4>Titre</h4>
+
+                <p>bla bla bla</p>
+            </div>
+        </div>
+        
+        <div class="footer-copyright">
+            <p><span> { </span>Copyright © 2020 Portfolio & Blog de Michel Martin<span> } </span></p>
+        </div>
+    </footer>
 
 </body>
 

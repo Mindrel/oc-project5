@@ -1,11 +1,7 @@
 /***** Section 2 : Hello (présentation) *****/
 
-.hello-container {
-    padding: 96px 0;
-    width: 850px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hello-section-container {
+    max-width: 800px;
 }
 
 .hello-text {

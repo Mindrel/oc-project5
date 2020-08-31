@@ -1,7 +1,7 @@
 /***** Section 1 : Hero *****/
 
 #hero {
-    background: url("../img/background.png") #CA8835 no-repeat bottom; 
+    background: url("../img/background.png") bottom no-repeat, linear-gradient(to left, #CA8835, #B29072, #CA8835);
     color: #FFFFFF;
 }
 

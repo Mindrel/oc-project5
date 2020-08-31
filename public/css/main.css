@@ -16,13 +16,10 @@ body {
     margin: auto;
 }
 
-li {
-    list-style-type: none;
-}
-
 h1, h3, h4 {
     font-family: "Nunito", sans-serif;
     text-transform: uppercase;
+    text-align: center; /* Responsive */
 }
 
 h1 {
@@ -36,12 +33,29 @@ h2, h4 {
 
 h2 {
     font-weight: normal;
+    text-align: center; /* Responsive */
 }
 
 h3 {
     font-size: 3rem;
     font-weight: 700;
     line-height: 2.5rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+[class$="-section-container"] { /* Tout élément ayant pour classe un nom terminant par -section-container */
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colored-section {
+    background: linear-gradient(to left, #CA8835, #B29072, #CA8835);
+    color: #FFFFFF;
 }
 
 .white-divider, .dark-divider {
