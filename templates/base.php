@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../public/css/section2hello.css" />
     <link rel="stylesheet" href="../public/css/section3projects.css" />
     <link rel="stylesheet" href="../public/css/section4blog.css" />
+    <link rel="stylesheet" href="../public/css/section5contact.css" />
     <link rel="stylesheet" href="../public/css/footer" />
     <title><?= $title ?></title>
 </head>
@@ -111,7 +112,7 @@
             <ul class="projects-gallery">
                 <li>
                     <figure>
-                        <img src="../public/img/1.jpg" />
+                        <img src="../public/img/1.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -120,7 +121,7 @@
 
                 <li>
                     <figure>
-                        <img src="../public/img/2.jpg" />
+                        <img src="../public/img/2.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -129,7 +130,7 @@
 
                 <li>
                     <figure>
-                        <img src="../public/img/3.jpg" />
+                        <img src="../public/img/3.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -138,7 +139,7 @@
 
                 <li>
                     <figure>
-                        <img src="../public/img/4.jpg" />
+                        <img src="../public/img/4.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -147,7 +148,7 @@
 
                 <li>
                     <figure>
-                        <img src="../public/img/5.jpg" />
+                        <img src="../public/img/5.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -156,7 +157,7 @@
 
                 <li>
                     <figure>
-                        <img src="../public/img/soon.jpg" />
+                        <img src="../public/img/soon.jpg" alt="futur projet" />
                         <figcaption>
                             <p>Prochainement...</p>
                         </figcaption>
@@ -177,14 +178,9 @@
                 <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="dark-divider-line"></div>
             </div>
-            
+
             <!-- Date/auteur et contenu article -->
             <article>
-                <div class="latest-article-date">
-                    <time datetime="2020-09-01 11:43">Septembre 2020</time>
-                    <p>par Mich'</p>
-                </div>
-
                 <div class="latest-article-content">
                     <header>
                         <h4 class="latest-article-title">Alors ? OpenClassrooms c'était comment ?</h4>
@@ -197,13 +193,18 @@
                         </p>
                     </section>
                 </div>
+
+                <footer class="latest-article-date">
+                    <time datetime="2020-09-01 11:43">Septembre 2020</time>
+                    <p>par Mich'</p>
+                </footer>
             </article>
-            
+
             <!-- Lien d'accès au blog -->
             <a href="#" class="light-link-button">Accéder au blog</a>
         </div>
     </section>
-    
+
     <!-- Séparateur de sections -->
     <div class="divider"></div>
 
@@ -218,6 +219,26 @@
                 <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="dark-divider-line"></div>
             </div>
+
+            <!-- Formulaire de contact -->
+            <form method="post" action="#">
+                <div class="contact-input">
+                    <input type="text" id="nom" name="nom" placeholder="Nom" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nom'" />
+                    <label for="nom">Nom</label>
+                </div>
+
+                <div class="contact-input">
+                    <input type="email" id="email" name="email" placeholder="Email" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" />
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="contact-input">
+                    <textarea id="message" name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vous n\'êtes pas inspiré ? &#128527'"></textarea>
+                    <label for="message">Message</label>
+                </div>
+
+                <input type="submit" value="Envoyer" id="submit" name="submit" />
+            </form>
         </div>
     </section>
 
@@ -242,6 +263,7 @@
             </div>
         </div>
 
+        <!-- Barre copyright -->
         <div class="footer-copyright">
             <p><span> { </span>Copyright © 2020 Portfolio & Blog de Michel Martin<span> } </span></p>
         </div>

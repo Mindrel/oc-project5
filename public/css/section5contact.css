@@ -1,0 +1,77 @@
+.contact-section-container {
+    max-width: 800px;
+}
+
+.contact-section-container form {
+    padding: 0 25px;
+    width: 100%;
+}
+
+.contact-input {
+    position: relative;
+}
+
+.contact-section-container input[type="text"],
+.contact-section-container input[type="email"],
+.contact-section-container textarea {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #E4D2BD;
+}
+
+.contact-section-container input[type="text"],
+.contact-section-container input[type="email"] {
+    width: 100%;
+    height: 50px;
+}
+
+.contact-section-container textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.contact-section-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.85rem;
+    color: #CA8835;
+    opacity: 0;
+    transition: all 250ms ease;
+}
+
+.contact-section-container input[type="text"]:focus + label,
+.contact-section-container input[type="email"]:focus + label,
+.contact-section-container textarea:focus + label {
+    top: -20px;
+    opacity: 1;
+    transition: all 250ms ease;
+}
+
+.contact-section-container ::-webkit-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
+
+.contact-section-container ::-moz-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
+
+.contact-section-container :-ms-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
+
+.contact-section-container ::-ms-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
+
+.contact-section-container ::placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+}
