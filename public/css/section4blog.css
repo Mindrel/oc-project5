@@ -1,0 +1,27 @@
+.latest-article-section-container article {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.latest-article-date {
+    width: 40%;
+    margin-right: 30px;
+    opacity: 0.8;
+}
+
+.latest-article-date time {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    line-height: 1.9rem; /* Pour aligner au titre article */
+}
+
+.latest-article.content {
+    width: 60%;
+}
+
+.latest-article-title {
+    text-transform: initial;
+    text-align: start;
+    margin-bottom: 10px;
+}

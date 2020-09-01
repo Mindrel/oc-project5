@@ -15,12 +15,13 @@
     <link rel="stylesheet" href="../public/css/section1hero.css" />
     <link rel="stylesheet" href="../public/css/section2hello.css" />
     <link rel="stylesheet" href="../public/css/section3projects.css" />
+    <link rel="stylesheet" href="../public/css/section4blog.css" />
     <link rel="stylesheet" href="../public/css/footer" />
     <title><?= $title ?></title>
 </head>
 
 <body>
-    <header>
+    <header class="main-header">
         <div class="container header-container">
             <!-- Logo -->
             <div class="header-logo">
@@ -105,7 +106,7 @@
                 <div class="white-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="white-divider-line"></div>
             </div>
-            
+
             <!-- Galerie de projets -->
             <ul class="projects-gallery">
                 <li>
@@ -176,24 +177,34 @@
                 <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
                 <div class="dark-divider-line"></div>
             </div>
-
+            
+            <!-- Date/auteur et contenu article -->
             <article>
-                <header>
-                    <h4></h4>
-                </header>
-                
-                <section>
+                <div class="latest-article-date">
+                    <time datetime="2020-09-01 11:43">Septembre 2020</time>
+                    <p>par Mich'</p>
+                </div>
 
-                </section>
-                
-                <footer>
+                <div class="latest-article-content">
+                    <header>
+                        <h4 class="latest-article-title">Alors ? OpenClassrooms c'était comment ?</h4>
+                    </header>
 
-                </footer>
+                    <section>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis minus dolorum, laborum consectetur illum, quo atque reiciendis quis neque ab similique quibusdam alias tempora, suscipit mollitia dignissimos laudantium! Ipsa, minus!<br />
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem labore animi, sint veniam qui odit eaque officia est molestiae ipsum culpa fugiat laudantium nemo maxime, pariatur consequuntur sunt praesentium obcaecati.
+                        </p>
+                    </section>
+                </div>
             </article>
 
-            <a href="#">Accéder au blog</a>
+            <a href="#" class="light-link-button">Accéder au blog</a>
         </div>
     </section>
+    
+    <!-- Séparateur de sections -->
+    <div class="section-colored-divider"></div>
 
     <!-- Section 5 : Contact -->
     <section id="contact" class="colored-section">
@@ -209,7 +220,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="main-footer">
         <div class="footer-container">
             <div>
                 <h4>Titre</h4>
@@ -229,7 +240,7 @@
                 <p>bla bla bla</p>
             </div>
         </div>
-        
+
         <div class="footer-copyright">
             <p><span> { </span>Copyright © 2020 Portfolio & Blog de Michel Martin<span> } </span></p>
         </div>

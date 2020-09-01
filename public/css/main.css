@@ -7,7 +7,7 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: #2C3E50;
 }
 
@@ -62,7 +62,7 @@ li {
     font-size: 2.2rem;
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px 0 25px 0;
 }
 
 .white-divider-line, .dark-divider-line {
@@ -83,3 +83,22 @@ li {
     background-color: #2C3E50;
 }
 
+a.light-link-button {
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: #2C3E50;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px 0px #2C3E50 ;
+    background-color: #FFFFFF;
+    padding: 16px 28px;
+    color: #2C3E50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 250ms;
+}
+
+a.light-link-button:hover {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    transition: all 250ms;
+}
