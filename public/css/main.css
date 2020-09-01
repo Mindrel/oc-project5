@@ -102,3 +102,8 @@ a.light-link-button:hover {
     color: #FFFFFF;
     transition: all 250ms;
 }
+
+.divider {
+    height: 216px;
+    background: url("../img/background-divider.png") bottom no-repeat;
+}

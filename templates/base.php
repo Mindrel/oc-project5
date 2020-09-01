@@ -198,24 +198,25 @@
                     </section>
                 </div>
             </article>
-
+            
+            <!-- Lien d'accès au blog -->
             <a href="#" class="light-link-button">Accéder au blog</a>
         </div>
     </section>
     
     <!-- Séparateur de sections -->
-    <div class="section-colored-divider"></div>
+    <div class="divider"></div>
 
     <!-- Section 5 : Contact -->
-    <section id="contact" class="colored-section">
+    <section id="contact">
         <div class="container contact-section-container">
             <h3>Contactez-moi</h3>
 
-            <!-- Séparateur blanc -->
-            <div class="white-divider">
-                <div class="white-divider-line"></div>
-                <div class="white-divider-icon"><i class="fas fa-code"></i></div>
-                <div class="white-divider-line"></div>
+            <!-- Séparateur sombre -->
+            <div class="dark-divider">
+                <div class="dark-divider-line"></div>
+                <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
+                <div class="dark-divider-line"></div>
             </div>
         </div>
     </section>
