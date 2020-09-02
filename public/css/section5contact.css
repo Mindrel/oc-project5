@@ -18,19 +18,25 @@
     border-right: none;
     border-left: none;
     border-bottom: 1px solid #E4D2BD;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
 }
 
 .contact-section-container input[type="text"],
 .contact-section-container input[type="email"] {
     width: 100%;
-    height: 50px;
+    height: 60px;
+    margin-bottom: 35px;
+    padding-bottom: 40px;
 }
 
 .contact-section-container textarea {
     min-width: 100%;
     max-width: 100%;
-    min-height: 100px;
-    max-height: 200px;
+    min-height: 200px;
+    max-height: 300px;
+    margin-bottom: 20px;
 }
 
 .contact-section-container label {
@@ -43,10 +49,10 @@
     transition: all 250ms ease;
 }
 
-.contact-section-container input[type="text"]:focus + label,
+.contact-section-container input[type="text"]:focus + label, /* Label qui vient juste après le champ */
 .contact-section-container input[type="email"]:focus + label,
 .contact-section-container textarea:focus + label {
-    top: -20px;
+    top: -30px;
     opacity: 1;
     transition: all 250ms ease;
 }
@@ -54,24 +60,34 @@
 .contact-section-container ::-webkit-input-placeholder {
     font-family: "Open Sans", sans-serif;
     font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
 }
 
 .contact-section-container ::-moz-placeholder {
     font-family: "Open Sans", sans-serif;
     font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
 }
 
 .contact-section-container :-ms-input-placeholder {
     font-family: "Open Sans", sans-serif;
     font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
 }
 
 .contact-section-container ::-ms-input-placeholder {
     font-family: "Open Sans", sans-serif;
     font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
 }
 
 .contact-section-container ::placeholder {
     font-family: "Open Sans", sans-serif;
     font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
 }

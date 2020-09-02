@@ -43,10 +43,10 @@
             <!-- Main menu -->
             <nav>
                 <ul>
-                    <li><a href="../public/index.php">Hello :)</a></li>
-                    <li><a href="#">Projets</a></li>
-                    <li><a href="#">Le blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../public/index.php#hello">Hello :)</a></li>
+                    <li><a href="../public/index.php#projects">Projets</a></li>
+                    <li><a href="../public/index.php#latest-article">Le blog</a></li>
+                    <li><a href="../public/index.php#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -238,7 +238,7 @@
                     <label for="message">Message</label>
                 </div>
 
-                <input type="submit" value="Envoyer" id="submit" name="submit" />
+                <input type="submit" value="Envoyer" id="submit" name="submit" class="colored-submit-button"/>
             </form>
         </div>
     </section>
