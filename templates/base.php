@@ -234,39 +234,50 @@
                 </div>
 
                 <div class="contact-input">
-                    <textarea id="message" name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vous n\'êtes pas inspiré ? &#128527'"></textarea>
+                    <textarea id="message" name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Vous n\'êtes pas inspiré ? &#128527;'"></textarea>
                     <label for="message">Message</label>
                 </div>
 
-                <input type="submit" value="Envoyer" id="submit" name="submit" class="colored-submit-button"/>
+                <input type="submit" value="Envoyer" id="submit" name="submit" class="colored-submit-button" />
             </form>
         </div>
     </section>
 
     <footer class="main-footer">
-        <div class="footer-container">
-            <div>
-                <h4>Titre</h4>
+        <div class="container footer-container">
+            <div class="footer-part">
+                <h4>Plan du site</h4>
 
-                <p>bla bla bla</p>
+                <ul>
+                    <li><a href="../public/index.php">Page d'accueil</a></li>
+                    <li><a href="../public/index.php#hello">Hello ! (présentation)</a></li>
+                    <li><a href="../public/index.php#projects">Mes projets</a></li>
+                    <li><a href="../public/index.php#latest-article">Article du blog</a></li>
+                    <li><a href="../public/index.php#contact">Contactez-moi</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Connexion</a></li>
+                </ul>
             </div>
 
-            <div>
-                <h4>Titre</h4>
+            <div class="footer-part">
+                <h4>Sur le web</h4>
 
-                <p>bla bla bla</p>
+                <p><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></p>
             </div>
 
-            <div>
-                <h4>Titre</h4>
+            <div class="footer-part">
+                <h4>Sources</h4>
 
-                <p>bla bla bla</p>
+                <p>
+                    Design fait main sans framework.<br />
+                    Les sources d'inspiration sont nombreuses, mais la majeure partie du template a été créée à partir du thème Freelancer de <a href="https://startbootstrap.com/themes/freelancer/" title="Nouvel onglet vers StartBootstrap" class="dotted-white-link" target="_blank">StartBootstrap</a> que je remercie.
+                </p>
             </div>
         </div>
 
         <!-- Barre copyright -->
         <div class="footer-copyright">
-            <p><span> { </span>Copyright © 2020 Portfolio & Blog de Michel Martin<span> } </span></p>
+            <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020</span> Portfolio & Blog de Michel Martin<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
 

@@ -46,6 +46,15 @@ h3 {
     line-height: 2.5rem;
 }
 
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.dotted-white-link {
+    border-bottom: 1px dotted #FFFFFF;    
+}
+
 li {
     list-style-type: none;
 }
