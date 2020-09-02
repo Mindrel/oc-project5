@@ -26,3 +26,7 @@
     text-align: start;
     margin-bottom: 10px;
 }
+
+.latest-article-extract-end {
+    font-style: italic;
+}

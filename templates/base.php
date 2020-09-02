@@ -189,7 +189,8 @@
                     <section>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis minus dolorum, laborum consectetur illum, quo atque reiciendis quis neque ab similique quibusdam alias tempora, suscipit mollitia dignissimos laudantium! Ipsa, minus!<br />
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem labore animi, sint veniam qui odit eaque officia est molestiae ipsum culpa fugiat laudantium nemo maxime, pariatur consequuntur sunt praesentium obcaecati.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem labore animi, sint veniam qui odit eaque officia est molestiae ipsum culpa fugiat laudantium nemo maxime, pariatur consequuntur sunt praesentium
+                            <span class="latest-article-extract-end">... (Go to the blog pour lire la suite)</span>
                         </p>
                     </section>
                 </div>
