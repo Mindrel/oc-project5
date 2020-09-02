@@ -245,6 +245,7 @@
 
     <footer class="main-footer">
         <div class="container footer-container">
+            <!-- Sitemap -->
             <div class="footer-part">
                 <h4>Plan du site</h4>
 
@@ -264,13 +265,15 @@
                     </ul>
                 </div>
             </div>
-
+            
+            <!-- Social -->
             <div class="footer-part">
                 <h4>Sur le web</h4>
 
                 <p><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></p>
             </div>
-
+            
+            <!-- Crédits -->
             <div class="footer-part">
                 <h4>Sources</h4>
 

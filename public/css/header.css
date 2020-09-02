@@ -67,10 +67,13 @@ header nav a {
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 250ms;
+    border-bottom: 5px dotted #2C3E50;
+    padding-bottom: 5px;
+    transition: color 250ms, border-bottom 350ms;
 }
 
 header nav a:hover {
     color: #CA8835;
-    transition: color 250ms;
+    border-bottom: 2px dotted #CA8835;
+    transition: color 250ms, border-bottom 350ms;
 }
