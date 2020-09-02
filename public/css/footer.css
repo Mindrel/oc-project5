@@ -4,7 +4,7 @@
 }
 
 .footer-container {
-    padding: 96px 0;
+    padding: 80px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -20,6 +20,15 @@
 .footer-part {
     text-align: center;
     width: 30%;
+}
+
+.footer-part-divided {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-part-divided ul {
+    width: 45%;
 }
 
 .footer-part .social {

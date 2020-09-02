@@ -248,15 +248,21 @@
             <div class="footer-part">
                 <h4>Plan du site</h4>
 
-                <ul>
-                    <li><a href="../public/index.php">Page d'accueil</a></li>
-                    <li><a href="../public/index.php#hello">Hello ! (présentation)</a></li>
-                    <li><a href="../public/index.php#projects">Mes projets</a></li>
-                    <li><a href="../public/index.php#latest-article">Article du blog</a></li>
-                    <li><a href="../public/index.php#contact">Contactez-moi</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Connexion</a></li>
-                </ul>
+                <div class="footer-part-divided">
+                    <ul>
+                        <li><a href="../public/index.php">Accueil portfolio</a></li>
+                        <li><a href="../public/index.php#hello">Hello !</a></li>
+                        <li><a href="../public/index.php#projects">Mes projets</a></li>
+                        <li><a href="../public/index.php#latest-article">Dernier article</a></li>
+                        <li><a href="../public/index.php#contact">Contactez-moi</a></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#">Accueil blog</a></li>
+                        <li><a href="#">Inscription</a></li>
+                        <li><a href="#">Connexion</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="footer-part">
