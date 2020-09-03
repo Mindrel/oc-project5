@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <script src="https://kit.fontawesome.com/bb97965415.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/css/main.css" />
-    <link rel="stylesheet" href="../public/css/header.css" />
-    <link rel="stylesheet" href="../public/css/section1hero.css" />
-    <link rel="stylesheet" href="../public/css/section2hello.css" />
-    <link rel="stylesheet" href="../public/css/section3projects.css" />
-    <link rel="stylesheet" href="../public/css/section4latest.css" />
-    <link rel="stylesheet" href="../public/css/section5contact.css" />
-    <link rel="stylesheet" href="../public/css/footer" />
+    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/css/header.css" />
+    <link rel="stylesheet" href="public/css/section1hero.css" />
+    <link rel="stylesheet" href="public/css/section2hello.css" />
+    <link rel="stylesheet" href="public/css/section3projects.css" />
+    <link rel="stylesheet" href="public/css/section4latest.css" />
+    <link rel="stylesheet" href="public/css/section5contact.css" />
+    <link rel="stylesheet" href="public/css/footer" />
     <title><?= $title ?></title>
 </head>
 
@@ -43,10 +43,10 @@
             <!-- Main menu -->
             <nav>
                 <ul>
-                    <li><a href="../public/index.php#hello" class="main-nav-link">Hello :)</a></li>
-                    <li><a href="../public/index.php#projects" class="main-nav-link">Projets</a></li>
-                    <li><a href="../public/index.php#latest-article" class="main-nav-link">Article</a></li>
-                    <li><a href="../public/index.php#contact" class="main-nav-link">Contact</a></li>
+                    <li><a href="index.php#hello" class="main-nav-link">Hello :)</a></li>
+                    <li><a href="index.php#projects" class="main-nav-link">Projets</a></li>
+                    <li><a href="index.php#latest-article" class="main-nav-link">Article</a></li>
+                    <li><a href="index.php#contact" class="main-nav-link">Contact</a></li>
                     <li><a href="#" class="blog-button">Le Blog</a></li>
                 </ul>
             </nav>
@@ -63,17 +63,44 @@
 
                 <div class="footer-part-divided">
                     <ul>
-                        <li><a href="../public/index.php">Accueil portfolio</a></li>
-                        <li><a href="../public/index.php#hello">Hello !</a></li>
-                        <li><a href="../public/index.php#projects">Mes projets</a></li>
-                        <li><a href="../public/index.php#latest-article">Dernier article</a></li>
-                        <li><a href="../public/index.php#contact">Contactez-moi</a></li>
+                        <li><a href="index.php">Accueil portfolio</a></li>
+                        <li><a href="index.php#hello">Hello !</a></li>
+                        <li><a href="index.php#projects">Mes projets</a></li>
+                        <li><a href="index.php#latest-article">Dernier article</a></li>
+                        <li><a href="index.php#contact">Contactez-moi</a></li>
                     </ul>
 
                     <ul>
                         <li><a href="#">Accueil blog</a></li>
-                        <li><a href="#">Inscription</a></li>
-                        <li><a href="#">Connexion</a></li>
+
+                        <?php
+                        // Menu dynamique de connexion
+
+                        if ($this->session->get("nickname")) : // Si connecté
+                        ?>
+
+                            <li><a href="index.php?route=logout">Déconnexion</a></li>
+                            <li><a href="index.php?route=profile">Profil</a></li>
+
+                            <?php
+                            if ($this->session->get("role") === "admin") : // N'apparaît que si user admin
+                            ?>
+                                <li><a href="index.php?route=administration">Administration</a></li>
+                            <?php
+                            endif;
+                            ?>
+
+                        <?php
+                        else : // Sinon pas connecté
+                        ?>
+
+                            <li><a href="index.php?route=register">Inscription</a></li>
+                            <li><a href="index.php?route=login">Connexion</a></li>
+
+                        <?php
+                        endif;
+                        ?>
+
                     </ul>
                 </div>
             </div>

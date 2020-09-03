@@ -6,7 +6,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
     <!-- Section 1 : Hero -->
     <section id="hero">
         <div class="container hero-container">
-            <img src="../public/img/avatar.svg" alt="avatar" class="hero-avatar" />
+            <img src="public/img/avatar.svg" alt="avatar" class="hero-avatar" />
 
             <h1>Michel Martin</h1>
 
@@ -63,7 +63,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             <ul class="projects-gallery">
                 <li>
                     <figure>
-                        <img src="../public/img/1.jpg" alt="projet" />
+                        <img src="public/img/1.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -72,7 +72,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <li>
                     <figure>
-                        <img src="../public/img/2.jpg" alt="projet" />
+                        <img src="public/img/2.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -81,7 +81,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <li>
                     <figure>
-                        <img src="../public/img/3.jpg" alt="projet" />
+                        <img src="public/img/3.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -90,7 +90,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <li>
                     <figure>
-                        <img src="../public/img/4.jpg" alt="projet" />
+                        <img src="public/img/4.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -99,7 +99,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <li>
                     <figure>
-                        <img src="../public/img/5.jpg" alt="projet" />
+                        <img src="public/img/5.jpg" alt="projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -108,7 +108,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <li>
                     <figure>
-                        <img src="../public/img/soon.jpg" alt="futur projet" />
+                        <img src="public/img/soon.jpg" alt="futur projet" />
                         <figcaption>
                             <p>Prochainement...</p>
                         </figcaption>
@@ -203,32 +203,6 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 <?= $this->session->show("login"); // Message apparaît si utilisateur connecté ?>
 <?= $this->session->show("logout"); // Message apparaît si utilisateur se déconnecte ?>
 <?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
-
-<?php
-if ($this->session->get("nickname")) : // Si connecté
-?>
-
-    <a href="../public/index.php?route=logout">Déconnexion</a>
-    <a href="../public/index.php?route=profile">Profil</a>
-
-    <?php
-    if ($this->session->get("role") === "admin") : // N'apparaît que si user admin
-    ?>
-        <a href="../public/index.php?route=administration">Administration</a>
-    <?php
-    endif;
-    ?>
-
-<?php
-else : // Sinon pas connecté
-?>
-
-    <a href="../public/index.php?route=register">Inscription</a>
-    <a href="../public/index.php?route=login">Connexion</a>
-
-<?php
-endif;
-?>
 
 <?php
 foreach ($articles as $article) :

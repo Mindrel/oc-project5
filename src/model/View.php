@@ -22,9 +22,9 @@ class View
     // Génère la vue à partir du template et remplit la partie dynamique
     public function render($template, $data = [])
     {
-        $this->file = "../templates/" . $template . ".php";
+        $this->file = "templates/" . $template . ".php";
         $content = $this->renderFile($this->file, $data);
-        $view = $this->renderFile("../templates/base.php", [
+        $view = $this->renderFile("templates/base.php", [
             "title" => $this->title,
             "content" => $content,
             "session" => $this->session
