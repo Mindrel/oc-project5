@@ -51,7 +51,7 @@ a {
     color: initial;
 }
 
-.dotted-white-link, a:hover {
+.dotted-white-link {
     border-bottom: 1px dotted #FFFFFF;    
 }
 

@@ -31,6 +31,10 @@
     width: 45%;
 }
 
+.footer-part-divided ul a:hover {
+    border-bottom: 1px dotted #FFFFFF;
+}
+
 .footer-part .social {
     display: inline-flex;
     justify-content: center;

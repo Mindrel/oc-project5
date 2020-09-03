@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../public/css/section1hero.css" />
     <link rel="stylesheet" href="../public/css/section2hello.css" />
     <link rel="stylesheet" href="../public/css/section3projects.css" />
-    <link rel="stylesheet" href="../public/css/section4blog.css" />
+    <link rel="stylesheet" href="../public/css/section4latest.css" />
     <link rel="stylesheet" href="../public/css/section5contact.css" />
     <link rel="stylesheet" href="../public/css/footer" />
     <title><?= $title ?></title>
@@ -43,10 +43,11 @@
             <!-- Main menu -->
             <nav>
                 <ul>
-                    <li><a href="../public/index.php#hello">Hello :)</a></li>
-                    <li><a href="../public/index.php#projects">Projets</a></li>
-                    <li><a href="../public/index.php#latest-article">Le blog</a></li>
-                    <li><a href="../public/index.php#contact">Contact</a></li>
+                    <li><a href="../public/index.php#hello" class="main-nav-link">Hello :)</a></li>
+                    <li><a href="../public/index.php#projects" class="main-nav-link">Projets</a></li>
+                    <li><a href="../public/index.php#latest-article" class="main-nav-link">Article</a></li>
+                    <li><a href="../public/index.php#contact" class="main-nav-link">Contact</a></li>
+                    <li><a href="#" class="blog-button">Le Blog</a></li>
                 </ul>
             </nav>
         </div>
@@ -270,7 +271,7 @@
             <div class="footer-part">
                 <h4>Sur le web</h4>
 
-                <p><a href="#" class="social"><i class="fab fa-linkedin-in"></i></a></p>
+                <p><a href="https://www.linkedin.com/in/michel-martin-dwj/" class="social"><i class="fab fa-linkedin-in"></i></a></p>
             </div>
             
             <!-- Crédits -->

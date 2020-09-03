@@ -57,23 +57,42 @@
 }
 
 header nav ul {
-    width: 375px;
+    width: 420px;
 }
 
-header nav a {
+.main-nav-link, .blog-button {
     font-family: "Nunito", sans-serif;
     font-size: 1rem;
     font-weight: bold;
     color: #FFFFFF;
     text-decoration: none;
     text-transform: uppercase;
-    border-bottom: 5px dotted #2C3E50;
-    padding-bottom: 5px;
-    transition: color 250ms, border-bottom 350ms;
 }
 
-header nav a:hover {
+.main-nav-link {
+    border-bottom: 7px dotted #2C3E50;
+    padding-bottom: 5px;
+    transition: color 250ms, border-bottom 350ms ease;
+}
+
+.main-nav-link:hover {
     color: #CA8835;
     border-bottom: 2px dotted #CA8835;
-    transition: color 250ms, border-bottom 350ms;
+    transition: color 250ms, border-bottom 350ms ease;
+}
+
+.blog-button {
+    border: 2px solid #FFFFFF; 
+    border-radius: 7px;
+    box-shadow: none;
+    background-color: #2C3E50;
+    padding: 15px 5px;
+    transition: color 250ms, background-color 250ms, box-shadow 250ms;
+}
+
+.blog-button:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 5px 0px #000000;    
+    color: #2C3E50;
+    transition: all 250ms;
 }
