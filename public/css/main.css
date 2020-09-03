@@ -51,7 +51,36 @@ a {
     color: initial;
 }
 
-.dotted-white-link {
+a.light-link-button {
+    border-width: 2px; 
+    border-style: solid; 
+    border-color: #2C3E50;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px 0px #2C3E50 ;
+    background-color: #FFFFFF;
+    padding: 16px 28px;
+    color: #2C3E50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 250ms;
+}
+
+a.light-link-button:hover {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    transition: all 250ms;
+}
+
+a.text-link {
+    border-bottom: 1px dotted;
+}
+
+a.text-link:hover {
+    border-bottom: 1px dotted;
+    opacity: 0.7;
+}
+
+a.dotted-white-link {
     border-bottom: 1px dotted #FFFFFF;    
 }
 
@@ -96,26 +125,6 @@ li {
     background-color: #2C3E50;
 }
 
-a.light-link-button {
-    border-width: 2px; 
-    border-style: solid; 
-    border-color: #2C3E50;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px 0px #2C3E50 ;
-    background-color: #FFFFFF;
-    padding: 16px 28px;
-    color: #2C3E50;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 250ms;
-}
-
-a.light-link-button:hover {
-    background-color: #2C3E50;
-    color: #FFFFFF;
-    transition: all 250ms;
-}
-
 .colored-submit-button {
     border-width: 2px; 
     border-style: solid; 
@@ -142,3 +151,11 @@ a.light-link-button:hover {
     background: url("../img/background-divider.png") bottom no-repeat;
 }
 
+.error-message {
+    margin-bottom: 20px;
+    color: #C20B0B;
+}
+
+.error-message i { /* Icône se trouvant juste avant le message d'erreur */
+    margin-right: 5px;
+}

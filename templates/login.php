@@ -2,27 +2,46 @@
 
 // Vue connexion
 
-$this->title  = "Connexion";
+$this->title  = "Michel Martin DWJ - Connexion";
 
 ?>
 
-<h1>Mon blog</h1>
+<!-- Hero secondaire -->
+<div id="hero" class="hero-container-secondary"></div>
 
-<p>En construction</p>
 
-<?= $this->session->show("error_login") // Message si erreur login ou password ?>
-<?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?>
+<section id="login">
+    <div class="container login-register-section-container">
+        <h3>Page de connexion</h3>
 
-<div>
-    <form method="post" action="../public/index.php?route=login">
-        <label for="nickname">Pseudo</label><br />
-        <input type="text" id="nickname" name="nickname" value="<?= isset($post) ? htmlspecialchars($post->get("nickname")) : "" ?>"/><br />
+        <!-- Séparateur sombre -->
+        <div class="dark-divider">
+            <div class="dark-divider-line"></div>
+            <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
+            <div class="dark-divider-line"></div>
+        </div>
 
-        <label for="pass">Mot de passe</label><br />
-        <input type="password" id="pass" name="pass" /><br />
+        <?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?></p>
+        <?= $this->session->show("error_login") // Message si erreur login ou password ?>
 
-        <input type="submit" value="Connexion" id="submit" name="submit" />
-    </form>
+        <!-- Formulaire de connexion -->
+        <form method="post" action="index.php?route=login">
+            <div class="contact-input">
+                <input type="text" id="nickname" name="nickname" placeholder="Pseudo" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pseudo'" value="<?= isset($post) ? htmlspecialchars($post->get("nickname")) : "" ?>" />
+                <label for="nickname">Pseudo</label>
+            </div>
 
-    <a href="../public/index.php">Retour à l'accueil</a>
-</div>
+            <div class="contact-input">
+                <input type="password" id="pass" name="pass" placeholder="Mot de passe" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mot de passe'" />
+                <i class="fas fa-eye" id="togglePassword"></i>
+                <label for="pass">Mot de passe</label>
+            </div>
+
+            <div>
+                <input type="submit" value="Connexion" id="submit" name="submit" class="colored-submit-button" />
+            </div>        
+        </form>
+
+        <a href="index.php" class="text-link">Retourner à l'accueil</a>
+    </div>
+</section>

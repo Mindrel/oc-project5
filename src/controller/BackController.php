@@ -12,8 +12,8 @@ class BackController extends Controller
     private function checkLoggedIn()
     {
         if (!$this->session->get("nickname")) {
-            $this->session->set("need_login", "Vous devez vous connecter pour accéder à cette page");
-            header("Location: ../public/index.php?route=login");
+            $this->session->set("need_login", '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Vous devez vous connecter pour accéder à cette page</p>');
+            header("Location: index.php?route=login");
         } else {
             return true;
         }
@@ -24,8 +24,8 @@ class BackController extends Controller
     {
         $this->checkLoggedIn();
         if (!($this->session->get("role") === "admin")) {
-            $this->session->set("not_admin", "Vous n'avez pas le droit d'accéder à cette page");
-            header("Location: ../public/index.php?route=profile");
+            $this->session->set("not_admin", "<p>Vous n'avez rien à faire sur cette page petit coquinou &#128536;</p>");
+            header("Location: index.php?route=profile");
         } else {
             return true;
         }

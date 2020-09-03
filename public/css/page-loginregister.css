@@ -1,0 +1,94 @@
+.login-register-section-container {
+    max-width: 800px;
+}
+
+.login-register-section-container form {
+    margin: 10px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-register-section-container input[type="text"],
+.login-register-section-container input[type="email"],
+.login-register-section-container input[type="password"] {
+    position: relative;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #E4D2BD;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    width: 350px;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+}
+
+.fa-eye, .fa-eye-slash { /* Icônes oeil pour afficher/masquer le password */ 
+    position: absolute;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+.fa-eye {
+    right: 1px;
+}
+
+.fa-eye-slash {
+    right: 0;
+}
+
+.login-register-section-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.85rem;
+    color: #CA8835;
+    opacity: 0;
+    transition: top 250ms ease, opacity 250ms ease;
+}
+
+.login-register-section-container input[type="text"]:focus ~ label, /* Label qui vient après le champ */
+.login-register-section-container input[type="email"]:focus ~ label, /* ~ ne tient pas compte du i entre l'input et le label */
+.login-register-section-container input[type="password"]:focus ~ label {
+    top: -25px;
+    opacity: 1;
+    transition: all 250ms ease;
+}
+
+.login-register-section-container ::-webkit-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
+}
+
+.login-register-section-container ::-moz-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
+}
+
+.login-register-section-container :-ms-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
+}
+
+.login-register-section-container ::-ms-input-placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
+}
+
+.login-register-section-container ::placeholder {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    opacity: 0.6;
+}

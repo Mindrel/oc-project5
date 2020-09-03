@@ -3,11 +3,18 @@
     color: #FFFFFF;
 }
 
-.hero-container {
+.hero-container, .hero-container-secondary {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hero-container {
     padding: 55px 0 305px 0;
+}
+
+.hero-container-secondary { 
+    height: 250px;
 }
 
 .hero-avatar {

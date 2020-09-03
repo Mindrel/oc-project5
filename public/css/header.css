@@ -23,6 +23,10 @@
     align-items: center;
 }
 
+.header-logo a {
+    color: #FFFFFF;
+}
+
 .header-logo-text strong, 
 .header-logo-text span {
     font-family: "Nunito", sans-serif;

@@ -12,12 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="public/css/main.css" />
     <link rel="stylesheet" href="public/css/header.css" />
+    <link rel="stylesheet" href="public/css/footer" />
     <link rel="stylesheet" href="public/css/section1hero.css" />
     <link rel="stylesheet" href="public/css/section2hello.css" />
     <link rel="stylesheet" href="public/css/section3projects.css" />
     <link rel="stylesheet" href="public/css/section4latest.css" />
     <link rel="stylesheet" href="public/css/section5contact.css" />
-    <link rel="stylesheet" href="public/css/footer" />
+    <link rel="stylesheet" href="public/css/page-loginregister.css" />
     <title><?= $title ?></title>
 </head>
 
@@ -27,16 +28,16 @@
             <!-- Logo -->
             <div class="header-logo">
                 <div class="header-logo-left-brace">
-                    {
+                    <a href="index.php"> { </a>
                 </div>
 
                 <div class="header-logo-text">
-                    <p><strong>Michel Martin</strong></p>
-                    <p><strong><span class="header-logo-text-spe">Junior</span> Web Developer</strong></p>
+                    <p><strong><a href="index.php">Michel Martin</a></strong></p>
+                    <p><a href="index.php"><strong><span class="header-logo-text-spe">Junior</span> Web Developer</strong></a></p>
                 </div>
 
                 <div class="header-logo-right-brace">
-                    }
+                    <a href="index.php"> } </a>
                 </div>
             </div>
 
@@ -128,6 +129,8 @@
             <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020</span> Portfolio & Blog de Michel Martin<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
+
+    <script src="public/js/pass.js"></script>
 </body>
 
 </html>
