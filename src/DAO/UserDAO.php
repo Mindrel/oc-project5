@@ -49,7 +49,7 @@ class UserDAO extends DAO
         $result = $this->createQuery($sql, [$post->get("nickname")]);
         $isUnique = $result->fetchColumn();
         if ($isUnique) {
-            return "<p>Le pseudo existe déjà</p>";
+            return '<p class="error-message"><i class="fas fa-exclamation-circle">Le pseudo existe déjà</p>';
         }
     }
 
