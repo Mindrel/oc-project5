@@ -23,6 +23,7 @@ $this->title  = "Michel Martin DWJ - Connexion";
 
         <?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?></p>
         <?= $this->session->show("error_login") // Message si erreur login ou password ?>
+        <?= $this->session->show("register"); // Message apparaît si nouvel utilisateur inscrit ?>
 
         <!-- Formulaire de connexion -->
         <form method="post" action="index.php?route=login">

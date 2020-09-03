@@ -9,21 +9,21 @@ class Constraint
     public function notBlank($name, $value)
     {
         if (empty($value)) {
-            return "<p>Le champ " . $name . " est vide</p>";
+            return '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ ' . $name . ' est vide</p>';
         }
     }
 
     public function minLength($name, $value, $minSize)
     {
         if (strlen($value) < $minSize) {
-            return "<p>Le champ " . $name . " doit contenir au moins " . $minSize . " caractères</p>";
+            return '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ ' . $name . ' doit contenir au moins ' . $minSize . ' caractères</p>';
         }
     }
 
     public function maxLength($name, $value, $maxSize)
     {
         if (strlen($value) > $maxSize) {
-            return "<p>Le champ " . $name . " doit contenir au maximum " . $maxSize . " caractères</p>";
+            return '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ ' . $name . ' doit contenir au maximum ' . $maxSize . ' caractères</p>';
         }
     }
 }

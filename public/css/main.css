@@ -159,3 +159,12 @@ li {
 .error-message i { /* Icône se trouvant juste avant le message d'erreur */
     margin-right: 5px;
 }
+
+.check-message {
+    margin-bottom: 20px;
+    color: #197419;
+}
+
+.check-message i {
+    margin-right: 5px;
+}

@@ -71,8 +71,8 @@ class FrontController extends Controller
 
             if (!$errors) {
                 $this->userDAO->register($post);
-                $this->session->set("register", "Votre inscription a bien été effectuée");
-                header("Location: ../public/index.php");
+                $this->session->set("register", '<p class="check-message"><i class="fas fa-check-circle"></i>Votre inscription a bien été effectuée, vous pouvez vous connecter</p>');
+                header("Location: index.php?route=login");
             }
 
             return $this->view->render("register", [

@@ -199,7 +199,6 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
 <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
 <?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
-<?= $this->session->show("register"); // Message apparaît si nouvel utilisateur inscrit ?>
 <?= $this->session->show("login"); // Message apparaît si utilisateur connecté ?>
 <?= $this->session->show("logout"); // Message apparaît si utilisateur se déconnecte ?>
 <?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
