@@ -8,12 +8,12 @@ use Mich\Blog\config\Parameter;
 
 class FrontController extends Controller
 {
-    // Gère l'affichage de la page d'accueil : Affiche tous les articles
+    // Gère l'affichage de la page d'accueil : Affiche le dernier article
     public function home()
     {
-        $articles = $this->articleDAO->getArticles();
+        $latestArticle = $this->articleDAO->getLatestArticle();
         return $this->view->render("home", [
-            "articles" => $articles
+            "latestArticle" => $latestArticle
         ]);
     }
 

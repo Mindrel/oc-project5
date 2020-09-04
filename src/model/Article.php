@@ -61,4 +61,14 @@ class Article
     {
         $this->creationDate = $creationDate;
     }
+
+    public function getTimeTag()
+    {
+        return $this->timeTag;
+    }
+
+    public function setTimeTag($timeTag)
+    {
+        $this->timeTag = $timeTag;
+    }
 }
