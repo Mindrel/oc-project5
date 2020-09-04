@@ -115,6 +115,8 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
                     </figure>
                 </li>
             </ul>
+
+            <a href="#" class="colored-link-button">Voir tous les projets</a>
         </div>
     </section>
 

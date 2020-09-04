@@ -24,7 +24,7 @@
 
 .footer-part-divided {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .footer-part-divided ul {

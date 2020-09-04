@@ -72,6 +72,7 @@
                     </ul>
 
                     <ul>
+                        <li><a href="#">Tous les projets</a></li>
                         <li><a href="#">Accueil blog</a></li>
 
                         <?php
@@ -119,7 +120,7 @@
 
                 <p>
                     Design fait main sans framework.<br />
-                    Les sources d'inspiration sont nombreuses, mais la majeure partie du template a été créée à partir du thème Freelancer de <a href="https://startbootstrap.com/themes/freelancer/" title="Nouvel onglet vers StartBootstrap" class="dotted-white-link" target="_blank">StartBootstrap</a> que je remercie.
+                    Les sources d'inspiration sont nombreuses, mais la majeure partie du template a été créée à partir du thème Freelancer de <a href="https://startbootstrap.com/themes/freelancer/" rel="nofollow" title="Nouvel onglet vers StartBootstrap" class="dotted-white-link" target="_blank">StartBootstrap</a> que je remercie.
                 </p>
             </div>
         </div>

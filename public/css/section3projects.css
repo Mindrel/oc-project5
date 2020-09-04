@@ -1,11 +1,8 @@
-.projects-section-container {
-    padding-bottom: 56px;
-}
-
 .projects-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 10px
 }
 
 .projects-gallery figure {

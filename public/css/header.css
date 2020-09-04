@@ -51,7 +51,7 @@
     letter-spacing: -1px;
 }
 
-.header-logo-text-spe, .header-logo-right-brace { /* Junior */
+.header-logo-text-spe, .header-logo-right-brace > a { /* "Junior" et accolade */
     color: #CA8835;
 }
 
@@ -61,7 +61,7 @@
 }
 
 header nav ul {
-    width: 420px;
+    width: 440px;
 }
 
 .main-nav-link, .blog-button {
