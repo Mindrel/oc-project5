@@ -46,3 +46,5 @@ $this->title  = "Michel Martin DWJ - Connexion";
         <a href="index.php" class="text-link">Retourner à l'accueil</a>
     </div>
 </section>
+
+<script src="public/js/displayPass.js"></script> <!-- Affiche/Masque le mot de passe -->

@@ -129,8 +129,6 @@
             <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020</span> Portfolio & Blog de Michel Martin<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
-
-    <script src="public/js/pass.js"></script>
 </body>
 
 </html>

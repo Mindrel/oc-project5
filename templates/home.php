@@ -193,26 +193,3 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </form>
         </div>
     </section>
-
-
-
-<?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
-<?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
-<?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
-<?= $this->session->show("login"); // Message apparaît si utilisateur connecté ?>
-<?= $this->session->show("logout"); // Message apparaît si utilisateur se déconnecte ?>
-<?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
-
-<?php
-foreach ($articles as $article) :
-?>
-    <div>
-        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()) ?>"><?= htmlspecialchars($article->getTitle()) ?></a></h2>
-        <p><?= htmlspecialchars($article->getContent()) ?></p>
-        <p><?= htmlspecialchars($article->getAuthor()) ?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></p>
-    </div>
-    <br />
-<?php
-endforeach;
-?>
