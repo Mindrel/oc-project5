@@ -11,6 +11,7 @@ class Article
     private $content;
     private $author;
     private $creationDate;
+    private $timeTag;
 
     public function getId()
     {
