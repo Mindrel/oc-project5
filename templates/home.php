@@ -151,7 +151,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </div>
 
             <footer class="latest-article-date">
-                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= htmlspecialchars($latestArticle->getCreationDate()) ?></time>
+                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule ?></time> 
                 <p>par <?= htmlspecialchars($latestArticle->getAuthor()) ?></p>
             </footer>
         </article>

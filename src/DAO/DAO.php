@@ -29,7 +29,7 @@ abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
     {
         // Tentative de connexion à la BDD
         try {
-            $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS); // Param de connexion se trouvent dans config/dev.php 
+            $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS, [PDO::MYSQL_ATTR_INIT_COMMAND => "SET lc_time_names = 'fr_FR'"]); // Param de connexion se trouvent dans config/dev.php (ou prod.php) + Ajout SET lc_time_names FR sinon mois articles en anglais
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // On renvoie la connexion
             return $this->connection;
