@@ -45,4 +45,4 @@ $this->title  = "Michel Martin DWJ - Inscription";
     </div>
 </section>
 
-<script src="public/js/displayPass.js"></script> <!-- Affiche/Masque le mot de passe -->
+<script src="public/js/toggle_pass.js"></script> <!-- Affiche/Masque le mot de passe -->
