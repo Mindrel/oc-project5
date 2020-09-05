@@ -145,7 +145,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
                 <section>
                     <p>
-                        <?= htmlspecialchars($latestArticle->getContent()) ?><span class="latest-article-extract-end">... (Go to the blog pour lire la suite)</span>
+                        <?= nl2br(htmlspecialchars($latestArticle->getContent())) ?><span class="latest-article-extract-end">... (Go to the blog pour lire la suite)</span>
                     </p>
                 </section>
             </div>
