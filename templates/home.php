@@ -62,56 +62,27 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
         <!-- Galerie de projets -->
         <ul class="projects-gallery">
-            <li>
-                <figure>
-                    <img src="public/img/1.jpg" alt="projet" />
-                    <figcaption>
-                        <i class="fas fa-search-plus"></i>
-                    </figcaption>
-                </figure>
-            </li>
 
-            <li>
-                <figure>
-                    <img src="public/img/2.jpg" alt="projet" />
-                    <figcaption>
-                        <i class="fas fa-search-plus"></i>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li>
-                <figure>
-                    <img src="public/img/3.jpg" alt="projet" />
-                    <figcaption>
-                        <i class="fas fa-search-plus"></i>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li>
-                <figure>
-                    <img src="public/img/4.jpg" alt="projet" />
-                    <figcaption>
-                        <i class="fas fa-search-plus"></i>
-                    </figcaption>
-                </figure>
-            </li>
-
-            <li>
-                <figure>
-                    <img src="public/img/5.jpg" alt="projet" />
-                    <figcaption>
-                        <i class="fas fa-search-plus"></i>
-                    </figcaption>
-                </figure>
-            </li>
+            <?php
+            foreach ($latestProjects as $project) :
+            ?>
+                <li>
+                    <figure>
+                        <img src="public/img/<?= htmlspecialchars($project->getImg()) ?>.jpg" alt="projet" />
+                        <figcaption>
+                            <i class="fas fa-search-plus"></i>
+                        </figcaption>
+                    </figure>
+                </li>
+            <?php
+            endforeach;
+            ?>
 
             <li>
                 <figure>
                     <img src="public/img/soon.jpg" alt="futur projet" />
                     <figcaption>
-                        <p>Prochainement...</p>
+                        <p>D'autres projets à venir prochainement...</p>
                     </figcaption>
                 </figure>
             </li>
@@ -151,7 +122,8 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </div>
 
             <footer class="latest-article-date">
-                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule ?></time> 
+                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule 
+                                                                                        ?></time>
                 <p>par <?= htmlspecialchars($latestArticle->getAuthor()) ?></p>
             </footer>
         </article>

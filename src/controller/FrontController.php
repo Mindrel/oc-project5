@@ -8,11 +8,13 @@ use Mich\Blog\config\Parameter;
 
 class FrontController extends Controller
 {
-    // Gère l'affichage de la page d'accueil : Affiche le dernier article
+    // Gère l'affichage de la page d'accueil : Affiche les 5 derniers projets et le dernier article
     public function home()
     {
+        $latestProjects = $this->projectDAO->getLatestProjects();
         $latestArticle = $this->articleDAO->getLatestArticle();
         return $this->view->render("home", [
+            "latestProjects" => $latestProjects,
             "latestArticle" => $latestArticle
         ]);
     }

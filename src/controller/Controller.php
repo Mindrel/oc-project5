@@ -4,6 +4,7 @@
 
 namespace Mich\Blog\src\controller;
 
+use Mich\Blog\src\DAO\ProjectDAO;
 use Mich\Blog\src\DAO\CommentDAO;
 use Mich\Blog\src\DAO\ArticleDAO; // use le namespace nécessaire sans quoi l'objet ArticleDAO sera introuvable lors de l'instanciation (mieux que NEW \mich\Blog\src\DAO\ArticleDAO car évite la répétition)
 use Mich\Blog\src\DAO\UserDAO;
@@ -13,6 +14,7 @@ use Mich\Blog\src\constraint\Validation;
 
 abstract class Controller // Abstrait car ne sera jamais instancié
 {
+    protected $projectDAO;
     protected $articleDAO; // On utilise l'héritage dans nos classes filles
     protected $commentDAO;
     protected $userDAO;
@@ -26,6 +28,7 @@ abstract class Controller // Abstrait car ne sera jamais instancié
     // Constructor pour éviter les répétitions d'instanciation
     public function __construct()
     {
+        $this->projectDAO = new ProjectDAO();
         $this->articleDAO = new ArticleDAO();
         $this->commentDAO = new CommentDAO();
         $this->userDAO = new UserDAO();
