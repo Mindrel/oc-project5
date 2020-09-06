@@ -170,11 +170,11 @@ class BackController extends Controller
         $this->session->stop();
         $this->session->start();
         if ($param === "logout") {
-            $this->session->set($param, "À bientôt !");
+            $this->session->set($param, '<p class="check-message"><i class="fas fa-check-circle"></i>Vous êtes déconnecté. À bientôt j\'espère !</p>');
         } else {
-            $this->session->set($param, "Votre compte a bien été supprimé");
+            $this->session->set($param, '<p class="check-message"><i class="fas fa-check-circle"></i>Votre compte a bien été supprimé</p>');
         }
-        header("Location: ../public/index.php");
+        header("Location: index.php?route=blog");
     }
 
     // Suppression utilisateur depuis espace admin
