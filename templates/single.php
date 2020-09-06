@@ -4,6 +4,9 @@
 $this->title = "Article"; 
 ?>
 
+<?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
+<?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
+
 <h1>Mon blog</h1>
 <p>En construction</p>
 

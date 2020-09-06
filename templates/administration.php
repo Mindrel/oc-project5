@@ -14,6 +14,7 @@ $this->title = "Administration"
 <?= $this->session->show("unflag_comment") // Affiche message lors suppression signalement ?>
 <?= $this->session->show("delete_comment") // Affiche message lors suppression commentaire ?>
 <?= $this->session->show("delete_user") // Affiche message lors suppression utilisateur ?>
+<?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
 
 <h2>Articles</h2>
 
