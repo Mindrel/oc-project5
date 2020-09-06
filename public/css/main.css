@@ -90,6 +90,7 @@ a.colored-link-button:hover {
 
 a.text-link {
     border-bottom: 1px dotted;
+    color: #2C3E50
 }
 
 a.text-link:hover {
