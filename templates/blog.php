@@ -20,6 +20,7 @@ $this->title = "Michel Martin - Le blog"
 
         <?= $this->session->show("login"); // Message apparaît si utilisateur connecté ?>
         <?= $this->session->show("logout"); // Message apparaît si utilisateur se déconnecte ?>
+        <?= $this->session->show("delete_account"); // Message apparaît si compte utilisateur supprimé ?>
 
         <!-- Date/auteur et contenu article -->
         <?php
