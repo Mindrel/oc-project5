@@ -1,54 +1,73 @@
-<?php 
+<?php
 // Vue d'un article
 
-$this->title = "Article"; 
+$this->title = "Article";
 ?>
 
-<?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
-<?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
+<!-- Hero secondaire -->
+<div id="hero" class="hero-container-secondary"></div>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
+<!-- Article -->
+<section id="current-article">
+    <div class="container current-article-section">
 
-<div>
-    <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
-    <p><?= htmlspecialchars($article->getContent()) ?></p>
-    <p><?= htmlspecialchars($article->getAuthor()) ?></p>
-    <p>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></p>
-</div>
+        <?= isset($errors["content"]) ? $errors["content"] : "" ?>
 
-<br />
+        <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
 
-<a href="../public/index.php">Retour à l'accueil</a>
+        <div class="current-article-date">
+            <p><?= ucfirst(htmlspecialchars($article->getCreationDate())) // ucfirst 1ère lettre majuscule 
+                ?></p>
+            <p>par <?= htmlspecialchars($article->getAuthor()) ?></p>
+        </div>
 
-<div id="comments" class="text-left" style="margin-left: 50px">
-    <h3>Ajouter un commentaire</h3>
+        <p><?= nl2br(htmlspecialchars($article->getContent())) ?></p>
 
-    <?php include("form_comment.php") ?>
+        <a href="#current-comments" class="text-link">Commenter l'article</a> | <a href="index.php?route=blog" class="text-link">Retour à la liste des articles</a>
+    </div>
+</section>
 
-    <h3>Commentaires</h3>
-    <?php
-    foreach ($comments as $comment) :
-    ?>
-        <h4><?= htmlspecialchars($comment->getNickname()) ?></h4>
-        <p><?= htmlspecialchars($comment->getContent()) ?></p>
-        <p>Posté le
-            <?= htmlspecialchars($comment->getCreationDate()) ?>
-        </p>
-        <?php
-        if ($comment->isFlag()) :
-        ?>
-            <p>Ce commentaire a déjà été signalé</p>
-        <?php
-        else :
-        ?>
-            <p><a href="../public/index.php?route=flagComment&commentId=<?= $comment->getId() ?>">Signaler le commentaire</a></p>
-        <?php
-        endif;
-        ?>
-        <br />
-    <?php
-    endforeach;
-    ?>
+<!-- Commentaires -->
+<section id="current-comments">
+    <div class="container current-comments-section">
+        <div class="comments-form-group">
+            <h3>Commentaires</h3>
 
-</div>
+            <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
+            <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
+
+            <?php include("form_comment.php") ?>
+        </div>
+
+        <ul class="comments-list">
+
+            <?php
+            foreach ($comments as $comment) :
+            ?>
+                <li>
+                    <h5><?= htmlspecialchars($comment->getNickname()) ?></strong></h5>
+                    <p><?= htmlspecialchars($comment->getContent()) ?></p>
+                    <p>Posté le
+                        <?= htmlspecialchars($comment->getCreationDate()) ?>
+                    </p>
+                    <?php
+                    if ($comment->isFlag()) :
+                    ?>
+                        <p>Ce commentaire a déjà été signalé</p>
+                    <?php
+                    else :
+                    ?>
+                        <p><a href="index.php?route=flagComment&commentId=<?= $comment->getId() ?>" class="text-link">Signaler le commentaire</a></p>
+                    <?php
+                    endif;
+                    ?>
+                </li>
+            <?php
+            endforeach;
+            ?>
+        
+        </ul>
+    </div>
+
+    </div>
+</section>

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="public/css/section5contact.css" />
     <link rel="stylesheet" href="public/css/page-loginregister.css" />
     <link rel="stylesheet" href="public/css/page-blog.css" />
+    <link rel="stylesheet" href="public/css/page-single.css" />
     <title><?= $title ?></title>
 </head>
 
