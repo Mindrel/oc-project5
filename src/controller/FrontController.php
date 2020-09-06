@@ -19,6 +19,15 @@ class FrontController extends Controller
         ]);
     }
 
+    // Gère l'affichage du blog avec tous les articles
+    public function blog()
+    {
+        $articles = $this->articleDAO->getArticles();
+        return $this->view->render("blog", [
+            "articles" => $articles
+        ]);
+    }
+
     // Gère l'affichage de la page de l'article demandé et les com associés
     public function article($articleId)
     {
@@ -92,11 +101,11 @@ class FrontController extends Controller
             $result = $this->userDAO->login($post);
 
             if ($result && $result["isPasswordValid"]) {
-                $this->session->set("login", "Content de vous revoir !");
+                $this->session->set("login", '<p class="check-message"><i class="fas fa-check-circle"></i>Vous êtes connecté. N\'hésitez pas à laisser des commentaires !</p>');
                 $this->session->set("id", $result["result"]["id"]);
                 $this->session->set("role", $result["result"]["name"]);
                 $this->session->set("nickname", $post->get("nickname"));
-                header("Location: index.php");
+                header("Location: index.php?route=blog");
             } else {
                 $this->session->set("error_login", '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Pseudo ou mot de passe incorrects</p>');
                 return $this->view->render("login", [

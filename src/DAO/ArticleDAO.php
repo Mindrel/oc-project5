@@ -25,7 +25,7 @@ class ArticleDAO extends DAO
     // Récupère tous les articles
     public function getArticles()
     {
-        $sql = "SELECT p5_article.id, p5_article.title, p5_article.content, p5_user.nickname, p5_article.creation_date FROM p5_article INNER JOIN p5_user ON p5_article.user_id = p5_user.id ORDER BY p5_article.id DESC";
+        $sql = "SELECT p5_article.id, p5_article.title, LEFT(p5_article.content, 500) AS content, p5_user.nickname, DATE_FORMAT(p5_article.creation_date, '%M %Y') AS creation_date, DATE_FORMAT(p5_article.creation_date, '%Y-%m-%dT%H:%i') AS time_tag FROM p5_article INNER JOIN p5_user ON p5_article.user_id = p5_user.id ORDER BY p5_article.id DESC";
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row) {

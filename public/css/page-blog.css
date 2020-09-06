@@ -1,0 +1,29 @@
+.articles-section-container article {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 50px 0;
+    border-bottom: 1px solid #E4D2BD;
+}
+
+.article-content section {
+    margin-bottom: 20px;
+}
+
+.article-date {
+    min-width: 190px;
+    margin-right: 30px;
+    opacity: 0.8;
+}
+
+.article-date time {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    line-height: 1.9rem; /* Pour aligner au titre article */
+}
+
+.article-title {
+    text-transform: initial;
+    text-align: start;
+    margin-bottom: 10px;
+}

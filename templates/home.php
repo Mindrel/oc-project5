@@ -107,8 +107,6 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
         <!-- Date/auteur et contenu article -->
 
         <article>
-
-
             <div class="latest-article-content">
                 <header>
                     <h4 class="latest-article-title"><?= htmlspecialchars($latestArticle->getTitle()) ?></h4>
@@ -122,15 +120,13 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </div>
 
             <footer class="latest-article-date">
-                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule 
-                                                                                        ?></time>
+                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule ?></time>
                 <p>par <?= htmlspecialchars($latestArticle->getAuthor()) ?></p>
             </footer>
         </article>
 
-
         <!-- Lien d'accès au blog -->
-        <a href="#" class="light-link-button">Accéder au blog</a>
+        <a href="index.php?route=blog" class="light-link-button">Accéder au blog</a>
     </div>
 </section>
 

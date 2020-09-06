@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="public/css/section4latest.css" />
     <link rel="stylesheet" href="public/css/section5contact.css" />
     <link rel="stylesheet" href="public/css/page-loginregister.css" />
+    <link rel="stylesheet" href="public/css/page-blog.css" />
     <title><?= $title ?></title>
 </head>
 
@@ -48,7 +49,7 @@
                     <li><a href="index.php#projects" class="main-nav-link">Projets</a></li>
                     <li><a href="index.php#latest-article" class="main-nav-link">Article</a></li>
                     <li><a href="index.php#contact" class="main-nav-link">Contact</a></li>
-                    <li><a href="#" class="blog-button">Le Blog</a></li>
+                    <li><a href="index.php?route=blog" class="blog-button">Le Blog</a></li>
                 </ul>
             </nav>
         </div>
@@ -73,7 +74,7 @@
 
                     <ul>
                         <li><a href="#">Tous les projets</a></li>
-                        <li><a href="#">Accueil blog</a></li>
+                        <li><a href="index.php?route=blog">Accueil blog</a></li>
 
                         <?php
                         // Menu dynamique de connexion

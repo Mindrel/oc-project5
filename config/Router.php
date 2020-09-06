@@ -35,7 +35,11 @@ class Router
 
                 if ($route === "article") { // Si route article on charge l'article ayant l'ID demandé
                     $this->frontController->article($this->request->getGet()->get("articleId"));
-                } 
+                }
+
+                else if ($route === "blog") { // Si route blog on affiche la page blog avec tous les articles
+                    $this->frontController->blog();
+                }
                 
                 else if ($route === "addArticle") { // Si route addArticle on déclenche l'ajout d'un article
                     $this->backController->addArticle($this->request->getPost());
@@ -106,7 +110,7 @@ class Router
             }
 
         } catch (Exception $e) {
-           $_SESSION["error"] = $e->getMessage();
+        //    $_SESSION["error"] = $e->getMessage();
            $this->errorController->errorServer();
         }
     }
