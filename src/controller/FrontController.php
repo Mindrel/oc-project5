@@ -107,7 +107,7 @@ class FrontController extends Controller
                 $this->session->set("nickname", $post->get("nickname"));
                 header("Location: index.php?route=blog");
             } else {
-                $this->session->set("error_login", '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Pseudo ou mot de passe incorrects</p>');
+                $this->session->set("error_login", '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Identifiants incorrects</p>');
                 return $this->view->render("login", [
                     "post" => $post
                 ]);
