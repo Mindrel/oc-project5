@@ -5,7 +5,7 @@
 }
 
 .current-comments-section {
-display: flex;
+    display: flex;
 }
 
 .current-article-section .error-message {
@@ -131,5 +131,14 @@ display: flex;
 
 .comments-list h5 {
     font-size: 1.3rem;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.comments-list h5 + p {
+    margin-bottom: 7px;
+}
+
+.comments-list li p:last-child {
+    opacity: 0.8;
+    font-size: 0.9rem;
 }

@@ -35,8 +35,22 @@ $this->title = "Article";
 
             <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
             <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
+            
+            <?php
+            if ($this->session->get("nickname")) : // Si connecté
+                
+                include("form_comment.php");
 
-            <?php include("form_comment.php") ?>
+            else :
+            ?>
+            
+            <p class="error-message"><i class="fas fa-exclamation-circle"></i>Vous devez être connecté pour pouvoir poster un commentaire</p>
+            <a href="index.php?route=login" class="text-link">Se connecter</a> | <a href="index.php?route=register" class="text-link">S'inscrire</a>
+
+            <?php
+            endif;
+            ?>
+
         </div>
 
         <ul class="comments-list">
@@ -45,19 +59,18 @@ $this->title = "Article";
             foreach ($comments as $comment) :
             ?>
                 <li>
-                    <h5><?= htmlspecialchars($comment->getNickname()) ?></strong></h5>
+                    <h5><?= htmlspecialchars($comment->getNickname()) ?></h5>
                     <p><?= htmlspecialchars($comment->getContent()) ?></p>
-                    <p>Posté le
-                        <?= htmlspecialchars($comment->getCreationDate()) ?>
-                    </p>
+                    <p>Posté le <?= htmlspecialchars($comment->getCreationDate()) ?> | 
+                    
                     <?php
                     if ($comment->isFlag()) :
                     ?>
-                        <p>Ce commentaire a déjà été signalé</p>
+                        <i>Ce commentaire a déjà été signalé</i></p>
                     <?php
                     else :
                     ?>
-                        <p><a href="index.php?route=flagComment&commentId=<?= $comment->getId() ?>" class="text-link">Signaler le commentaire</a></p>
+                        <a href="index.php?route=flagComment&commentId=<?= $comment->getId() ?>" class="text-link">Signaler le commentaire</a></p>
                     <?php
                     endif;
                     ?>
