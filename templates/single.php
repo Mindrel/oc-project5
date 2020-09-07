@@ -1,7 +1,7 @@
 <?php
 // Vue d'un article
 
-$this->title = "Article";
+$this->title = "Michel Martin - Article : " . htmlspecialchars($article->getTitle());
 ?>
 
 <!-- Hero secondaire -->
