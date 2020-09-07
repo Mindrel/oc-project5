@@ -10,8 +10,8 @@ $this->title = "Article";
 <!-- Article -->
 <section id="current-article">
     <div class="container current-article-section">
-
-        <?= isset($errors["content"]) ? $errors["content"] : "" ?>
+        <?= isset($errors["nickname"]) ? $errors["nickname"] : "" ?>
+        <?= isset($errors["content"]) ? $errors["content"] : "" ?>     
 
         <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
 
@@ -32,9 +32,6 @@ $this->title = "Article";
     <div class="container current-comments-section">
         <div class="comments-form-group">
             <h3>Commentaires</h3>
-
-            <?= $this->session->show("add_comment") // Message apparaît si commentaire posté ?>
-            <?= $this->session->show("flag_comment") // Message apparaît si commentaire signalé ?>
             
             <?php
             if ($this->session->get("nickname")) : // Si connecté
@@ -61,16 +58,30 @@ $this->title = "Article";
                 <li>
                     <h5><?= htmlspecialchars($comment->getNickname()) ?></h5>
                     <p><?= htmlspecialchars($comment->getContent()) ?></p>
-                    <p>Posté le <?= htmlspecialchars($comment->getCreationDate()) ?> | 
+                    <p>Posté le <?= htmlspecialchars($comment->getCreationDate()) ?> 
                     
                     <?php
-                    if ($comment->isFlag()) :
+                    if ($this->session->get("nickname")) :
                     ?>
-                        <i>Ce commentaire a déjà été signalé</i></p>
+
+                        <?php
+                        if ($comment->isFlag()) :
+                        ?>
+                            | <i>Ce commentaire a déjà été signalé</i></p>
+                        <?php
+                        else :
+                        ?>
+                            | <a href="index.php?route=flagComment&commentId=<?= $comment->getId() ?>" class="text-link" onclick="return confirm('Souhaitez-vous vraiment signaler ce commentaire ?')" >Signaler le commentaire</a></p>
+                        <?php
+                        endif;
+                        ?>
+
                     <?php
                     else :
                     ?>
-                        <a href="index.php?route=flagComment&commentId=<?= $comment->getId() ?>" class="text-link">Signaler le commentaire</a></p>
+
+                    </p>
+
                     <?php
                     endif;
                     ?>
@@ -80,7 +91,5 @@ $this->title = "Article";
             ?>
         
         </ul>
-    </div>
-
     </div>
 </section>

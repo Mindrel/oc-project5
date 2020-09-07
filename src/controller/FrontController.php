@@ -47,8 +47,8 @@ class FrontController extends Controller
             
             if (!$errors) {
                 $this->commentDAO->addComment($post, $articleId);
-                $this->session->set("add_comment", "Le nouveau commentaire a bien été ajouté");
-                header("Location: ../public/index.php");
+                $this->session->set("add_comment", '<p class="check-message"><i class="fas fa-check-circle"></i>Votre commentaire a bien été ajouté</p>');
+                header("Location: index.php?route=blog");
             }
             
             $article = $this->articleDAO->getArticle($articleId);
@@ -66,8 +66,8 @@ class FrontController extends Controller
     public function flagComment($commentId)
     {
         $this->commentDAO->flagComment($commentId);
-        $this->session->set("flag_comment", "Le commentaire a bien été signalé");
-        header("Location: ../public/index.php");
+        $this->session->set("flag_comment", '<p class="check-message"><i class="fas fa-check-circle"></i>Le commentaire a bien été signalé</p>');
+        header("Location: index.php?route=blog");
     }
 
     // Inscription utilisateur

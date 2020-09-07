@@ -59,6 +59,11 @@
     position: relative;
 }
 
+.comment-input label[for=nickname], /* Inutile car user automatique via session */
+.comment-input input[name=nickname] {
+    display: none;
+}
+
 .current-comments-section textarea {
     min-width: 300px;
     max-width: 300px;
