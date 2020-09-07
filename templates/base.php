@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="public/css/page-loginregister.css" />
     <link rel="stylesheet" href="public/css/page-blog.css" />
     <link rel="stylesheet" href="public/css/page-single.css" />
+    <link rel="stylesheet" href="public/css/page-error.css" />
     <title><?= $title ?></title>
 </head>
 
