@@ -18,5 +18,5 @@ $submit = $route === "addComment" ? "Ajouter" : "Mettre à jour";
         <label for="content">Écrivez votre commentaire ci-dessous</label>
     </div>
 
-    <input type="submit" value="Ajouter" id="submit" name="submit" class="colored-submit-button" onclick="return confirm('Confirmez-vous l\'envoi du commentaire ?')" />
+    <input type="submit" value="<?= $submit ?>" id="submit" name="submit" class="colored-submit-button" onclick="return confirm('Confirmez-vous l\'envoi du commentaire ?')" />
 </form>
