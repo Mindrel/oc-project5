@@ -1,0 +1,11 @@
+.profile-section-container h4,
+.profile-section-container .colored-submit-button,
+.profile-section-container .light-link-button {
+    margin-bottom: 25px;
+}
+
+.profile-section-container .colored-submit-button,
+.profile-section-container .light-link-button {
+    width: 370px;
+    text-align: center;
+}

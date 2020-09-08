@@ -2,24 +2,31 @@
 
 // Vue profil utilisateur
 
-$this->title = "Mon profil"; 
+$this->title = "Michel Martin - Gestion de votre profil";
 
 ?>
 
-<h1>Mon blog</h1>
+<!-- Hero secondaire -->
+<div id="hero" class="hero-container-secondary"></div>
+<section id="profile">
+    <div class="container profile-section-container">
+        <h3>Gestion de profil</h3>
 
-<p>En construction</p>
+        <!-- Séparateur sombre -->
+        <div class="dark-divider">
+            <div class="dark-divider-line"></div>
+            <div class="dark-divider-icon"><i class="fas fa-code"></i></div>
+            <div class="dark-divider-line"></div>
+        </div>
 
-<?= $this->session->show("update_password") // Message apparaît après modif password ?>
-<?= $this->session->show("not_admin") // Apparaît si tentative d'action nécessitant d'être admin ?>
+        <?= $this->session->show("update_password") // Message apparaît après modif password ?>
+        <?= $this->session->show("not_admin") // Apparaît si tentative d'action nécessitant d'être admin ?>
 
-<div>
-    <h2><?= $this->session->get("nickname") ?></h2>
-    <p><?= $this->session->get("id") ?></p>
-    <a href="../public/index.php?route=updatePassword">Modifier le mot de passe</a>
-    <a href="../public/index.php?route=deleteAccount">Supprimer ce compte utilisateur</a>
-</div>
+        <h4>Nom d'utilisateur : <?= $this->session->get("nickname") ?></h4>
 
-<br />
+        <a href="index.php?route=updatePassword" class="colored-submit-button">Modifier votre mot de passe</a>
+        <a href="index.php?route=deleteAccount" class="light-link-button">Supprimer ce compte utilisateur</a>
 
-<a href="../public/index.php">Retour à l'accueil</a>
+        <a href="index.php" class="text-link">Retour au blog</a>
+    </div>
+</section>

@@ -24,7 +24,7 @@ class BackController extends Controller
     {
         $this->checkLoggedIn();
         if (!($this->session->get("role") === "admin")) {
-            $this->session->set("not_admin", "<p>Vous n'avez rien à faire sur cette page petit coquinou &#128536;</p>");
+            $this->session->set("not_admin", '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Vous n\'avez rien à faire sur cette page petit coquinou &#128536;</p>');
             header("Location: index.php?route=profile");
         } else {
             return true;

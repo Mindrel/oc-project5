@@ -21,7 +21,7 @@ $this->title  = "Michel Martin DWJ - Connexion";
             <div class="dark-divider-line"></div>
         </div>
 
-        <?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?></p>
+        <?= $this->session->show("need_login") // Apparaît si tentative d'action nécessitant d'être connecté ?>
         <?= $this->session->show("error_login") // Message si erreur login ou password ?>
         <?= $this->session->show("register"); // Message apparaît si nouvel utilisateur inscrit ?>
 
@@ -43,7 +43,7 @@ $this->title  = "Michel Martin DWJ - Connexion";
             </div>        
         </form>
 
-        <a href="index.php" class="text-link">Retourner à l'accueil</a>
+        <a href="index.php?route=blog" class="text-link">Retour au blog</a>
     </div>
 </section>
 

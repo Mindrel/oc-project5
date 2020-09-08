@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="public/css/page-blog.css" />
     <link rel="stylesheet" href="public/css/page-single.css" />
     <link rel="stylesheet" href="public/css/page-error.css" />
+    <link rel="stylesheet" href="public/css/page-profile.css" />
     <title><?= $title ?></title>
 </head>
 
