@@ -8,6 +8,7 @@ $this->title = "Michel Martin - Gestion de votre profil";
 
 <!-- Hero secondaire -->
 <div id="hero" class="hero-container-secondary"></div>
+
 <section id="profile">
     <div class="container profile-section-container">
         <h3>Gestion de profil</h3>
@@ -25,8 +26,8 @@ $this->title = "Michel Martin - Gestion de votre profil";
         <h4>Nom d'utilisateur : <?= $this->session->get("nickname") ?></h4>
 
         <a href="index.php?route=updatePassword" class="colored-submit-button">Modifier votre mot de passe</a>
-        <a href="index.php?route=deleteAccount" class="light-link-button">Supprimer ce compte utilisateur</a>
+        <a href="index.php?route=deleteAccount" class="light-link-button" onclick="return confirm('Voulez-vous vraiment supprimer votre compte ? \nATTENTION : Opération irréversible !')">Supprimer ce compte utilisateur</a>
 
-        <a href="index.php" class="text-link">Retour au blog</a>
+        <a href="index.php?route=blog" class="text-link">Retour au blog</a>
     </div>
 </section>

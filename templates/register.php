@@ -41,7 +41,7 @@ $this->title  = "Michel Martin DWJ - Inscription";
         </form>
 
 
-        <a href="index.php" class="text-link">Retour au blog</a>
+        <a href="index.php?route=blog" class="text-link">Retour au blog</a>
     </div>
 </section>
 

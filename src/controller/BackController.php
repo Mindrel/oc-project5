@@ -140,8 +140,8 @@ class BackController extends Controller
         if ($this->checkLoggedIn()) {
             if ($post->get("submit")) {
                 $this->userDAO->updatePassword($post, $this->session->get("nickname"));
-                $this->session->set("update_password", "Le mot de passe a été mis à jour");
-                header("Location: ../public/index.php?route=profile");
+                $this->session->set("update_password", '<p class="check-message"><i class="fas fa-check-circle"></i>Le mot de passe a été mis à jour</p>');
+                header("Location: index.php?route=profile");
             }
             return $this->view->render("update_password");
         }
