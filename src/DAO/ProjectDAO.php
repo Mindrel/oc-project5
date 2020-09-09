@@ -49,4 +49,14 @@ class ProjectDAO extends DAO
         $result->closeCursor();
         return $latestProjects;
     }
+
+    // Récupère un seul projet
+    public function getProject($projectId)
+    {
+        $sql = "SELECT id, title, content, logo, img, website FROM p5_project WHERE id = ?";
+        $result = $this->createQuery($sql, [$projectId]);
+        $project = $result->fetch();
+        $result->closeCursor();
+        return $this->buildObject($project);
+    }
 }

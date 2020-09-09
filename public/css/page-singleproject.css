@@ -1,0 +1,26 @@
+.current-project-section-container div, /* Pour aligner à gauche */
+.current-project-section-container h2 {
+    width: 100%;
+    text-align: start;
+}   
+
+.current-project-section-container h2 {
+    text-transform: initial;
+    text-align: start;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.current-project-section-container img {
+    float: left;
+    width: 450px;
+    border: 1px solid #E4D2BD;
+    margin: 0 30px 10px 0;
+    padding: 8px;
+    filter: brightness(95%); /* Pour détourer l'image dans un cadre blanc bien visible */
+}
+
+.current-project-section-container > p {
+    margin-bottom: 40px;
+}

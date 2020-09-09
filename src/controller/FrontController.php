@@ -28,6 +28,15 @@ class FrontController extends Controller
         ]);
     }
 
+    // Gère l'affichage de la page projet demandée
+    public function project($projectId)
+    {
+        $project = $this->projectDAO->getProject($projectId);
+        return $this->view->render("single_project", [
+            "project" => $project
+        ]);
+    }
+
     // Gère l'affichage du blog avec tous les articles
     public function blog()
     {

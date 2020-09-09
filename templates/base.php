@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="public/css/page-profile.css" />
     <link rel="stylesheet" href="public/css/page-password.css" />
     <link rel="stylesheet" href="public/css/page-projects.css" />
+    <link rel="stylesheet" href="public/css/page-singleproject.css" />
     <title><?= $title ?></title>
 </head>
 

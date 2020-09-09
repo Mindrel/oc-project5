@@ -38,6 +38,10 @@ class Router
                     $this->frontController->projects();
                 }
 
+                else if ($route === "project") { // Si route project on charge le projet ayant l'ID demandé
+                    $this->frontController->project($this->request->getGet()->get("projectId"));
+                }
+
                 else if ($route === "blog") { // Si route blog on affiche la page blog avec tous les articles
                     $this->frontController->blog();
                 }
