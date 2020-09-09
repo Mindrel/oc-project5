@@ -79,7 +79,7 @@
                     </ul>
 
                     <ul>
-                        <li><a href="#">Tous les projets</a></li>
+                        <li><a href="index.php?route=projects">Tous les projets</a></li>
                         <li><a href="index.php?route=blog">Accueil blog</a></li>
 
                         <?php
