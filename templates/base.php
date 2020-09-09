@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="public/css/page-error.css" />
     <link rel="stylesheet" href="public/css/page-profile.css" />
     <link rel="stylesheet" href="public/css/page-password.css" />
+    <link rel="stylesheet" href="public/css/page-projects.css" />
     <title><?= $title ?></title>
 </head>
 

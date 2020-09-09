@@ -1,0 +1,23 @@
+.projects-section-container article {
+    display: flex;
+    padding: 50px 0;
+    border-bottom: 1px solid #E4D2BD;
+}
+
+.projects-section-container header img {
+    max-width: 320px;
+    border: 1px solid #E4D2BD;
+    margin-right: 30px;
+    filter: brightness(95%);
+    padding: 8px;
+}
+
+.project-content section {
+    margin-bottom: 20px;
+}
+
+.project-title {
+    text-transform: initial;
+    text-align: start;
+    margin-bottom: 10px;
+}

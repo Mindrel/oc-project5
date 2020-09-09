@@ -51,7 +51,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 <!-- Section 3 : Projets -->
 <section id="projects" class="colored-section">
     <div class="container projects-section-container">
-        <h3>Mes super projets</h3>
+        <h3>Mes projets récents</h3>
 
         <!-- Séparateur blanc -->
         <div class="white-divider">
@@ -68,7 +68,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             ?>
                 <li>
                     <figure>
-                        <img src="public/img/<?= htmlspecialchars($project->getImg()) ?>.jpg" alt="projet" />
+                        <img src="public/img/<?= htmlspecialchars($project->getLogo()) ?>.jpg" alt="logo projet" />
                         <figcaption>
                             <i class="fas fa-search-plus"></i>
                         </figcaption>
@@ -88,7 +88,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </li>
         </ul>
 
-        <a href="#" class="colored-link-button">Voir tous les projets</a>
+        <a href="index.php?route=projects" class="colored-link-button">Voir tous les projets</a>
     </div>
 </section>
 

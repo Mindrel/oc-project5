@@ -9,6 +9,7 @@ class Project
     private $id;
     private $title;
     private $content;
+    private $logo;
     private $img;
     private $website;
 
@@ -40,6 +41,16 @@ class Project
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
     }
 
     public function getImg()
