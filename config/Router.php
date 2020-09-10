@@ -110,6 +110,22 @@ class Router
                     $this->backController->administration();
                 }
 
+                else if ($route === "adminProjects") { // Back gestion des projets
+
+                }
+
+                else if ($route === "adminArticles") { // Back gestion des articles
+
+                }
+
+                else if ($route === "adminComments") { // Back gestion des commentaires
+
+                }
+
+                else if ($route === "adminUsers") { // Back gestion des utilisateurs
+
+                }
+
                 else { // Si la route est différente des précedentes alors error not found
                     $this->errorController->errorNotFound();
                 }

@@ -31,19 +31,21 @@ class BackController extends Controller
         }
     }
 
-    // Accès espace admin et y apparaissent tous les articles, commentaires, utilisateurs
+    // Accès hub central espace admin 
     public function administration()
     {
         if ($this->checkAdmin()) {
-            $articles = $this->articleDAO->getArticles();
-            $comments = $this->commentDAO->getAllComments();
-            $users = $this->userDAO->getUsers();
+            return $this->view->render("administration");
 
-            return $this->view->render("administration", [
-                "articles" => $articles,
-                "comments" => $comments,
-                "users" => $users
-            ]);
+            // $articles = $this->articleDAO->getArticles();
+            // $comments = $this->commentDAO->getAllComments();
+            // $users = $this->userDAO->getUsers();
+
+            // return $this->view->render("administration", [
+            //     "articles" => $articles,
+            //     "comments" => $comments,
+            //     "users" => $users
+            // ]);
         }
     }
 

@@ -1,132 +1,37 @@
 <?php
-// Vue espace admin
+// Vue hub central espace admin
 
-$this->title = "Administration"
+$this->title = "Hub central espace administration"
 ?>
 
-<h1>Mon blog</h1>
+<section id="admin-hub">
+    <!-- Hero secondaire -->
+    <div id="hero" class="hero-container-secondary">
+        <h1>Administration</h1>
 
-<p>En construction</p>
+        <div class="white-divider">
+            <div class="white-divider-line"></div>
+            <div class="white-divider-icon"><i class="fas fa-code"></i></div>
+            <div class="white-divider-line"></div>
+        </div>
+    </div>
 
-<?= $this->session->show("add_article") // Affiche message lors de l'ajout article ?> 
-<?= $this->session->show("edit_article") // Affiche message lors de la modif article ?>
-<?= $this->session->show("delete_article") // Affiche message lors de la suppression article ?>
-<?= $this->session->show("unflag_comment") // Affiche message lors suppression signalement ?>
-<?= $this->session->show("delete_comment") // Affiche message lors suppression commentaire ?>
-<?= $this->session->show("delete_user") // Affiche message lors suppression utilisateur ?>
-<?= $this->session->show("delete_comment") // Message apparaît si commentaire supprimé ?>
+    <!-- Hub d'accès à l'administration des projets, articles, commentaires, utilisateurs -->
+    <div class="container admin-section-container">
 
-<h2>Articles</h2>
+        <div class="hub">
+            <a href="index.php?route=adminProjects" class="colored-submit-button" title="Gestion des projets"><i class="fas fa-code-branch"></i></a>
+            <a href="index.php?route=adminArticles" class="colored-submit-button" title="Gestion des articles"><i class="far fa-newspaper"></i></a>
+            <a href="index.php?route=adminComments" class="colored-submit-button" title="Gestion des commentaires"><i class="fas fa-comments"></i></a>
+            <a href="index.php?route=adminUsers" class="colored-submit-button" title="Gestion des utilisateurs"><i class="fas fa-users"></i></a>
+        </div>
 
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+        <div>
+            <a href="index.php" class="text-link">Retour à l'accueil</a> | <a href="index.php?route=blog" class="text-link">Retour au blog</a>
+        </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</td>
-            <th>Titre</td>
-            <th>Contenu</td>
-            <th>Auteur</td>
-            <th>Date</td>
-            <th>Actions</td>
-        </tr>
-    </thead>
+    </div>
+</section>
 
-    <tbody>
-        <?php
-        foreach ($articles as $article) :
-        ?>
-            <tr>
-                <td><?= htmlspecialchars($article->getId()) ?></td>
-                <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()) ?>"><?= htmlspecialchars($article->getTitle()) ?></a></td>
-                <td><?= substr(htmlspecialchars($article->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
-                <td><?= htmlspecialchars($article->getAuthor()) ?></td>
-                <td>Créé le : <?= htmlspecialchars($article->getCreationDate()) ?></td>
-                <td>
-                    <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId() ?>">Modifier</a>
-                    <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId() ?>">Supprimer</a>
-                </td>
-            </tr>
-        <?php
-        endforeach;
-        ?>
-    </tbody>
-</table>
-
-<h2>Commentaires signalés</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</td>
-            <th>Pseudo</td>
-            <th>Message</td>
-            <th>Date</td>
-            <th>Actions</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <?php
-        foreach ($comments as $comment) :
-        ?>
-            <tr>
-                <td><?= htmlspecialchars($comment->getId()) ?></td>
-                <td><?= htmlspecialchars($comment->getNickname()) ?></td>
-                <td><?= substr(htmlspecialchars($comment->getContent()), 0, 150) // retourne les 150 premiers char ?></td>
-                <td>Créé le : <?= htmlspecialchars($comment->getCreationDate()) ?></td>
-                <td>
-                    <a href="../public/index.php?route=unflagComment&commentId=<?= $comment->getId() ?>">Enlever le signalement</a>
-                    <a href="../public/index.php?route=deleteComment&commentId=<?= $comment->getId() ?>">Supprimer le commentaire</a>
-                </td>
-            </tr>
-        <?php
-        endforeach;
-        ?>
-    </tbody>
-</table>
-
-<h2>Utilisateurs</h2>
-
-<table>
-    <thead>
-        <tr>
-            <th>ID</td>
-            <th>Pseudo</td>
-            <th>Date</td>
-            <th>Rôle</td>
-            <th>Actions</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <?php
-        foreach ($users as $user) :
-        ?>
-            <tr>
-                <td><?= htmlspecialchars($user->getId()) ?></td>
-                <td><?= htmlspecialchars($user->getNickname()) ?></td>
-                <td>Créé le : <?= htmlspecialchars($user->getCreationDate()) ?></td>
-                <td><?= htmlspecialchars($user->getRole()) ?></td>
-                <td>
-
-                    <?php
-                    if ($user->getRole() != "admin") :
-                    ?>
-                        <a href="../public/index.php?route=deleteUser&userId=<?= $user->getId() ?>">Supprimer</a>
-                    <?php
-                    else :
-                    ?>
-                        Suppression impossible
-                    <?php
-                    endif;
-                    ?>
-                </td>
-            </tr>
-        <?php
-        endforeach;
-        ?>
-    </tbody>
-</table>
-
-<a href="../public/index.php">Retour à l'accueil</a>
+<!-- Séparateur de sections -->
+<div class="divider"></div>

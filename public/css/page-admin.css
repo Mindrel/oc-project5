@@ -1,0 +1,22 @@
+#admin-hub .hero-container-secondary {
+    background: linear-gradient(to left, #CA8835, #B29072, #CA8835);
+    color: #FFFFFF;
+}
+
+#admin-hub .hero-container-secondary h1 {
+    margin: auto auto 10px auto;
+}
+
+#admin-hub .hero-container-secondary .white-divider {
+    margin: 10px auto auto auto;
+}
+
+.admin-section-container .colored-submit-button {
+    display: inline-block;
+    font-size: 5rem;
+    width: 170px;
+    height: 170px;
+    margin: 30px 30px 96px 30px ;
+    padding: 25px;
+    text-align: center;
+}
