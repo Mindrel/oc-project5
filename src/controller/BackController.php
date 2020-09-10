@@ -36,16 +36,54 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             return $this->view->render("administration");
+        }
+    }
 
-            // $articles = $this->articleDAO->getArticles();
-            // $comments = $this->commentDAO->getAllComments();
-            // $users = $this->userDAO->getUsers();
+    // Accès au back des projets
+    public function adminProjects()
+    {
+        if ($this->checkAdmin()) {
+            $projects = $this->projectDAO->getProjects();
 
-            // return $this->view->render("administration", [
-            //     "articles" => $articles,
-            //     "comments" => $comments,
-            //     "users" => $users
-            // ]);
+            return $this->view->render("admin_projects", [
+                "projects" => $projects
+            ]);
+        }
+    }
+
+    // Accès au back des articles
+    public function adminArticles()
+    {
+        if ($this->checkAdmin()) {
+            $articles = $this->articleDAO->getArticles();
+
+            return $this->view->render("admin_articles", [
+                "articles" => $articles
+            ]);
+        }
+    }
+
+    // Accès au back des commentaires
+    public function adminComments()
+    {
+        if ($this->checkAdmin()) {
+            $comments = $this->commentDAO->getComments();
+
+            return $this->view->render("admin_comments", [
+                "comments" => $comments
+            ]);
+        }
+    }
+
+    // Accès au back des projets
+    public function adminUsers()
+    {
+        if ($this->checkAdmin()) {
+            $users = $this->userDAO->getUsers();
+
+            return $this->view->render("admin_users", [
+                "users" => $users
+            ]);
         }
     }
 

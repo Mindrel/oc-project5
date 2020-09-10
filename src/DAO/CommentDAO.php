@@ -64,7 +64,7 @@ class CommentDAO extends DAO
     }
 
     // Récup tous les commentaires existants pour l'espace admin
-    public function getAllComments()
+    public function getComments()
     {
         $sql = "SELECT id, nickname, content, creation_date, flag FROM p5_comment ORDER BY flag DESC, creation_date DESC";
         $result = $this->createQuery($sql);

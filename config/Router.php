@@ -111,19 +111,19 @@ class Router
                 }
 
                 else if ($route === "adminProjects") { // Back gestion des projets
-
+                    $this->backController->adminProjects();
                 }
 
                 else if ($route === "adminArticles") { // Back gestion des articles
-
+                    $this->backController->adminArticles();
                 }
 
                 else if ($route === "adminComments") { // Back gestion des commentaires
-
+                    $this->backController->adminComments();
                 }
 
                 else if ($route === "adminUsers") { // Back gestion des utilisateurs
-
+                    $this->backController->adminUsers();
                 }
 
                 else { // Si la route est différente des précedentes alors error not found
