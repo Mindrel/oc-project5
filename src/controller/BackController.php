@@ -95,8 +95,8 @@ class BackController extends Controller
                 $errors = $this->validation->validate($post, "Article"); // Processus de validation des données
                 if (!$errors) {
                     $this->articleDAO->addArticle($post, $this->session->get("id")); // 2ème param récup id de l'user connecté (admin)
-                    $this->session->set("add_article", "Le nouvel article a bien été ajouté");
-                    header("Location: ../public/index.php?route=administration");
+                    $this->session->set("add_article", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouvel article a bien été ajouté</p>');
+                    header("Location: index.php?route=administration");
                 }
                 return $this->view->render("add_article", [
                     "post" => $post,
@@ -117,8 +117,8 @@ class BackController extends Controller
                 $errors = $this->validation->validate($post, "Article");
                 if (!$errors) {
                     $this->articleDAO->editArticle($post, $articleId, $this->session->get("id")); // 3ème param récup id user connecté (admin)
-                    $this->session->set("edit_article", "L'article a bien été modifié");
-                    header("Location: ../public/index.php?route=administration");
+                    $this->session->set("edit_article", '<p class="check-message"><i class="fas fa-check-circle"></i>L\'article a bien été modifié</p>');
+                    header("Location: index.php?route=adminArticles");
                 }
                 return $this->view->render("edit_article", [
                     "post" => $post,
@@ -141,8 +141,8 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $this->articleDAO->deleteArticle($articleId);
-            $this->session->set("delete_article", "L'article a bien été supprimé");
-            header("Location: ../public/index.php?route=administration");
+            $this->session->set("delete_article", '<p class="check-message"><i class="fas fa-check-circle"></i>L\'article a bien été supprimé</p>');
+            header("Location: index.php?route=adminArticles");
         }
     }
 
@@ -151,8 +151,8 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $this->commentDAO->deleteComment($commentId);
-            $this->session->set("delete_comment", "Le commentaire a bien été supprimé");
-            header("Location: ../public/index.php?route=administration");
+            $this->session->set("delete_comment", '<p class="check-message"><i class="fas fa-check-circle"></i>Le commentaire a bien été supprimé</p>');
+            header("Location: index.php?route=adminComments");
         }
     }
 
@@ -161,8 +161,8 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $this->commentDAO->unflagComment($commentId);
-            $this->session->set("unflag_comment", "Le commentaire n'est plus signalé");
-            header("Location: ../public/index.php?route=administration");
+            $this->session->set("unflag_comment", '<p class="check-message"><i class="fas fa-check-circle"></i>Le commentaire n\'est plus signalé</p>');
+            header("Location: index.php?route=adminComments");
         }
     }
 
@@ -222,8 +222,8 @@ class BackController extends Controller
     {
         if ($this->checkAdmin()) {
             $this->userDAO->deleteUser($userId);
-            $this->session->set("delete_user", "L'utilisateur a bien été supprimé");
-            header("Location: ../public/index.php?route=administration");
+            $this->session->set("delete_user", '<p class="check-message"><i class="fas fa-check-circle"></i>L\'utilisateur a bien été supprimé</p>');
+            header("Location: index.php?route=adminUsers");
         }
     }
 }
