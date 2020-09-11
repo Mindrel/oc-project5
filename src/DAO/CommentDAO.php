@@ -24,7 +24,7 @@ class CommentDAO extends DAO
     // Récupère tous les commentaires par article
     public function getCommentsFromArticle($articleId)
     {
-        $sql = "SELECT id, nickname, content, DATE_FORMAT(creation_date, '%e %M %Y à %Hh%i') as creation_date, flag FROM p5_comment WHERE article_id = ? ORDER BY creation_date DESC";
+        $sql = "SELECT id, nickname, content, DATE_FORMAT(creation_date, '%e %M %Y à %Hh%i') as creation_date, flag FROM p5_comment WHERE article_id = ? ORDER BY id DESC";
         $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row) {
@@ -66,7 +66,7 @@ class CommentDAO extends DAO
     // Récup tous les commentaires existants pour l'espace admin
     public function getComments()
     {
-        $sql = "SELECT id, nickname, content, creation_date, flag FROM p5_comment ORDER BY flag DESC, creation_date DESC";
+        $sql = "SELECT id, nickname, content, creation_date, flag FROM p5_comment ORDER BY flag DESC, id DESC";
         $result = $this->createQuery($sql);
         $comments = [];
         foreach ($result as $row) {
