@@ -66,10 +66,21 @@ td, th {
     font-size: 90%;
 }
 
-.id-cell, .title-cell, .author-cell, .date-cell, .actions-cell, .flag-cell {
+.id-cell, 
+.title-cell, 
+.author-cell, 
+.date-cell, 
+.actions-cell, 
+.flag-cell, 
+.nickname-cell, 
+.role-cell {
     text-align: center;
 }
 
 .content-cell, .message-cell {
     max-width: 450px;
+}
+
+.nickname-cell {
+    min-width: 250px;
 }
