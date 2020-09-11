@@ -66,10 +66,10 @@ td, th {
     font-size: 90%;
 }
 
-.id-cell, .title-cell, .author-cell, .date-cell, .actions-cell {
+.id-cell, .title-cell, .author-cell, .date-cell, .actions-cell, .flag-cell {
     text-align: center;
 }
 
-.content-cell {
+.content-cell, .message-cell {
     max-width: 450px;
 }
