@@ -1,13 +1,13 @@
-#admin-hub .hero-container-secondary {
+#admin .hero-container-secondary {
     background: linear-gradient(to left, #CA8835, #B29072, #CA8835);
     color: #FFFFFF;
 }
 
-#admin-hub .hero-container-secondary h1 {
+#admin .hero-container-secondary h1 {
     margin: auto auto 10px auto;
 }
 
-#admin-hub .hero-container-secondary .white-divider {
+#admin .hero-container-secondary .white-divider {
     margin: 10px auto auto auto;
 }
 
@@ -19,4 +19,57 @@
     margin: 30px 30px 96px 30px ;
     padding: 25px;
     text-align: center;
+}
+
+#admin h3 {
+    margin-bottom: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border: solid 2px #CFCFCF;
+    font-size: 1.1rem;
+    margin: 50px 0;   
+    width: 100%;
+}
+
+table tbody tr:nth-child(2n + 0), thead {
+    background-color: white;
+}
+
+table tbody tr:nth-child(2n + 1) {
+    background-color: #F9F9F9;
+}
+
+table i {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    margin: 0 5px;
+}
+
+table i:hover {
+    opacity: 0.7;
+}
+
+thead {
+    border: solid 1px #CFCFCF;}
+
+td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+td, th {
+    border: dotted 1px #CFCFCF;
+    padding: 3px 6px;
+    font-size: 90%;
+}
+
+.id-cell, .title-cell, .author-cell, .date-cell, .actions-cell {
+    text-align: center;
+}
+
+.content-cell {
+    max-width: 450px;
 }
