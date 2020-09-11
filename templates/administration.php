@@ -4,7 +4,7 @@
 $this->title = "Hub central espace administration"
 ?>
 
-<section id="admin-hub">
+<section id="admin">
     <!-- Hero secondaire -->
     <div id="hero" class="hero-container-secondary">
         <h1>Administration</h1>
