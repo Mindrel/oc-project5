@@ -73,7 +73,9 @@ td, th {
 .actions-cell, 
 .flag-cell, 
 .nickname-cell, 
-.role-cell {
+.role-cell,
+.logo-cell,
+.img-cell {
     text-align: center;
 }
 

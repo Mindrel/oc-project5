@@ -21,6 +21,7 @@ $this->title = "Administration - Gestion des utilisateurs"
 
         <?= $this->session->show("delete_user") // Affiche message lors suppression utilisateur ?>
 
+        <p>Pour créer un nouvel utilisateur, utiliser le lien inscription en bas de page.</p>
         <table>
             <thead>
                 <tr>
