@@ -20,10 +20,10 @@ $this->title = "Hub central espace administration"
     <div class="container admin-section-container">
 
         <div class="hub">
-            <a href="index.php?route=adminProjects" class="colored-submit-button" title="Gestion des projets"><i class="fas fa-code-branch"></i></a>
-            <a href="index.php?route=adminArticles" class="colored-submit-button" title="Gestion des articles"><i class="far fa-newspaper"></i></a>
-            <a href="index.php?route=adminComments" class="colored-submit-button" title="Gestion des commentaires"><i class="fas fa-comments"></i></a>
-            <a href="index.php?route=adminUsers" class="colored-submit-button" title="Gestion des utilisateurs"><i class="fas fa-users"></i></a>
+            <a href="index.php?route=adminProjects" class="admin-hub-button" title="Gestion des projets" ><i class="fas fa-code-branch"></i></a>
+            <a href="index.php?route=adminArticles" class="admin-hub-button" title="Gestion des articles" class="admin-hub-button"><i class="far fa-newspaper"></i></a>
+            <a href="index.php?route=adminComments" class="admin-hub-button" title="Gestion des commentaires" class="admin-hub-button"><i class="fas fa-comments"></i></a>
+            <a href="index.php?route=adminUsers" class="admin-hub-button" title="Gestion des utilisateurs" class="admin-hub-button"><i class="fas fa-users"></i></a>
         </div>
 
         <div>
