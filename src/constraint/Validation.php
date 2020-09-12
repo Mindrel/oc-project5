@@ -9,7 +9,13 @@ class Validation
     // Méthode appelée depuis le contrôleur et renvoie vers la classe concernée
     public function validate($data, $name)
     {
-        if ($name === "Article") {
+        if ($name === "Project") {
+            $projectValidation = new ProjectValidation();
+            $errors = $projectValidation->check($data);
+            return $errors;
+        }
+
+        else if ($name === "Article") {
             $articleValidation = new ArticleValidation();
             $errors = $articleValidation->check($data);
             return $errors;

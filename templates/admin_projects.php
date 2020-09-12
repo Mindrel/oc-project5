@@ -24,7 +24,7 @@ $this->title = "Administration - Gestion des projets"
         <?= $this->session->show("edit_project") // Affiche message lors de la modif project ?>
         <?= $this->session->show("delete_project") // Affiche message lors de la suppression project ?>
 
-        <a href="index.php?route=addproject" class="text-link">Créer un nouveau projet <i class="fas fa-plus-circle"></i></a>
+        <a href="index.php?route=addProject" class="text-link">Créer un nouveau projet <i class="fas fa-plus-circle"></i></a>
 
         <table>
             <thead>
@@ -51,8 +51,8 @@ $this->title = "Administration - Gestion des projets"
                         <td class="img-cell"><?= htmlspecialchars($project->getImg()) ?></td>
                         <td class="website-cell"><a href="<?= htmlspecialchars($project->getWebsite()) ?>" class="text-link" title="Ouvrir dans un nouvel onglet" target="_blank"><?= htmlspecialchars($project->getWebsite()) ?></a></td>
                         <td class="actions-cell">
-                            <a href="index.php?route=editproject&projectId=<?= $project->getId() ?>" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="index.php?route=deleteproject&projectId=<?= $project->getId() ?>" title="Supprimer" onclick="return confirm ('Supprimer ce projet ? \nATTENTION : Action irréversible !')"><i class="fas fa-trash"></i></a>
+                            <a href="index.php?route=editProject&projectId=<?= $project->getId() ?>" title="Modifier"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="index.php?route=deleteProject&projectId=<?= $project->getId() ?>" title="Supprimer" onclick="return confirm ('Supprimer ce projet ? \nATTENTION : Action irréversible !')"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php

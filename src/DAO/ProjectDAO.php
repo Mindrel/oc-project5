@@ -59,4 +59,32 @@ class ProjectDAO extends DAO
         $result->closeCursor();
         return $this->buildObject($project);
     }
+
+    // Ajout d'un projet
+    public function addProject(Parameter $post)
+    {
+        $sql = "INSERT INTO p5_project (title, content, logo, img, website) VALUES (?, ?, ?, ?, ?)";
+        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $post->get("logo"), $post->get("img"), $post->get("website")]);
+    }
+
+    // Modification d'un projet
+    public function editProject(Parameter $post, $projectId)
+    {
+        $sql = "UPDATE p5_project SET title = :title, content = :content, logo = :logo, img = :img, website = :website WHERE id = :projectId";
+        $this->createQuery($sql, [
+            "title" => $post->get("title"),
+            "content" => $post->get("content"),
+            "logo" => $post->get("logo"),
+            "img" => $post->get("img"),
+            "website" => $post->get("website"),
+            "projectId" => $projectId
+        ]);
+    }
+
+    // Suppression d'un projet 
+    public function deleteProject($projectId)
+    {
+        $sql = "DELETE FROM p5_project WHERE id = ?";
+        $this->createQuery($sql, [$projectId]);
+    }
 }

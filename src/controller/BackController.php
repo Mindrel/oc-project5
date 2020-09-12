@@ -87,6 +87,67 @@ class BackController extends Controller
         }
     }
 
+    // Ajout d'un projet
+    public function addProject(Parameter $post)
+    {
+        if ($this->checkAdmin()) {
+            if ($post->get("submit")) {
+                $errors = $this->validation->validate($post, "Project"); // Processus de validation des données
+                if (!$errors) {
+                    $this->projectDAO->addProject($post);
+                    $this->session->set("add_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouveau projet a bien été ajouté</p>');
+                    header("Location: index.php?route=adminProjects");
+                }
+                return $this->view->render("add_project", [
+                    "post" => $post,
+                    "errors" => $errors
+                ]);
+            }
+            return $this->view->render("add_project");
+        }
+    }
+
+    // Modification d'un projet
+    public function editProject(Parameter $post, $projectId)
+    {
+        if ($this->checkAdmin()) {
+            $project = $this->projectDAO->getProject($projectId); // Récupère d'abord le contenu du projet
+
+            if ($post->get("submit")) {
+                $errors = $this->validation->validate($post, "Project");
+                if (!$errors) {
+                    $this->projectDAO->editProject($post, $projectId);
+                    $this->session->set("edit_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le projet a bien été modifié</p>');
+                    header("Location: index.php?route=adminProjects");
+                }
+                return $this->view->render("edit_project", [
+                    "post" => $post,
+                    "errors" => $errors
+                ]);
+            }
+            $post->set("id", $project->getId());
+            $post->set("title", $project->getTitle());
+            $post->set("content", $project->getContent());
+            $post->set("logo", $project->getLogo());
+            $post->set("img", $project->getImg());
+            $post->set("website", $project->getWebsite());
+
+            return $this->view->render("edit_project", [
+                "post" => $post
+            ]);
+        }
+    }
+
+    // Suppression d'un projet
+    public function deleteProject($projectId)
+    {
+        if ($this->checkAdmin()) {
+            $this->projectDAO->deleteProject($projectId);
+            $this->session->set("delete_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le projet a bien été supprimé</p>');
+            header("Location: index.php?route=adminProjects");
+        }
+    }
+
     // Ajout d'un article
     public function addArticle(Parameter $post)
     {

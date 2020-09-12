@@ -49,7 +49,19 @@ class Router
                 else if ($route === "article") { // Si route article on charge l'article ayant l'ID demandé
                     $this->frontController->article($this->request->getGet()->get("articleId"));
                 }
-                
+
+                else if ($route === "addProject") { // Si route addProject on déclenche l'ajout d'un projet
+                    $this->backController->addProject($this->request->getPost());
+                }
+
+                else if ($route === "editProject") { // Si editProject on déclenche modification d'un projet
+                    $this->backController->editProject($this->request->getPost(), $this->request->getGet()->get("projectId"));
+                }
+
+                else if ($route === "deleteProject") { // Si deleteProject on déclenche suppression article
+                    $this->backController->deleteProject($this->request->getGet()->get("projectId"));
+                }
+
                 else if ($route === "addArticle") { // Si route addArticle on déclenche l'ajout d'un article
                     $this->backController->addArticle($this->request->getPost());
                 }
