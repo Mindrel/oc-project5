@@ -11,14 +11,18 @@
     margin: 10px auto auto auto;
 }
 
-.admin-section-container .colored-submit-button {
+.admin-hub-button {
     display: inline-block;
     font-size: 5rem;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #CA8835;
     width: 170px;
     height: 170px;
     margin: 30px 30px 96px 30px ;
     padding: 25px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 0px #2C3E50 ;
 }
 
 #admin h3 {
@@ -85,4 +89,8 @@ td, th {
 
 .nickname-cell {
     min-width: 250px;
+}
+
+.admin-section-container form {
+    margin-bottom: 50px;
 }
