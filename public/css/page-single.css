@@ -50,8 +50,8 @@
     margin-bottom: 20px;
 }
 
-.comments-form-group form {
-    min-width: 300px;
+.comments-form-group {
+    width: 300px;
     margin-right: 96px;
 }
 

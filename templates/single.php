@@ -35,9 +35,23 @@ $this->title = "Michel Martin - Article : " . htmlspecialchars($article->getTitl
             
             <?php
             if ($this->session->get("nickname")) : // Si connecté
-                
-                include("form_comment.php");
+            ?> 
+                <!-- Formulaire ajout commentaire -->
+                <form method="post" action="index.php?route=addComment&articleId=<?= htmlspecialchars($article->getId()) ?>">
+                    <div class="comment-input">
+                        <input type="text" id="nickname" name="nickname" value="<?= $this->session->get("nickname") // Remplit le pseudo auto puisque user connecté ?>" /> 
+                        <label for="nickname">Pseudo</label>
+                    </div>
 
+                    <div class="comment-input">
+                        <textarea id="content" name="content" placeholder="Écrivez votre commentaire ici" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Écrivez votre commentaire ici'"><?= isset($post) ? htmlspecialchars($post->get("content")) : "" ?></textarea>
+                        <label for="content">Écrivez votre commentaire ci-dessous</label>
+                    </div>
+
+                    <input type="submit" value="Ajouter" id="submit" name="submit" class="colored-submit-button" onclick="return confirm('Confirmez-vous l\'envoi du commentaire ?')" />
+                </form>       
+
+            <?php
             else :
             ?>
             
