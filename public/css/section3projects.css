@@ -18,15 +18,15 @@
 }
 
 .projects-gallery figure figcaption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgb(44, 62, 80, 0.92);
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     opacity: 0;
     transition: opacity 250ms;
 }
@@ -39,6 +39,15 @@
 
 .projects-gallery figure figcaption i {
     font-size: 5rem;
+}
+
+.projects-gallery figure figcaption a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    width: 100%;
+    height: 100%;
 }
 
 .projects-gallery figure figcaption p {

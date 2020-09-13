@@ -70,7 +70,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
                     <figure>
                         <img src="public/img/<?= htmlspecialchars($project->getLogo()) ?>.jpg" alt="logo projet" />
                         <figcaption>
-                            <i class="fas fa-search-plus"></i>
+                            <a href="index.php?route=project&projectId=<?= htmlspecialchars($project->getId()) ?>"><i class="fas fa-search-plus"></i></a>
                         </figcaption>
                     </figure>
                 </li>
