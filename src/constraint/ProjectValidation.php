@@ -35,6 +35,15 @@ class ProjectValidation extends Validation
         } else if ($name === "content") {
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
+        } else if ($name === "logo") {
+            $error = $this->checkLogo($name, $value);
+            $this->addError($name, $error);
+        } else if ($name === "img") {
+            $error = $this->checkImage($name, $value);
+            $this->addError($name, $error);
+        } else if ($name === "website") {
+            $error = $this->checkWebsite($name, $value);
+            $this->addError($name, $error);
         }
     }
 
@@ -71,6 +80,31 @@ class ProjectValidation extends Validation
 
         if ($this->constraint->minLength($name, $value, 2)) {
             return $this->constraint->minLength("contenu", $value, 2);
+        }
+    }
+
+    private function checkLogo($name, $value)
+    {
+        if ($this->constraint->notBlank($name, $value)) {
+            return $this->constraint->notBlank("logo", $value);
+        }
+    }
+
+    private function checkImage($name, $value)
+    {
+        if ($this->constraint->notBlank($name, $value)) {
+            return $this->constraint->notBlank("image", $value);
+        }
+    }
+
+    private function checkWebsite($name, $value)
+    {
+        if ($this->constraint->notBlank($name, $value)) {
+            return $this->constraint->notBlank("website", $value);
+        }
+
+        if ($this->constraint->urlFormat($name, $value)) {
+            return $this->constraint->urlFormat("website", $value);
         }
     }
 }

@@ -26,4 +26,11 @@ class Constraint
             return '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ ' . $name . ' doit contenir au maximum ' . $maxSize . ' caractères</p>';
         }
     }
+
+    public function urlFormat($name, $value)
+    {
+        if (!(filter_var($value, FILTER_VALIDATE_URL))) {
+            return '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ ' . $name . ' ne correspond pas au format URL</p>';
+        }
+    }
 }
