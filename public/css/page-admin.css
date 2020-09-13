@@ -92,5 +92,35 @@ td, th {
 }
 
 .admin-section-container form {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 50px;
+}
+
+.admin-section-container input[type=text],
+.admin-section-container textarea {
+    border: 2px solid #E4D2BD;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.25rem;
+    color: #2C3E50;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+}
+
+.admin-section-container label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.admin-section-container textarea {
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 300px;
+    max-height: 500px;
+}
+
+.admin-section-container .colored-submit-button {
+    width: 185px;
 }
