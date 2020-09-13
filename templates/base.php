@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="public/css/section5contact.css" />
     <link rel="stylesheet" href="public/css/page-loginregister.css" />
     <link rel="stylesheet" href="public/css/page-blog.css" />
-    <link rel="stylesheet" href="public/css/page-single.css" />
+    <link rel="stylesheet" href="public/css/page-singlearticle.css" />
     <link rel="stylesheet" href="public/css/page-error.css" />
     <link rel="stylesheet" href="public/css/page-profile.css" />
     <link rel="stylesheet" href="public/css/page-password.css" />
