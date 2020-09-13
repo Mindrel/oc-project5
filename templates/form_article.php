@@ -14,5 +14,5 @@ $submit = $route === "addArticle" ? "Envoyer" : "Mettre à jour";
     <div><label for="content">Contenu</label><?= isset($errors["content"]) ? $errors["content"] : "" ?></div>
     <textarea id="content" name="content"><?= isset($post) ? htmlspecialchars($post->get("content")): "" ?></textarea>
 
-    <input type="submit" value="<?= $submit ?>" id="submit" name="submit" class="colored-submit-button" />
+    <input type="submit" value="<?= $submit ?>" id="submit" name="submit" class="colored-submit-button" onclick="return confirm('Ajouter l\'article ?')" />
 </form>

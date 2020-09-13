@@ -157,7 +157,7 @@ class BackController extends Controller
                 if (!$errors) {
                     $this->articleDAO->addArticle($post, $this->session->get("id")); // 2ème param récup id de l'user connecté (admin)
                     $this->session->set("add_article", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouvel article a bien été ajouté</p>');
-                    header("Location: index.php?route=administration");
+                    header("Location: index.php?route=adminArticles");
                 }
                 return $this->view->render("add_article", [
                     "post" => $post,
