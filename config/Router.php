@@ -142,9 +142,11 @@ class Router
                     default: // Si la route est différente des précedentes alors error not found
                         $this->errorController->errorNotFound();
                 }
+                
             } else {
                 $this->frontController->home(); // Si route pas set on charge l'accueil par défaut
             }
+
         } catch (Exception $e) {
             $this->errorController->errorServer();
         }
