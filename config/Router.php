@@ -26,129 +26,234 @@ class Router
     }
 
     public function run()
-    { 
+    {
         $route = $this->request->getGet()->get("route"); // Evite la répétition des $_GET
-       
+
         try {
 
             if (isset($route)) {
 
-                
-                if ($route === "projects") { // Si route projects on affiche la page tous les projets
-                    $this->frontController->projects();
-                }
+                switch ($route) {
 
-                else if ($route === "project") { // Si route project on charge le projet ayant l'ID demandé
-                    $this->frontController->project($this->request->getGet()->get("projectId"));
-                }
+                    case "projects": // Si route vaut projects on affiche la page tous les projets
+                        $this->frontController->projects();
+                        break;
 
-                else if ($route === "blog") { // Si route blog on affiche la page blog avec tous les articles
-                    $this->frontController->blog();
-                }
-                
-                else if ($route === "article") { // Si route article on charge l'article ayant l'ID demandé
-                    $this->frontController->article($this->request->getGet()->get("articleId"));
-                }
+                    case "project": // Si project on charge le projet ayant l'ID demandé
+                        $this->frontController->project($this->request->getGet()->get("projectId"));
+                        break;
 
-                else if ($route === "addProject") { // Si route addProject on déclenche l'ajout d'un projet
-                    $this->backController->addProject($this->request->getPost());
-                }
+                    case "blog": // Si blog on affiche la page blog avec tous les articles
+                        $this->frontController->blog();
+                        break;
 
-                else if ($route === "editProject") { // Si editProject on déclenche modification d'un projet
-                    $this->backController->editProject($this->request->getPost(), $this->request->getGet()->get("projectId"));
-                }
+                    case "article": // Si article on charge l'article ayant l'ID demandé
+                        $this->frontController->article($this->request->getGet()->get("articleId"));
+                        break;
 
-                else if ($route === "deleteProject") { // Si deleteProject on déclenche suppression article
-                    $this->backController->deleteProject($this->request->getGet()->get("projectId"));
-                }
+                    case "addProject": // Si addProject on déclenche l'ajout d'un projet
+                        $this->backController->addProject($this->request->getPost());
+                        break;
 
-                else if ($route === "addArticle") { // Si route addArticle on déclenche l'ajout d'un article
-                    $this->backController->addArticle($this->request->getPost());
-                }
+                    case "editProject": // Si editProject on déclenche modification d'un projet
+                        $this->backController->editProject($this->request->getPost(), $this->request->getGet()->get("projectId"));
+                        break;
 
-                else if ($route === "editArticle") { // Si editArticle on déclenche modification d'un article
-                    $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get("articleId"));
-                }
+                    case "deleteProject": // Si deleteProject on déclenche suppression article
+                        $this->backController->deleteProject($this->request->getGet()->get("projectId"));
+                        break;
 
-                else if ($route === "deleteArticle") { // Si deleteArticle on déclenche suppression article
-                    $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
-                }
+                    case "addArticle": // Si addArticle on déclenche l'ajout d'un article
+                        $this->backController->addArticle($this->request->getPost());
+                        break;
 
-                else if ($route === "addComment") { // Si addComment ajoute commentaire
-                    $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get("articleId"));
-                }
+                    case "editArticle": // Si editArticle on déclenche modification d'un article
+                        $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get("articleId"));
+                        break;
 
-                else if ($route === "flagComment") { // Si flagComment signale commentaire
-                    $this->frontController->flagComment($this->request->getGet()->get("commentId"));
-                }
-                
-                else if ($route ==="unflagComment") { // Enlève le signalement d'un com via l'espace admin
-                    $this->backController->unflagComment($this->request->getGet()->get("commentId"));
-                }
+                    case "deleteArticle": // Si deleteArticle on déclenche suppression article
+                        $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
+                        break;
 
-                else if ($route === "deleteComment") { // Si deleteComment supprime commentaire
-                    $this->backController->deleteComment($this->request->getGet()->get("commentId"));
-                }
+                    case "addComment": // Si addComment ajoute commentaire
+                        $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get("articleId"));
+                        break;
 
-                else if ($route === "register") { // Si route register alors on lance l'inscription
-                    $this->frontController->register($this->request->getPost());
-                }
+                    case "flagComment": // Si flagComment signale commentaire
+                        $this->frontController->flagComment($this->request->getGet()->get("commentId"));
+                        break;
 
-                else if ($route === "login") { // Connexion utilisateur
-                    $this->frontController->login($this->request->getPost());
-                }
+                    case "unflagComment": // Enlève le signalement d'un com via l'espace admin
+                        $this->backController->unflagComment($this->request->getGet()->get("commentId"));
+                        break;
 
-                else if ($route === "logout") { // Déconnexion utilisateur
-                    $this->backController->logout();
-                }
-                
-                else if ($route === "profile") { // Accès profil utilisateur
-                    $this->backController->profile();
-                }
+                    case "deleteComment": // Si deleteComment supprime commentaire
+                        $this->backController->deleteComment($this->request->getGet()->get("commentId"));
+                        break;
 
-                else if ($route === "updatePassword") { // Modif mot de passe utilisateur
-                    $this->backController->updatePassword($this->request->getPost());
-                }
+                    case "register": // Si register alors on lance l'inscription
+                        $this->frontController->register($this->request->getPost());
+                        break;
 
-                else if ($route === "deleteAccount") { // Suppression compte utilisateur
-                    $this->backController->deleteAccount();
-                }
+                    case "login": // Connexion utilisateur
+                        $this->frontController->login($this->request->getPost());
+                        break;
 
-                else if ($route === "deleteUser") { // Suppression utilisateur depuis espace admin
-                    $this->backController->deleteUser($this->request->getGet()->get("userId"));
-                }
+                    case "logout": // Déconnexion utilisateur
+                        $this->backController->logout();
+                        break;
 
-                else if ($route ==="administration") { // Accès espace admin
-                    $this->backController->administration();
-                }
+                    case "profile": // Accès profil utilisateur
+                        $this->backController->profile();
+                        break;
 
-                else if ($route === "adminProjects") { // Back gestion des projets
-                    $this->backController->adminProjects();
-                }
+                    case "updatePassword": // Modif mot de passe utilisateur
+                        $this->backController->updatePassword($this->request->getPost());
+                        break;
 
-                else if ($route === "adminArticles") { // Back gestion des articles
-                    $this->backController->adminArticles();
-                }
+                    case "deleteAccount": // Suppression compte utilisateur
+                        $this->backController->deleteAccount();
+                        break;
 
-                else if ($route === "adminComments") { // Back gestion des commentaires
-                    $this->backController->adminComments();
-                }
+                    case "deleteUser": // Suppression utilisateur depuis espace admin
+                        $this->backController->deleteUser($this->request->getGet()->get("userId"));
+                        break;
 
-                else if ($route === "adminUsers") { // Back gestion des utilisateurs
-                    $this->backController->adminUsers();
-                }
+                    case "administration": // Accès espace admin
+                        $this->backController->administration();
+                        break;
 
-                else { // Si la route est différente des précedentes alors error not found
-                    $this->errorController->errorNotFound();
-                }
+                    case "adminProjects": // Back gestion des projets
+                        $this->backController->adminProjects();
+                        break;
 
+                    case "adminArticles": // Back gestion des articles
+                        $this->backController->adminArticles();
+                        break;
+
+                    case "adminComments": // Back gestion des commentaires
+                        $this->backController->adminComments();
+                        break;
+
+                    case "adminUsers": // Back gestion des utilisateurs
+                        $this->backController->adminUsers();
+                        break;
+
+                    default: // Si la route est différente des précedentes alors error not found
+                        $this->errorController->errorNotFound();
+                }
             } else {
-                $this->frontController->home(); // Dans tous les autres cas on charge l'accueil
+                $this->frontController->home(); // Si route pas set on charge l'accueil par défaut
             }
-
         } catch (Exception $e) {
-        //    $_SESSION["error"] = $e->getMessage();
-           $this->errorController->errorServer();
+            $this->errorController->errorServer();
         }
     }
 }
+                // if ($route === "projects") { // Si route projects on affiche la page tous les projets
+                //     $this->frontController->projects();
+                // }
+
+                // else if ($route === "project") { // Si route project on charge le projet ayant l'ID demandé
+                //     $this->frontController->project($this->request->getGet()->get("projectId"));
+                // }
+
+                // else if ($route === "blog") { // Si route blog on affiche la page blog avec tous les articles
+                //     $this->frontController->blog();
+                // }
+
+                // else if ($route === "article") { // Si route article on charge l'article ayant l'ID demandé
+                //     $this->frontController->article($this->request->getGet()->get("articleId"));
+                // }
+
+                // else if ($route === "addProject") { // Si route addProject on déclenche l'ajout d'un projet
+                //     $this->backController->addProject($this->request->getPost());
+                // }
+
+                // else if ($route === "editProject") { // Si editProject on déclenche modification d'un projet
+                //     $this->backController->editProject($this->request->getPost(), $this->request->getGet()->get("projectId"));
+                // }
+
+                // else if ($route === "deleteProject") { // Si deleteProject on déclenche suppression article
+                //     $this->backController->deleteProject($this->request->getGet()->get("projectId"));
+                // }
+
+                // else if ($route === "addArticle") { // Si route addArticle on déclenche l'ajout d'un article
+                //     $this->backController->addArticle($this->request->getPost());
+                // }
+
+                // else if ($route === "editArticle") { // Si editArticle on déclenche modification d'un article
+                //     $this->backController->editArticle($this->request->getPost(), $this->request->getGet()->get("articleId"));
+                // }
+
+                // else if ($route === "deleteArticle") { // Si deleteArticle on déclenche suppression article
+                //     $this->backController->deleteArticle($this->request->getGet()->get("articleId"));
+                // }
+
+                // else if ($route === "addComment") { // Si addComment ajoute commentaire
+                //     $this->frontController->addComment($this->request->getPost(), $this->request->getGet()->get("articleId"));
+                // }
+
+                // else if ($route === "flagComment") { // Si flagComment signale commentaire
+                //     $this->frontController->flagComment($this->request->getGet()->get("commentId"));
+                // }
+
+                // else if ($route ==="unflagComment") { // Enlève le signalement d'un com via l'espace admin
+                //     $this->backController->unflagComment($this->request->getGet()->get("commentId"));
+                // }
+
+                // else if ($route === "deleteComment") { // Si deleteComment supprime commentaire
+                //     $this->backController->deleteComment($this->request->getGet()->get("commentId"));
+                // }
+
+                // else if ($route === "register") { // Si route register alors on lance l'inscription
+                //     $this->frontController->register($this->request->getPost());
+                // }
+
+                // else if ($route === "login") { // Connexion utilisateur
+                //     $this->frontController->login($this->request->getPost());
+                // }
+
+                // else if ($route === "logout") { // Déconnexion utilisateur
+                //     $this->backController->logout();
+                // }
+
+                // else if ($route === "profile") { // Accès profil utilisateur
+                //     $this->backController->profile();
+                // }
+
+                // else if ($route === "updatePassword") { // Modif mot de passe utilisateur
+                //     $this->backController->updatePassword($this->request->getPost());
+                // }
+
+                // else if ($route === "deleteAccount") { // Suppression compte utilisateur
+                //     $this->backController->deleteAccount();
+                // }
+
+                // else if ($route === "deleteUser") { // Suppression utilisateur depuis espace admin
+                //     $this->backController->deleteUser($this->request->getGet()->get("userId"));
+                // }
+
+                // else if ($route ==="administration") { // Accès espace admin
+                //     $this->backController->administration();
+                // }
+
+                // else if ($route === "adminProjects") { // Back gestion des projets
+                //     $this->backController->adminProjects();
+                // }
+
+                // else if ($route === "adminArticles") { // Back gestion des articles
+                //     $this->backController->adminArticles();
+                // }
+
+                // else if ($route === "adminComments") { // Back gestion des commentaires
+                //     $this->backController->adminComments();
+                // }
+
+                // else if ($route === "adminUsers") { // Back gestion des utilisateurs
+                //     $this->backController->adminUsers();
+                // }
+
+                // else { // Si la route est différente des précedentes alors error not found
+                //     $this->errorController->errorNotFound();
+                // }
