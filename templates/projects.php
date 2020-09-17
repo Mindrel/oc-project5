@@ -24,7 +24,7 @@ $this->title = "Michel Martin - Liste des projets"
         ?>
             <article>
                 <header>
-                    <img src="public/img/<?= htmlspecialchars($project->getLogo()) ?>.jpg" alt="logo projet" />
+                    <img src="<?= htmlspecialchars($project->getLogo()) ?>" alt="logo projet" />
                 </header>
 
                 <div class="project-content">

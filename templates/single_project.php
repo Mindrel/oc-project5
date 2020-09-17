@@ -14,7 +14,7 @@ $this->title = "Michel Martin - Projet : " . htmlspecialchars($project->getTitle
 
         <!-- Contenu et illustration -->
         <p>
-            <a href="<?= htmlspecialchars($project->getWebsite()) ?>" target="_blank" title="Nouvel onglet vers le site du projet" rel="nofollow"><img src="public/img/<?= htmlspecialchars($project->getImg()) ?>.jpg" alt="Aperçu - Illustration du projet" /></a>
+            <a href="<?= htmlspecialchars($project->getWebsite()) ?>" target="_blank" title="Nouvel onglet vers le site du projet" rel="nofollow"><img src="<?= htmlspecialchars($project->getImg()) ?>" alt="Aperçu - Illustration du projet" /></a>
 
             <?= nl2br(htmlspecialchars($project->getContent())) ?>
         </p>
