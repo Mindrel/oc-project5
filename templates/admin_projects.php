@@ -48,7 +48,7 @@ $this->title = "Administration - Gestion des projets"
                         <td class="title-cell"><a href="index.php?route=project&projectId=<?= htmlspecialchars($project->getId()) ?>" class="text-link" title="Accéder dans un nouvel onglet"><?= substr(htmlspecialchars($project->getTitle()), 0, 20) // retourne les 20 premiers char ?>...</a></td>
                         <td class="content-cell"><?= substr(htmlspecialchars($project->getContent()), 0, 80) // retourne les 80 premiers char ?>...</td>
                         <td class="logo-cell"><?= htmlspecialchars($project->getLogo()) ?></td>
-                        <td class="img-cell"><?= htmlspecialchars($project->getImg()) ?></td>
+                        <td class="thumbnail-cell"><?= htmlspecialchars($project->getThumbnail()) ?></td>
                         <td class="website-cell"><a href="<?= htmlspecialchars($project->getWebsite()) ?>" class="text-link" title="Ouvrir dans un nouvel onglet" target="_blank"><?= htmlspecialchars($project->getWebsite()) ?></a></td>
                         <td class="actions-cell">
                             <a href="index.php?route=editProject&projectId=<?= $project->getId() ?>" title="Modifier"><i class="fas fa-pencil-alt"></i></a>

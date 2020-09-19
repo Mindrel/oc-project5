@@ -38,8 +38,8 @@ class ProjectValidation extends Validation
         } else if ($name === "logo") {
             $error = $this->checkLogo($name, $value);
             $this->addError($name, $error);
-        } else if ($name === "img") {
-            $error = $this->checkImage($name, $value);
+        } else if ($name === "thumbnail") {
+            $error = $this->checkThumbnail($name, $value);
             $this->addError($name, $error);
         } else if ($name === "website") {
             $error = $this->checkWebsite($name, $value);
@@ -90,7 +90,7 @@ class ProjectValidation extends Validation
         }
     }
 
-    private function checkImage($name, $value)
+    private function checkThumbnail($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank("image", $value);

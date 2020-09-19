@@ -10,7 +10,7 @@ class Project
     private $title;
     private $content;
     private $logo;
-    private $img;
+    private $thumbnail;
     private $website;
 
     public function getId()
@@ -53,14 +53,14 @@ class Project
         $this->logo = $logo;
     }
 
-    public function getImg()
+    public function getThumbnail()
     {
-        return $this->img;
+        return $this->thumbnail;
     }
 
-    public function setImg($img)
+    public function setThumbnail($thumbnail)
     {
-        $this->img = $img;
+        $this->thumbnail = $thumbnail;
     }
 
     public function getWebsite()
