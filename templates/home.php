@@ -166,3 +166,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
         </form>
     </div>
 </section>
+
+<div id="weather"  style="position: absolute; top: 100px; left: 100px; background-color: white; width: 300px; height: 300px; padding: 20px; text-align: center;"></div>
+<script src="public/js/position.js"></script>
+<script src="public/js/weather.js"></script>
