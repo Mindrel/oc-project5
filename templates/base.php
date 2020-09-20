@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="public/css/main.css" />
     <link rel="stylesheet" href="public/css/header.css" />
     <link rel="stylesheet" href="public/css/footer" />
+    <link rel="stylesheet" href="public/css/weather" />
     <link rel="stylesheet" href="public/css/section1hero.css" />
     <link rel="stylesheet" href="public/css/section2hello.css" />
     <link rel="stylesheet" href="public/css/section3projects.css" />

@@ -19,6 +19,18 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
         </div>
 
         <h2>Développeur Web Junior - Étudiant OpenClassrooms</h2>
+
+        <!-- Météo -->
+        <div id="weather">
+            <!-- Bouton ouverture fermeture météo -->
+            <div id="weather-toggle-btn" onclick="toggleWeather()">
+                <i class="fas fa-sun"></i>
+            </div>          
+            
+            <p class="vertical-text">Un petit peu d'Ajax ?</p>
+            
+            <div id="weather-content"></div>
+        </div>
     </div>
 </section>
 
@@ -167,6 +179,6 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
     </div>
 </section>
 
-<div id="weather"  style="position: absolute; top: 100px; left: 100px; background-color: white; width: 300px; height: 300px; padding: 20px; text-align: center;"></div>
+<script src="public/js/toggle_weather.js"></script>
 <script src="public/js/position.js"></script>
 <script src="public/js/weather.js"></script>
