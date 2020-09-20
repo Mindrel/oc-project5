@@ -3,30 +3,60 @@
 class Weather {
     constructor() {
         this.position = new Position();
-        this.position.getPosition(this.getWeather, this.displayError); // Sans () fait référence à la fonction, avec () exécute la fonction
-        this.weatherDiv = document.getElementById("weather");
+        this.position.getPosition(this.getWeather, this.getDefaultWeather); // Sans () fait référence à la fonction, avec () exécute la fonction
+        this.weatherElement = document.getElementById('weather-content');
+        this.city = 'Perpignan';
     }
 
-    // Récupère la météo (en cas de réussite du getPosition)
+    // Récupère la météo de la position de l'utilisateur (en cas de réussite du getPosition)
     getWeather = async (currentPosition) => {
-        const response = await fetch("https://www.prevision-meteo.ch/services/json/lat=" + currentPosition.coords.latitude + "lng=" + currentPosition.coords.longitude);
+        const response = await fetch('https://www.prevision-meteo.ch/services/json/lat=' + currentPosition.coords.latitude + 'lng=' + currentPosition.coords.longitude);
         const jsonWeather = await response.json();
 
         this.displayData(jsonWeather);
     }
 
-    // Affiche les données récupérées sur le site
+    // Affiche les données récupérées de la position de l'user
     displayData(data) {
-        this.weatherDiv.innerHTML = '<img src=' + data.current_condition.icon + ' alt=' + data.current_condition.condition + ' />' +
-            '<p>La température actuelle est de ' + data.current_condition.tmp + '°C</p>';
+        this.weatherElement.innerHTML = '<p class="weather-title">Votre temps</p><div class="weather-today"><p>Aujourd\'hui</p><img src=' +
+            data.fcst_day_0.icon +
+            ' alt="' +
+            data.fcst_day_0.condition +
+            '" class="weather-img" />' +
+            '<p>Min. : ' +
+            data.fcst_day_0.tmin +
+            '°C</p><p>Max. : ' +
+            data.fcst_day_0.tmax +
+            '°C</p></div><div class="weather-tomorrow"><p>Demain</p><img src=' +
+            data.fcst_day_1.icon +
+            ' alt="' +
+            data.fcst_day_1.condition +
+            '" class="weather-img" /><p>Min. : ' +
+            data.fcst_day_1.tmin +
+            '°C</p><p>Max : ' +
+            data.fcst_day_1.tmax +
+            '°C</p></div>';
     }
-    
-    // Récupère la météo de Perpignan en cas d'échec du getPosition
-    displayError = async () => {
-        const response = await fetch("https://www.prevision-meteo.ch/services/json/Perpignan");
+
+    // Par défaut récupère la météo de this.city en cas d'échec du getPosition
+    getDefaultWeather = async () => {
+        const response = await fetch(`https://www.prevision-meteo.ch/services/json/${this.city}`);
         const jsonWeather = await response.json();
-        this.weatherDiv.innerHTML = '<p>Vous n\'avez pas voulu donner votre position ? Je comprends...\nDans ce cas voici le temps qu\'il fait chez moi ! :</p>' +
-        '';
+
+        this.displayDefaultData(jsonWeather);
+    }
+
+    // Affiche les données de this.city récupérées en cas d'échec du getPosition
+    displayDefaultData(data) {
+        this.weatherElement.innerHTML = '<p>Puisque vous n\'avez pas accepté de partager votre position, voici le temps qu\'il fait actuellement à ' +
+            this.city + ' ! </p>' +
+            '<div><img src=' +
+            data.current_condition.icon +
+            ' alt="' +
+            data.current_condition.condition +
+            '" class="weather-img" /><p>' +
+            data.current_condition.tmp +
+            '°C</p></div>';
     }
 }
 

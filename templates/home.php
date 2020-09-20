@@ -27,7 +27,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
                 <i class="fas fa-sun"></i>
             </div>          
             
-            <p class="vertical-text">Un petit peu d'Ajax ?</p>
+            <p class="vertical-text">Un petit peu d'AJAX ?</p>
             
             <div id="weather-content"></div>
         </div>
