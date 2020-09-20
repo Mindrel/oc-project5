@@ -120,7 +120,10 @@
             <div class="footer-part">
                 <h4>Sur le web</h4>
 
-                <p><a href="https://www.linkedin.com/in/michel-martin-dwj/" class="social"><i class="fab fa-linkedin-in"></i></a></p>
+                <p>
+                    <a href="https://www.linkedin.com/in/michel-martin-dwj/" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Mindrel" class="social"><i class="fab fa-github"></i></a>
+                </p>
             </div>
 
             <!-- Crédits -->
