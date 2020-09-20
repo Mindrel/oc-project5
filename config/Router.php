@@ -52,7 +52,7 @@ class Router
                         break;
 
                     case "addProject": // Si addProject on déclenche l'ajout d'un projet
-                        $this->backController->addProject($this->request->getPost());
+                        $this->backController->addProject($this->request->getPost(), $this->request->getFiles());
                         break;
 
                     case "editProject": // Si editProject on déclenche modification d'un projet

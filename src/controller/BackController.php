@@ -5,6 +5,7 @@
 namespace Mich\Blog\src\controller;
 
 use Mich\Blog\config\Parameter;
+use Mich\Blog\src\services\UploadImage;
 
 class BackController extends Controller
 {
@@ -88,12 +89,25 @@ class BackController extends Controller
     }
 
     // Ajout d'un projet
-    public function addProject(Parameter $post)
+    public function addProject(Parameter $post, Parameter $files)
     {
         if ($this->checkAdmin()) {
             if ($post->get("submit")) {
                 $errors = $this->validation->validate($post, "Project"); // Processus de validation des données
                 if (!$errors) {
+                    -
+                    $image1 = new UploadImage(new Parameter($files->get("logo")));
+                    $image2 = new UploadImage(new Parameter($files->get("thumbnail")));
+
+                    if ($image1->uploadOk === 1) {
+                        $post->logo = $image1->target_file;
+                    }
+
+                    if ($image2->uploadOk === 1) {
+                        $post->thumbnail = $image2->target_file;
+                    }
+
+
                     $this->projectDAO->addProject($post);
                     $this->session->set("add_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouveau projet a bien été ajouté</p>');
                     header("Location: index.php?route=adminProjects");
@@ -129,7 +143,7 @@ class BackController extends Controller
             $post->set("title", $project->getTitle());
             $post->set("content", $project->getContent());
             $post->set("logo", $project->getLogo());
-            $post->set("img", $project->getImg());
+            $post->set("thumbnail", $project->getThumbnail());
             $post->set("website", $project->getWebsite());
 
             return $this->view->render("edit_project", [
