@@ -94,21 +94,32 @@ class BackController extends Controller
         if ($this->checkAdmin()) {
             if ($post->get("submit")) {
                 $errors = $this->validation->validate($post, "Project"); // Processus de validation des données
+
                 if (!$errors) {
-                    -
-                    $image1 = new UploadImage(new Parameter($files->get("logo")));
-                    $image2 = new UploadImage(new Parameter($files->get("thumbnail")));
+                    $imageLogo = new UploadImage(new Parameter($files->get("logo")));
+                    $imageThumbnail = new UploadImage(new Parameter($files->get("thumbnail")));
 
-                    if ($image1->uploadOk === 1) {
-                        $post->logo = $image1->target_file;
+                    if ($imageLogo->uploadOk === 1) {
+                        $post->logo = $imageLogo->target_file;
                     }
 
-                    if ($image2->uploadOk === 1) {
-                        $post->thumbnail = $image2->target_file;
+                    if ($imageThumbnail->uploadOk === 1) {
+                        $post->thumbnail = $imageThumbnail->target_file;
+                    }
+                        
+                    if ($imageLogo->uploadOk === 0) {
+                        $errors += ["logo" => $imageLogo->errorUploadImage];
+                        $imageThumbnail->deleteUploadedImage();
                     }
 
+                    if ($imageThumbnail->uploadOk === 0) {
+                        $errors += ["thumbnail" => $imageThumbnail->errorUploadImage];
+                        $imageLogo->deleteUploadedImage();
+                    }
+                }
 
-                    $this->projectDAO->addProject($post);
+                if (!$errors) {
+                    $this->projectDAO->addProject($post, $files);
                     $this->session->set("add_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouveau projet a bien été ajouté</p>');
                     header("Location: index.php?route=adminProjects");
                 }

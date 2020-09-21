@@ -61,10 +61,11 @@ class ProjectDAO extends DAO
     }
 
     // Ajout d'un projet
-    public function addProject(Parameter $post)
+    public function addProject(Parameter $post, Parameter $files)
     {
+        $imgUploadPath = "public/img/upload/";
         $sql = "INSERT INTO p5_project (title, content, logo, thumbnail, website) VALUES (?, ?, ?, ?, ?)";
-        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $post->get("logo"), $post->get("thumbnail"), $post->get("website")]);
+        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $imgUploadPath . $files->get("logo")['name'], $imgUploadPath . $files->get("thumbnail")['name'], $post->get("website")]);
     }
 
     // Modification d'un projet
