@@ -35,7 +35,7 @@ class ProjectValidation extends Validation
         } else if ($name === "content") {
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
-        } else if ($name === "website") {
+        } else if ($name === "URL") {
             $error = $this->checkWebsite($name, $value);
             $this->addError($name, $error);
         }
@@ -80,11 +80,11 @@ class ProjectValidation extends Validation
     private function checkWebsite($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {
-            return $this->constraint->notBlank("website", $value);
+            return $this->constraint->notBlank("URL", $value);
         }
 
         if ($this->constraint->urlFormat($name, $value)) {
-            return $this->constraint->urlFormat("website", $value);
+            return $this->constraint->urlFormat("URL", $value);
         }
     }
 }
