@@ -12,17 +12,11 @@ $confirm = $route === "addProject" ? "Ajouter le projet ?" : "Modifier le projet
     <label for="title">Titre</label><?= isset($errors["title"]) ? $errors["title"] : "" ?>
     <input type="text" id="title" name="title" value="<?= isset($post) ? htmlspecialchars($post->get("title")) : "" ?>" />
 
-    <div>
-        <label for="logo">Logo</label>
-        <input type="file" id="logo" name="logo" />
-    </div>
-    <?= isset($errors["logo"]) ? $errors["logo"] : "" ?>
+    <label for="logo">Logo</label> <?= isset($errors["logo"]) ? $errors["logo"] : "" ?>
+    <input type="file" id="logo" name="logo" />
 
-    <div>
-        <label for="thumbnail">Miniature</label>
-        <input type="file" id="thumbnail" name="thumbnail" />
-    </div>
-    <?= isset($errors["thumbnail"]) ? $errors["thumbnail"] : "" ?>
+    <label for="thumbnail">Miniature</label> <?= isset($errors["thumbnail"]) ? $errors["thumbnail"] : "" ?>
+    <input type="file" id="thumbnail" name="thumbnail" />
 
     <label for="website">URL du projet</label><?= isset($errors["website"]) ? $errors["website"] : "" ?>
     <input type="text" id="website" name="website" value="<?= isset($post) ? htmlspecialchars($post->get("website")) : "" ?>" />
