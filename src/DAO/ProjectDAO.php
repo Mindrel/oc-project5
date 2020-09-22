@@ -9,6 +9,8 @@ use Mich\Blog\config\Parameter;
 
 class ProjectDAO extends DAO
 {
+    private $imgUploadPath = "public/img/upload/";
+
     // Permet de convertir chaque champ de la table en propriété de l'objet
     private function buildObject($row)
     {
@@ -63,20 +65,19 @@ class ProjectDAO extends DAO
     // Ajout d'un projet
     public function addProject(Parameter $post, Parameter $files)
     {
-        $imgUploadPath = "public/img/upload/";
         $sql = "INSERT INTO p5_project (title, content, logo, thumbnail, website) VALUES (?, ?, ?, ?, ?)";
-        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $imgUploadPath . $files->get("logo")['name'], $imgUploadPath . $files->get("thumbnail")['name'], $post->get("website")]);
+        $this->createQuery($sql, [$post->get("title"), $post->get("content"), $this->imgUploadPath . $files->get("logo")['name'], $this->imgUploadPath . $files->get("thumbnail")['name'], $post->get("website")]);
     }
 
     // Modification d'un projet
-    public function editProject(Parameter $post, $projectId)
+    public function editProject(Parameter $post, Parameter $files, $projectId)
     {
         $sql = "UPDATE p5_project SET title = :title, content = :content, logo = :logo, thumbnail = :thumbnail, website = :website WHERE id = :projectId";
         $this->createQuery($sql, [
             "title" => $post->get("title"),
             "content" => $post->get("content"),
-            "logo" => $post->get("logo"),
-            "thumbnail" => $post->get("thumbnail"),
+            "logo" => $this->imgUploadPath . $files->get("logo")['name'],
+            "thumbnail" => $this->imgUploadPath . $files->get("thumbnail")['name'],
             "website" => $post->get("website"),
             "projectId" => $projectId
         ]);

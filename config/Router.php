@@ -56,7 +56,7 @@ class Router
                         break;
 
                     case "editProject": // Si editProject on déclenche modification d'un projet
-                        $this->backController->editProject($this->request->getPost(), $this->request->getGet()->get("projectId"));
+                        $this->backController->editProject($this->request->getPost(), $this->request->getFiles(), $this->request->getGet()->get("projectId"));
                         break;
 
                     case "deleteProject": // Si deleteProject on déclenche suppression article

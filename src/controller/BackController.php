@@ -95,29 +95,31 @@ class BackController extends Controller
             if ($post->get("submit")) {
                 $errors = $this->validation->validate($post, "Project"); // Processus de validation des données
 
+                // Si pas d'erreur de validation des champs text on passe à l'upload image
                 if (!$errors) {
                     $imageLogo = new UploadImage(new Parameter($files->get("logo")));
                     $imageThumbnail = new UploadImage(new Parameter($files->get("thumbnail")));
 
                     if ($imageLogo->uploadOk === 1) {
-                        $post->logo = $imageLogo->target_file;
+                        $post->logo = $imageLogo->targetFile;
                     }
 
                     if ($imageThumbnail->uploadOk === 1) {
-                        $post->thumbnail = $imageThumbnail->target_file;
+                        $post->thumbnail = $imageThumbnail->targetFile;
                     }
-                        
+                    // Si upload logo échec on ajoute l'erreur dans l'array errors et delete thumb (pour éviter erreur réupload même image thumb)
                     if ($imageLogo->uploadOk === 0) {
                         $errors += ["logo" => $imageLogo->errorUploadImage];
                         $imageThumbnail->deleteUploadedImage();
                     }
-
+                    // Idem ci-dessus mais pour thumbnail
                     if ($imageThumbnail->uploadOk === 0) {
                         $errors += ["thumbnail" => $imageThumbnail->errorUploadImage];
                         $imageLogo->deleteUploadedImage();
                     }
                 }
 
+                // Si pas d'erreur on lance la requête
                 if (!$errors) {
                     $this->projectDAO->addProject($post, $files);
                     $this->session->set("add_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le nouveau projet a bien été ajouté</p>');
@@ -133,15 +135,39 @@ class BackController extends Controller
     }
 
     // Modification d'un projet
-    public function editProject(Parameter $post, $projectId)
+    public function editProject(Parameter $post, Parameter $files, $projectId)
     {
         if ($this->checkAdmin()) {
             $project = $this->projectDAO->getProject($projectId); // Récupère d'abord le contenu du projet
 
             if ($post->get("submit")) {
                 $errors = $this->validation->validate($post, "Project");
+                
                 if (!$errors) {
-                    $this->projectDAO->editProject($post, $projectId);
+                    $imageLogo = new UploadImage(new Parameter($files->get("logo")));
+                    $imageThumbnail = new UploadImage(new Parameter($files->get("thumbnail")));
+
+                    if ($imageLogo->uploadOk === 1) {
+                        $post->logo = $imageLogo->targetFile;
+                    }
+
+                    if ($imageThumbnail->uploadOk === 1) {
+                        $post->thumbnail = $imageThumbnail->targetFile;
+                    }
+                        
+                    if ($imageLogo->uploadOk === 0) {
+                        $errors += ["logo" => $imageLogo->errorUploadImage];
+                        $imageThumbnail->deleteUploadedImage();
+                    }
+
+                    if ($imageThumbnail->uploadOk === 0) {
+                        $errors += ["thumbnail" => $imageThumbnail->errorUploadImage];
+                        $imageLogo->deleteUploadedImage();
+                    }
+                }
+
+                if (!$errors) {
+                    $this->projectDAO->editProject($post, $files, $projectId);
                     $this->session->set("edit_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le projet a bien été modifié</p>');
                     header("Location: index.php?route=adminProjects");
                 }
