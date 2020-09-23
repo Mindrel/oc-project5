@@ -60,6 +60,19 @@
                     <li><a href="index.php?route=blog" class="blog-button">Le Blog</a></li>
                 </ul>
             </nav>
+
+            <!-- Menu n'apparaît que si ecran sm -->
+            <ul class="sm-nav-menu">
+                <li class="scrolling-menu"><span><i class="fas fa-angle-down"></i>Menu</span>
+                    <ul class="scrolling-menu-options">
+                        <li><a href="index.php#hello" class="second-nav-link">Hello :)</a></li>
+                        <li><a href="index.php#projects" class="second-nav-link">Projets</a></li>
+                        <li><a href="index.php#latest-article" class="second-nav-link">Article</a></li>
+                        <li><a href="index.php#contact" class="second-nav-link">Contact</a></li>
+                        <li><a href="index.php?route=blog" class="second-nav-link">Le Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </header>
 

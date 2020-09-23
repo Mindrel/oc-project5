@@ -101,6 +101,10 @@ header nav ul {
     transition: all 250ms;
 }
 
+.sm-nav-menu { /* Menu responsive */
+    display: none;
+}
+
 /****** MEDIA QUERIES  ******/
 
 @media screen and (max-width: 1199px) { /* Tablettes */
@@ -134,5 +138,63 @@ header nav ul {
 
     .main-nav-link, .blog-button {
         font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    nav { /* Pour remplacer par le menu responsive */
+        display: none;
+    }
+
+    /***** Menu responsive *****/
+    
+    .sm-nav-menu {
+        display: block;
+    }
+
+    .scrolling-menu {
+        position: relative;
+    }
+
+    .scrolling-menu span {
+        padding: 0 18px 0 0;
+    }
+
+    .scrolling-menu span i {
+        margin-right: 5px;
+    }
+
+    .scrolling-menu-options {
+        display: none;
+        background-color: #2C3E50;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        border: 1px solid #B6B6B6;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px 0px #2C3E50;
+    }
+    
+    .scrolling-menu:hover .scrolling-menu-options {
+        display: block;
+    } 
+
+    .scrolling-menu-options li {
+        padding: 8px 11px;
+        border-bottom: 1px solid #B6B6B6;
+        text-align: center;
+    }
+
+    .scrolling-menu-options li:last-child {
+        border-bottom: none;
+    }
+    
+    .second-nav-link, .scrolling-menu span {
+        font-family: "Nunito", sans-serif;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 }
