@@ -72,3 +72,9 @@
         height: 228px; /* 95% taille originale image */
     }
 }
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .projects-gallery {
+        max-width: 400px;
+    }
+}

@@ -36,6 +36,8 @@
     
     .latest-article-section-container article {
         flex-direction: column-reverse;
+        width: 95%;
+        align-items: left;
     }
 
     .latest-article-date {
@@ -47,4 +49,11 @@
         line-height: 1.4rem;
         margin-right: 5px;
     }    
+}
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .latest-article-section-container article {
+        width: 85%;
+        text-align: justify;
+    }
 }

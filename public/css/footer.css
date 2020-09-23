@@ -93,3 +93,30 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .footer-part {
+        text-align: center;
+        max-width: 350px;
+        width: 90%;
+        margin-bottom: 60px;
+    }
+
+    .footer-part-divided {
+        flex-direction: row;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .footer-part-divided ul {
+        width: 100%;
+        margin: 0 10px;
+    }
+}
