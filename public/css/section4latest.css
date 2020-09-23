@@ -26,3 +26,25 @@
 .latest-article-extract-end {
     font-style: italic;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    .latest-article-section-container {
+        margin: auto;
+    }
+    
+    .latest-article-section-container article {
+        flex-direction: column-reverse;
+    }
+
+    .latest-article-date {
+        display: flex;
+    }
+
+    .latest-article-date time {
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        margin-right: 5px;
+    }    
+}

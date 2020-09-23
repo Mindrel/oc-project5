@@ -100,3 +100,39 @@ header nav ul {
     color: #2C3E50;
     transition: all 250ms;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    .main-header, .header-container {
+        height: 90px;
+    }
+    
+    .header-logo {
+        width: 255px;
+    }
+
+    .header-logo-text strong, 
+    .header-logo-text span {
+        font-size: 21px;
+    }
+
+    .header-logo-text p:nth-child(2) strong, /* Junior Web Developer */
+    .header-logo-text p:nth-child(2) strong span { /* Junior */
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .header-logo-left-brace, .header-logo-right-brace { /* Accolades */
+        font-size: 49px;
+        transform: translateY(-5px);
+    }
+
+    header nav ul {
+        width: 370px;
+    }
+
+    .main-nav-link, .blog-button {
+        font-size: 0.9rem;
+    }
+}

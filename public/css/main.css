@@ -188,3 +188,27 @@ li {
 .check-message i {
     margin-right: 5px;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    body {
+        font-size: 1.10rem;
+    }
+
+    .container {
+        max-width: 96%;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 2.7rem;
+    }
+}

@@ -80,3 +80,16 @@
 .footer-logo-text-spe, .footer-logo-right-brace {
     color: #CA8835;;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    .footer-part-divided {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-part-divided ul {
+        width: 100%;
+    }
+}
