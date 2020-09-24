@@ -18,7 +18,8 @@
     border: 1px solid #E4D2BD;
     margin: 0 30px 10px 0;
     padding: 8px;
-    filter: brightness(95%); /* Pour détourer l'image dans un cadre blanc bien visible */
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%); /* Pour détourer l'image dans un cadre blanc bien visible */
 }
 
 .current-project-section-container > p {
