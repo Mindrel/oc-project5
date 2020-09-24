@@ -192,7 +192,7 @@ li {
 /****** MEDIA QUERIES  ******/
 
 @media screen and (max-width: 1199px) { /* Tablettes */
-    body {
+    body, .colored-submit-button  {
         font-size: 1.10rem;
     }
 
@@ -210,5 +210,10 @@ li {
     
     h3 {
         font-size: 2.7rem;
+    }
+
+    .error-message, .check-message {
+        width: 90%;
+        text-align: center;
     }
 }

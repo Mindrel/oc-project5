@@ -37,7 +37,6 @@
     .latest-article-section-container article {
         flex-direction: column-reverse;
         width: 95%;
-        align-items: left;
     }
 
     .latest-article-date {

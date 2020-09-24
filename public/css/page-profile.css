@@ -9,3 +9,12 @@
     width: 370px;
     text-align: center;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .profile-section-container .colored-submit-button,
+    .profile-section-container .light-link-button {
+        width: 300px;    
+    }
+}

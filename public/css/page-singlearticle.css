@@ -146,3 +146,54 @@
     opacity: 0.8;
     font-size: 0.9rem;
 }
+
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    .current-article-section,
+    .current-comments-section {
+      width: 90%;
+    }
+
+    .current-comments-section {
+        flex-direction: column;
+    }
+
+    .comments-form-group {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .current-article-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .current-comments-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .current-article-section > p {
+        margin-bottom: 40px;
+    }
+    
+    .current-article-date > p:first-child { /* La date */
+        font-size: 1.4rem;
+    }
+
+    .current-comments-section textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .current-article-section,
+    .current-comments-section {
+      width: 85%;
+    }
+
+    .current-article-section {
+        text-align: justify;
+    }
+}

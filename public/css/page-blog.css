@@ -27,3 +27,33 @@
     text-align: start;
     margin-bottom: 10px;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    .articles-section-container {
+        margin: auto;
+    }
+    
+    .articles-section-container article {
+        flex-direction: column-reverse;
+        width: 95%;
+    }
+
+    .article-date {
+        display: flex;
+    }
+
+    .article-date time {
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        margin-right: 5px;
+    }    
+}
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .articles-section-container article {
+        width: 85%;
+        text-align: justify;
+    }
+}

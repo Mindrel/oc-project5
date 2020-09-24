@@ -92,3 +92,13 @@
     color: #2C3E50;
     opacity: 0.6;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .login-register-section-container input[type="text"],
+    .login-register-section-container input[type="email"],
+    .login-register-section-container input[type="password"] {
+        width: 300px;
+    }
+}    

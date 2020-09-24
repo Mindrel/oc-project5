@@ -21,3 +21,19 @@
     text-align: start;
     margin-bottom: 10px;
 }
+
+/****** MEDIA QUERIES  ******/
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    .projects-section-container article {
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+        width: 85%;
+    }
+
+    .projects-section-container header img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
