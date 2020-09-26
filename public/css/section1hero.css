@@ -21,3 +21,17 @@
     width: 240px;
     margin-bottom: 40px;
 }
+
+/****** MEDIA QUERIES ******/
+
+@media screen and (max-width: 1199px) { /* Tablettes */
+    #hero {
+        background: url("../img/background.png") bottom no-repeat, linear-gradient(90deg, rgba(202,136,53,1) 0%, rgba(178,144,114,1) 40%, rgba(178,144,114,1) 60%, rgba(202,136,53,1) 100%);
+    }
+}
+
+@media screen and (max-width: 767px) { /* Smartphones */
+    #hero {
+        background: url("../img/background.png") bottom no-repeat, linear-gradient(90deg, rgba(202,136,53,1) 0%, rgba(178,144,114,1) 33%, rgba(178,144,114,1) 66%, rgba(202,136,53,1) 100%);
+    }
+}
