@@ -5,74 +5,79 @@ namespace Mich\Blog\src\services;
 require "config.php"; // Identifiants du SMTP
 
 use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
 
 class SendEmail
 {
-    private $errors = [];
-    public $errorMessage = '';
+    private $name;
+    private $email;
+    private $message;
+    public $errors;
 
-    public function __construct() 
+    public function __construct()
     {
-        $this->email();    
+        $this->name = $_POST['nom'];
+        $this->email = $_POST['email'];
+        $this->message = $_POST['message'];
+        $this->errors = [];
+        $this->checkErrorsEmail();
     }
 
-    public function email()
+    public function checkErrorsEmail()
     {
         if (!empty($_POST)) {
-            $name = $_POST['nom'];
-            $email = $_POST['email'];
-            $message = $_POST['message'];
+            $this->name;
+            $this->email;
+            $this->message;
 
-            if (empty($name)) {
-                $this->errors[] = 'Name is empty';
+            if (empty($this->name)) {
+                $this->errors["name"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ nom est vide</p>';
             }
 
-            if (empty($email)) {
-                $this->errors[] = 'Email is empty';
-            } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $this->errors[] = 'Email is invalid';
+            if (empty($this->email)) {
+                $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ email est vide</p>';
+            } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+                $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le format d\'adresse email n\'est pas valide</p>';
             }
 
-            if (empty($message)) {
-                $this->errors[] = 'Message is empty';
-            }
-
-            if (!empty($this->errors)) {
-                $allErrors = join('<br/>', $this->errors);
-                $this->errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+            if (empty($this->message)) {
+                $this->errors["message"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ message est vide</p>';
             } else {
-                $mail = new PHPMailer(true);
-                $mail->CharSet = 'UTF-8'; // Accents non pris en compte dans le nom expéditeur
-                $mail->Encoding = 'quoted-printable'; // Accents non pris en compte dans le nom expéditeur
-                // specify SMTP credentials
-                $mail->isSMTP();
-                $mail->Host = MAIL_HOST;
-                $mail->SMTPAuth = true;
-                $mail->Username = MAIL_USERNAME;
-                $mail->Password = MAIL_PASSWORD;
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = 587;
-
-                $mail->setFrom($email, 'Formulaire de contact P5');
-                $mail->addAddress(MAIL_RECIPIENT, MAIL_RECIPIENT_NAME);
-                $mail->Subject = 'Formulaire de contact P5 - Nouveau message de ' . html_entity_decode($name); // Accents non pris en compte dans le nom expéditeur
-
-                // Enable HTML if needed
-                $mail->isHTML(true);
-
-                $bodyParagraphs = ["<strong>Nom expéditeur :</strong> {$name}", "<strong>Email réponse :</strong> {$email}", "<strong>Message posté :</strong>", nl2br($message)];
-                $body = join('<br /><br />', $bodyParagraphs);
-                $mail->Body = $body;
-
-                echo $body;
-                if ($mail->send()) {
-
-                    header('Location: index.php'); // redirect to 'thank you' page
-                } else {
-                    $this->errorMessage = 'Oops, something went wrong. Mailer Error: ' . $mail->ErrorInfo;
-                }
+                $this->generateEmail();
             }
+        }
+    }
+
+    public function generateEmail()
+    {
+        $mail = new PHPMailer();
+
+        // Accents non pris en compte dans le nom expéditeur
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'quoted-printable';
+
+        // Param SMTP et email (CONST dans config.php)
+        $mail->isSMTP();
+        $mail->Host = MAIL_HOST;
+        $mail->SMTPAuth = true;
+        $mail->Username = MAIL_USERNAME;
+        $mail->Password = MAIL_PASSWORD;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+        $mail->setFrom($this->email, 'Formulaire de contact P5');
+        $mail->addAddress(MAIL_RECIPIENT, MAIL_RECIPIENT_NAME);
+        $mail->Subject = 'Formulaire de contact P5 - Nouveau message de ' . html_entity_decode($this->name); // Accents non pris en compte dans le nom expéditeur
+
+        // Activation HTML nécessaire (mise en forme texte)
+        $mail->isHTML(true);
+
+        // Contenu du mail
+        $bodyParagraphs = ["<strong>Nom expéditeur :</strong> {$this->name}", "<strong>Email réponse :</strong> {$this->email}", "<strong>Message posté :</strong>", nl2br($this->message)];
+        $body = join('<br /><br />', $bodyParagraphs);
+        $mail->Body = $body;
+
+        // Envoi du mail, si échoue :
+        if (!$mail->send()) {
+            $this->error["failure"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Oups, il semble que l\'envoi du message ait échoué... ' /* '<br />Détail de l'erreur :<br />' . $mail->ErrorInfo */ . '</p>';
         }
     }
 }

@@ -52,7 +52,7 @@ class Router
                         break;
 
                     case "sendEmail":
-                        $this->frontController->emailForm();
+                        $this->frontController->homeEmailContactForm();
                         break;
 
                     case "addProject": // Si addProject on déclenche l'ajout d'un projet

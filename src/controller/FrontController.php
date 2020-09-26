@@ -21,9 +21,18 @@ class FrontController extends Controller
     }
 
     // Gère l'envoi de mail via le formulaire de contact
-    public function emailForm()
+    public function homeEmailContactForm()
     {
         $sendEmail = new SendEmail();
+        $errors = $sendEmail->errors;
+
+        if (!$errors) {
+            return $this->view->render("email_success", []);
+        }
+
+        return $this->view->render("email_error", [
+            "errors" => $errors
+        ]);
     }
 
     // Gère l'affichage de la page avec tous les projets
@@ -69,13 +78,13 @@ class FrontController extends Controller
     {
         if ($post->get("submit")) {
             $errors = $this->validation->validate($post, "Comment");
-            
+
             if (!$errors) {
                 $this->commentDAO->addComment($post, $articleId);
                 $this->session->set("add_comment", '<p class="check-message"><i class="fas fa-check-circle"></i>Votre commentaire a bien été ajouté</p>');
                 header("Location: index.php?route=blog");
             }
-            
+
             $article = $this->articleDAO->getArticle($articleId);
             $comments = $this->commentDAO->getCommentsFromArticle($articleId);
             return $this->view->render("single_article", [
@@ -140,6 +149,4 @@ class FrontController extends Controller
         }
         return $this->view->render("login");
     }
-
-
 }
