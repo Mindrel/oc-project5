@@ -177,6 +177,7 @@ li {
     right: 50px;
     width: 60px;
     height: 60px;
+    font-size: 2rem;
     background-color: #2C3E50;
     border: 2px solid #B29072;
     border-radius: 10px;
@@ -189,7 +190,6 @@ li {
 
 #top-arrow a {
     color: #FFFFFF;
-    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,5 +241,14 @@ li {
     .error-message, .check-message {
         width: 90%;
         text-align: center;
+    }
+}
+@media screen and (max-width: 767px) { /* Smartphones */
+    #top-arrow {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.7rem;
     }
 }
