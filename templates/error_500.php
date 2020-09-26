@@ -5,6 +5,7 @@
 
 <div class="container error-section-container">
     <p>GROOOAAAAAAAAAAAAARRR !!! *</p>
+    <?= $_SESSION["error"] ?>
 
     <img src="public/img/error-tiger.jpg" alt="Tigre pas content" />
 

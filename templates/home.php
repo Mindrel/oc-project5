@@ -158,7 +158,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
         </div>
 
         <!-- Formulaire de contact -->
-        <form method="post" action="#">
+        <form method="post" action="index.php?route=sendEmail">
             <div class="contact-input">
                 <input type="text" id="nom" name="nom" placeholder="Nom" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nom'" />
                 <label for="nom">Nom</label>

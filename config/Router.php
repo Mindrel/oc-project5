@@ -51,6 +51,10 @@ class Router
                         $this->frontController->article($this->request->getGet()->get("articleId"));
                         break;
 
+                    case "sendEmail":
+                        $this->frontController->emailForm();
+                        break;
+
                     case "addProject": // Si addProject on déclenche l'ajout d'un projet
                         $this->backController->addProject($this->request->getPost(), $this->request->getFiles());
                         break;
@@ -142,12 +146,11 @@ class Router
                     default: // Si la route est différente des précedentes alors error not found
                         $this->errorController->errorNotFound();
                 }
-                
             } else {
                 $this->frontController->home(); // Si route pas set on charge l'accueil par défaut
             }
-
         } catch (Exception $e) {
+            $_SESSION["error"] = $e->getMessage();
             $this->errorController->errorServer();
         }
     }

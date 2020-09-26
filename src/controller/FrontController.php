@@ -5,6 +5,7 @@
 namespace Mich\Blog\src\controller;
 
 use Mich\Blog\config\Parameter;
+use Mich\Blog\src\services\SendEmail;
 
 class FrontController extends Controller
 {
@@ -17,6 +18,12 @@ class FrontController extends Controller
             "latestProjects" => $latestProjects,
             "latestArticle" => $latestArticle
         ]);
+    }
+
+    // Gère l'envoi de mail via le formulaire de contact
+    public function emailForm()
+    {
+        $sendEmail = new SendEmail();
     }
 
     // Gère l'affichage de la page avec tous les projets
@@ -133,4 +140,6 @@ class FrontController extends Controller
         }
         return $this->view->render("login");
     }
+
+
 }
