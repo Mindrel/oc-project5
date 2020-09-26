@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="public/css/page-loginregister.css" />
     <link rel="stylesheet" href="public/css/page-blog.css" />
     <link rel="stylesheet" href="public/css/page-singlearticle.css" />
-    <link rel="stylesheet" href="public/css/page-error.css" />
+    <link rel="stylesheet" href="public/css/page-errorsuccess.css" />
     <link rel="stylesheet" href="public/css/page-profile.css" />
     <link rel="stylesheet" href="public/css/page-password.css" />
     <link rel="stylesheet" href="public/css/page-projects.css" />

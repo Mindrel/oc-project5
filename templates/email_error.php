@@ -13,7 +13,7 @@ header("Refresh: 6;URL=index.php#contact");
 <div id="hero" class="hero-container-secondary"></div>
 
 <!-- Erreur lors de l'envoi du mail -->
-<div class="container error-section-container">
+<div class="container email-message-section-container">
     <p>
         <?= isset($errors["name"]) ? $errors["name"] : "" ?>
         <?= isset($errors["email"]) ? $errors["email"] : "" ?>
@@ -21,8 +21,8 @@ header("Refresh: 6;URL=index.php#contact");
         <?= isset($errors["failure"]) ? $errors["failure"] : "" ?>
     </p>
 
-    <p>
-        <i>Veuillez réessayer !</i><br />
-        Vous allez être automatiquement redirigé vers le formulaire de contact...
-    </p>
+    <p class="email-message">Veuillez réessayer please !</p><br />
+    <p class="email-message"><i>Redirection vers le formulaire de contact dans <b><span id="countdown"></span></b></i></p>
 </div>
+
+<script src="public/js/countdown.js"></script>
