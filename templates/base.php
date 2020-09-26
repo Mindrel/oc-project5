@@ -155,6 +155,10 @@
             <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020</span> Portfolio & Blog de Michel Martin<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
+
+    <div id="top-arrow" class="top-arrow-hidden"><a href="#"><i class="fas fa-arrow-up"></i></a></div>
+
+    <script src="public/js/top_arrow.js"></script>
 </body>
 
 </html>
