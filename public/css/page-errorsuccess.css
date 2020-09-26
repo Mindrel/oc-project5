@@ -22,6 +22,10 @@
 /****** MEDIA QUERIES  ******/
 
 @media screen and (max-width: 767px) { /* Smartphones */
+    .email-message-section-container p {
+        width: 90%;
+    }
+
     .error-section-container p:first-child {
         font-size: 1.3rem;
     }
