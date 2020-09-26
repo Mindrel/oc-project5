@@ -63,9 +63,9 @@ class SendEmail
         $mail->Password = MAIL_PASSWORD;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
-        $mail->setFrom($this->email, 'Formulaire de contact P5');
+        $mail->setFrom(MAIL_SET_FROM, 'Formulaire de contact P5');
         $mail->addAddress(MAIL_RECIPIENT, MAIL_RECIPIENT_NAME);
-        $mail->Subject = 'Formulaire de contact P5 - Nouveau message de ' . html_entity_decode($this->name); // Accents non pris en compte dans le nom expéditeur
+        $mail->Subject = 'Nouveau message de ' . html_entity_decode($this->name); // Accents non pris en compte dans le nom expéditeur
 
         // Activation HTML nécessaire (mise en forme texte)
         $mail->isHTML(true);
