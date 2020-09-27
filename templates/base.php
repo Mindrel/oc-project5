@@ -63,8 +63,9 @@
 
             <!-- Menu n'apparaît que si ecran sm -->
             <ul class="sm-nav-menu">
-                <li class="scrolling-menu"><span><i class="fas fa-angle-down"></i>Menu</span>
+                <li class="scrolling-menu"><span>Menu<i class="fas fa-angle-down"></i></span>
                     <ul class="scrolling-menu-options">
+                        <div class="caret-up"></div>
                         <li><a href="index.php#hello" class="second-nav-link">Hello :)</a></li>
                         <li><a href="index.php#projects" class="second-nav-link">Projets</a></li>
                         <li><a href="index.php#latest-article" class="second-nav-link">Article</a></li>

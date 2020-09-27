@@ -161,7 +161,7 @@ header nav ul {
     }
 
     .scrolling-menu span i {
-        margin-right: 5px;
+        margin-left: 5px;
     }
 
     .scrolling-menu-options {
@@ -180,13 +180,25 @@ header nav ul {
     } 
 
     .scrolling-menu-options li {
-        padding: 8px 11px;
         border-bottom: 1px solid #B6B6B6;
         text-align: center;
     }
 
+    .scrolling-menu-options li a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 8px 11px;
+    }
+
     .scrolling-menu-options li:last-child {
         border-bottom: none;
+        background-color: #FFFFFF;
+        border-radius: 0 0 9px 9px;
+    }
+
+    .scrolling-menu-options li:last-child a {
+        color: #2C3E50;
     }
     
     .second-nav-link, .scrolling-menu span {
@@ -196,5 +208,14 @@ header nav ul {
         color: #FFFFFF;
         text-decoration: none;
         text-transform: uppercase;
+    }
+
+    .scrolling-menu-options .caret-up {
+        position: absolute;
+        top: -11px;
+        left: 37px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 10px solid #B6B6B6;
     }
 }
