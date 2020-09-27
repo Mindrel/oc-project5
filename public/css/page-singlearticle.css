@@ -165,6 +165,10 @@
         margin-bottom: 30px;
     }
 
+    .comments-form-group .error-message {
+        text-align: start;
+    }
+    
     .current-article-section h2 {
         font-size: 2.2rem;
     }
