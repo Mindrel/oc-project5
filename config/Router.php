@@ -51,7 +51,7 @@ class Router
                         $this->frontController->article($this->request->getGet()->get("articleId"));
                         break;
 
-                    case "sendEmail":
+                    case "sendEmail": // sendEmail on déclenche l'envoi de mail via formulaire de contact
                         $this->frontController->homeEmailContactForm();
                         break;
 
@@ -150,7 +150,7 @@ class Router
                 $this->frontController->home(); // Si route pas set on charge l'accueil par défaut
             }
         } catch (Exception $e) {
-            $_SESSION["error"] = $e->getMessage();
+            // $_SESSION["error"] = $e->getMessage();
             $this->errorController->errorServer();
         }
     }
