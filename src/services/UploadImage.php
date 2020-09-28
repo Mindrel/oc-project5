@@ -66,7 +66,7 @@ class UploadImage
     public function checkFileSize()
     {
         if ($this->uploadOk == 1) {
-            if ($this->file->get("size") > 500000) {
+            if ($this->file->get("size") > 3000000) {
                 $this->errorUploadImage = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le fichier "' . basename($this->file->get("name")) . '" est trop lourd</p>';
                 $this->uploadOk = 0;
             }
