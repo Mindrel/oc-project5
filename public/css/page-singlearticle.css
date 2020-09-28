@@ -52,6 +52,7 @@
 
 .comments-form-group {
     margin-right: 96px;
+    max-width: 300px;
 }
 
 .comment-input {
@@ -163,6 +164,7 @@
     .comments-form-group {
         margin-right: 0;
         margin-bottom: 30px;
+        max-width: none;
     }
 
     .comments-form-group .error-message {
