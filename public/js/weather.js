@@ -23,15 +23,15 @@ class Weather {
             ' alt="' +
             data.fcst_day_0.condition +
             '" class="weather-img" />' +
-            '<p>Min. : ' +
+            '<p>Min : ' +
             data.fcst_day_0.tmin +
-            '°C</p><p>Max. : ' +
+            '°C</p><p>Max : ' +
             data.fcst_day_0.tmax +
             '°C</p></div><div class="weather-tomorrow"><p>Demain</p><img src=' +
             data.fcst_day_1.icon +
             ' alt="' +
             data.fcst_day_1.condition +
-            '" class="weather-img" /><p>Min. : ' +
+            '" class="weather-img" /><p>Min : ' +
             data.fcst_day_1.tmin +
             '°C</p><p>Max : ' +
             data.fcst_day_1.tmax +

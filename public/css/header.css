@@ -161,7 +161,7 @@ header nav ul {
         justify-content: center;
         align-items: center;
         width: 80px;
-        height: 50px;
+        height: 70px;
         padding: 0 18px 0 0;
     }
 
@@ -173,7 +173,7 @@ header nav ul {
         display: none;
         background-color: #2C3E50;
         position: absolute;
-        top: 60px;
+        top: 70px;
         right: 0;
         border: 1px solid #B6B6B6;
         border-radius: 10px;
