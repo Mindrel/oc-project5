@@ -171,6 +171,9 @@ class BackController extends Controller
                     $this->session->set("edit_project", '<p class="check-message"><i class="fas fa-check-circle"></i>Le projet a bien été modifié</p>');
                     header("Location: index.php?route=adminProjects");
                 }
+
+                $post->set("id", $project->getId());
+    
                 return $this->view->render("edit_project", [
                     "post" => $post,
                     "errors" => $errors
@@ -232,6 +235,9 @@ class BackController extends Controller
                     $this->session->set("edit_article", '<p class="check-message"><i class="fas fa-check-circle"></i>L\'article a bien été modifié</p>');
                     header("Location: index.php?route=adminArticles");
                 }
+
+                $post->set("id", $article->getId());
+
                 return $this->view->render("edit_article", [
                     "post" => $post,
                     "errors" => $errors
