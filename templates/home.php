@@ -25,10 +25,10 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             <!-- Bouton ouverture fermeture météo -->
             <div id="weather-toggle-btn" onclick="toggleWeather()">
                 <i class="fas fa-sun"></i>
-            </div>          
-            
+            </div>
+
             <p class="vertical-text">Un petit peu d'AJAX ?</p>
-            
+
             <div id="weather-content"></div>
         </div>
     </div>
@@ -48,13 +48,17 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
         <div class="hello-text">
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates animi accusamus molestiae autem deserunt repellendus ex veniam quod impedit, quaerat cumque molestias iusto! Nobis repellat perferendis quidem perspiciatis voluptatibus? Laudantium!
+                Petit padawan ou maître développeur, simple visiteur curieux ou cador du recrutement, qui que vous soyez bienvenue sur mon humble portfolio !<br />
+                À vrai dire ce n'est pas qu'un simple portfolio... C'est une sorte de vitrine qui reflète mon niveau de compétences du moment.
+                Autrement dit, le niveau d'un développeur junior ! Le parcours OpenClassrooms impose la création de plusieurs projets de développement
+                de sites web. C'est au cours du dernier qu'il m'est venu l'idée de créer un site tel que celui-ci.
             </p>
 
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus cumque error cum ex incidunt placeat, minus odio qui inventore consectetur provident, voluptatum praesentium sit nemo vitae iusto. Beatae, recusandae adipisci!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid rem quisquam praesentium porro autem dolore quis ut commodi, dolorum maxime et quas quia sint totam incidunt voluptatum impedit iure culpa.
+                Passionné d'informatique, je suis un technicien un peu touche à tout qui a fini par s'intéresser au code.<br /> 
+                Résultat : une année d'études en ligne pour obtenir un diplôme au bout, tout en continuant à exercer un métier à temps plein en parallèle ! N'hésitez pas
+                à parcourir les pages de mes projets et à visiter les sites correspondants. Le blog est régulièrement mis à jour et vous pouvez même commmenter 
+                mes articles. En pied de page vous trouverez des liens vers mon profil LinkedIn et mon compte GitHub. Alors à très vite :)
             </p>
         </div>
     </div>
