@@ -35,7 +35,7 @@ class ProjectValidation extends Validation
         } else if ($name === "content") {
             $error = $this->checkContent($name, $value);
             $this->addError($name, $error);
-        } else if ($name === "URL") {
+        } else if ($name === "website") {
             $error = $this->checkWebsite($name, $value);
             $this->addError($name, $error);
         }
