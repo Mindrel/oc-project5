@@ -48,7 +48,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
 
         <div class="hello-text">
             <p>
-                Petit padawan ou maître développeur, simple visiteur curieux ou cador du recrutement, qui que vous soyez bienvenue sur mon humble portfolio !<br />
+                Petit padawan ou maître développeur, cador du recrutement ou simple visiteur, qui que vous soyez bienvenue sur mon humble portfolio !<br />
                 À vrai dire ce n'est pas qu'un simple portfolio... C'est une sorte de vitrine qui reflète mon niveau de compétences du moment.
                 Autrement dit, le niveau d'un développeur junior ! Le parcours OpenClassrooms impose la création de plusieurs projets de développement
                 de sites web. C'est au cours du dernier qu'il m'est venu l'idée de créer un site tel que celui-ci.
@@ -57,7 +57,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             <p>
                 Passionné d'informatique, je suis un technicien un peu touche à tout qui a fini par s'intéresser au code.<br /> 
                 Résultat : une année d'études en ligne pour obtenir un diplôme au bout, tout en continuant à exercer un métier à temps plein en parallèle ! N'hésitez pas
-                à parcourir les pages de mes projets et à visiter les sites correspondants. Le blog est régulièrement mis à jour et vous pouvez même commmenter 
+                à parcourir les pages de mes projets et à visiter les sites correspondants. Le blog est régulièrement mis à jour et vous pouvez même commenter 
                 mes articles. En pied de page vous trouverez des liens vers mon profil LinkedIn et mon compte GitHub. Alors à très vite :)
             </p>
         </div>
