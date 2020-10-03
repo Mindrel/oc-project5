@@ -24,6 +24,17 @@ class ProjectDAO extends DAO
         return $project;
     }
 
+    // Détermine le nombre de projets existants
+    public function countProjects() 
+    {
+        $sql = "SELECT COUNT(*) AS nb_projects FROM p5_project";
+        $result = $this->createQuery($sql);
+        $array = $result->fetch();
+        $nbProjects = (int) $array['nb_projects'];
+        $result->closeCursor();
+        return $nbProjects;
+    }
+
     // Récupère tous les projets
     public function getProjects($limit, $offset)
     {
