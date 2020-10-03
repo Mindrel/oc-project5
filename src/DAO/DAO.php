@@ -4,8 +4,8 @@
 
 namespace Mich\Blog\src\DAO; // Permet d'éviter les collisions de classe (deux classes du même nom dans le même projet) en créant une zone spécifique à l'utilisation de cette classe (ne peut être utilisée ailleurs)
 
-use PDO; // Nécessaire sans quoi le namespace bloque l'accès à cet objet
-use Exception; // Nécessaire sans quoi le namespace bloque l'accès à cet objet
+use PDO;
+use Exception;
 
 // Connexion à la base de données
 abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
@@ -39,16 +39,22 @@ abstract class DAO // Abstraite pour qu'on ne puisse pas l'instancier
     }
 
     // Méthode qui fait appel à getConnection() et qui gère les requêtes (afin d'éviter les répétitions d'instanciations dans les classes des requêtes)
-    protected function createQuery($sql, $parameters = null) // (param : requête sql, paramètres qui valent null par défaut)
+    protected function createQuery($sql, $parameters = null)
     {
-        // S'il s'agit d'une requête préparée il est nécessaire de préciser les paramètres
         if ($parameters) {
             $result = $this->checkConnection()->prepare($sql);
             $result->execute($parameters);
             return $result;
         }
-        // par défaut il n'y a pas de paramètres pour une requête query
         $result = $this->checkConnection()->query($sql);
+        return $result;
+    }
+
+    // Méthode similaire à la précédente avec pagination en plus
+    protected function createPaginationQuery($sql, $limit, $offset)
+    {
+        $result = $this->checkConnection()->prepare($sql);
+        $result->execute();
         return $result;
     }
 }

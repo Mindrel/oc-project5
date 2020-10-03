@@ -7,6 +7,8 @@ namespace Mich\Blog\src\controller;
 use Mich\Blog\config\Parameter;
 use Mich\Blog\src\services\SendEmail;
 
+const ITEM_PER_PAGE = 2;
+
 class FrontController extends Controller
 {
     // Gère l'affichage de la page d'accueil : Affiche les 5 derniers projets et le dernier article
@@ -36,12 +38,17 @@ class FrontController extends Controller
     }
 
     // Gère l'affichage de la page avec tous les projets
-    public function projects()
+    public function projects($page)
     {
-        $projects = $this->projectDAO->getProjects();
-        return $this->view->render("projects", [
-            "projects" => $projects
-        ]);
+        if ($page > 0) {
+            $offset = ITEM_PER_PAGE * ($page) - ITEM_PER_PAGE;
+            $projects = $this->projectDAO->getProjects(ITEM_PER_PAGE, $offset);
+            return $this->view->render("projects", [
+                "projects" => $projects
+            ]);
+        }
+
+        header("Location: index.php?route=projects&page=1");
     }
 
     // Gère l'affichage de la page projet demandée

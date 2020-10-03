@@ -104,7 +104,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </li>
         </ul>
 
-        <a href="index.php?route=projects" class="colored-link-button">Voir tous les projets</a>
+        <a href="index.php?route=projects&page=1" class="colored-link-button">Voir tous les projets</a>
     </div>
 </section>
 

@@ -36,7 +36,7 @@ class Router
                 switch ($route) {
 
                     case "projects": // Si route vaut projects on affiche la page tous les projets
-                        $this->frontController->projects();
+                        $this->frontController->projects($this->request->getGet()->get("page"));
                         break;
 
                     case "project": // Si project on charge le projet ayant l'ID demandé
