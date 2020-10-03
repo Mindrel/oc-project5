@@ -22,6 +22,28 @@
     margin-bottom: 10px;
 }
 
+.projects-pagination {
+    display: flex;
+    margin-top: 50px;
+}
+
+.projects-pagination li {
+    margin: 0 10px;
+}
+
+.project-page-disabled {
+    display: none;
+}
+
+.project-current-page {
+    opacity: 0.5;
+    border-bottom: 1px solid #2C3E50;
+}
+
+.project-page-link {
+    color: #2C3E50;
+}
+
 /****** MEDIA QUERIES  ******/
 
 @media screen and (max-width: 767px) { /* Smartphones */
@@ -38,4 +60,12 @@
         margin-right: 0;
         margin-bottom: 20px;
     }
+
+    .projects-pagination {
+        font-size: 0.9rem;
+    }
+
+    .projects-pagination li {
+        margin: 0 7px;
+    }   
 }

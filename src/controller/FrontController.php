@@ -7,7 +7,7 @@ namespace Mich\Blog\src\controller;
 use Mich\Blog\config\Parameter;
 use Mich\Blog\src\services\SendEmail;
 
-const ITEM_PER_PAGE = 2; //Spécifique aux projets (nb de projets par page)
+const ITEM_PER_PAGE = 2; // Spécifique aux projets (nb de projets par page)
 
 class FrontController extends Controller
 {
@@ -43,7 +43,7 @@ class FrontController extends Controller
         $nbProjects = $this->projectDAO->countProjects();
         $nbPages = ceil($nbProjects / ITEM_PER_PAGE);
 
-        // Si param url page > 0 et <= au nb de pages on affiche la page des projets avec 
+        // Si param url page > 0 et <= au nb de pages on affiche la page des projets demandée
         if ($page > 0 && $page <= $nbPages) {
             $offset = ITEM_PER_PAGE * ($page) - ITEM_PER_PAGE;
             $projects = $this->projectDAO->getProjects(ITEM_PER_PAGE, $offset);
@@ -52,7 +52,7 @@ class FrontController extends Controller
             ]);
         }
 
-        // Par défaut on renvoie vers la page 1 
+        // Par défaut on renvoie toujours vers la page 1 
         header("Location: index.php?route=projects&page=1");
     }
 

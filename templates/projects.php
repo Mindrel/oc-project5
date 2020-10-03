@@ -1,6 +1,9 @@
 <?php
 // Vue du blog avec tous les projects
 
+use Mich\Blog\src\DAO\ProjectDAO;
+use const Mich\Blog\src\controller\ITEM_PER_PAGE;
+
 $this->title = "Michel Martin - Liste des projets"
 ?>
 
@@ -43,5 +46,42 @@ $this->title = "Michel Martin - Liste des projets"
         endforeach;
         ?>
 
+        <!-- Pagination des projets -->
+
+        <?php
+        $this->projectDAO = new ProjectDAO();
+        $nbProjects = $this->projectDAO->countProjects();
+        $nbPages = ceil($nbProjects / ITEM_PER_PAGE);
+        $currentPage = $_GET['page'];
+        ?>
+
+        <ul class="projects-pagination">
+            <!-- Vers page précédente (disparaît sur la première page) -->
+            <li class="project-page <?= ($currentPage == 1) ? "project-page-disabled" : "" ?>">
+                <a href="index.php?route=projects&page=<?= $currentPage - 1 ?>" class="project-page-link"><i class="fas fa-chevron-left"></i> Plus récents</a>
+            </li>
+
+            <!-- Numéros de pages (lien du num de la page courante désactivé) -->
+            <?php
+            for ($page = 1; $page <= $nbPages; $page++) :
+            ?>
+                <li class="project-page <?= ($currentPage == $page) ? "project-current-page" : "" ?>">
+                    <?php
+                    if ($currentPage == $page) :
+                        echo $page;
+                    else :
+                        echo '<a href="index.php?route=projects&page=' . $page . '" class="project-page-link">' . $page . '</a>';
+                    endif;
+                    ?>
+                </li>
+            <?php
+            endfor;
+            ?>
+
+            <!-- Vers page suivante (disparaît sur la dernière page) -->
+            <li class="project-page <?= ($currentPage == $nbPages) ? "project-page-disabled" : "" ?>">
+                <a href="index.php?route=projects&page=<?= $currentPage + 1 ?>" class="project-page-link">Plus anciens <i class="fas fa-chevron-right"></i></a>
+            </li>
+        </ul>
     </div>
 </section>
