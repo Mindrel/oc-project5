@@ -36,7 +36,21 @@ class ProjectDAO extends DAO
     }
 
     // Récupère tous les projets
-    public function getProjects($limit, $offset)
+    public function getProjects()
+    {
+        $sql = "SELECT id, title, LEFT(content, 300) AS content, logo, thumbnail, website FROM p5_project ORDER BY id DESC";
+        $result = $this->createQuery($sql);
+        $projects = [];
+        foreach ($result as $row) {
+            $projectId = $row["id"];
+            $projects[$projectId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $projects;
+    }
+
+    // Récupère les projets selon une limite (pour la pagination)
+    public function getProjectsByPage($limit, $offset)
     {
         $sql = 'SELECT id, title, LEFT(content, 300) AS content, logo, thumbnail, website FROM p5_project ORDER BY id DESC LIMIT ' . $offset . ', ' . $limit;
         $result = $this->createPaginationQuery($sql, $limit, $offset);

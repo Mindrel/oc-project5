@@ -46,7 +46,7 @@ class FrontController extends Controller
         // Si param url page > 0 et <= au nb de pages on affiche la page des projets demandée
         if ($page > 0 && $page <= $nbPages) {
             $offset = ITEM_PER_PAGE * ($page) - ITEM_PER_PAGE;
-            $projects = $this->projectDAO->getProjects(ITEM_PER_PAGE, $offset);
+            $projects = $this->projectDAO->getProjectsByPage(ITEM_PER_PAGE, $offset);
             return $this->view->render("projects", [
                 "projects" => $projects
             ]);
