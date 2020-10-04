@@ -51,6 +51,7 @@ class ProjectValidation extends Validation
         }
     }
 
+    // Vérifie le champ titre
     private function checkTitle($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {
@@ -66,6 +67,7 @@ class ProjectValidation extends Validation
         }
     }
 
+    // Vérifie le contenu principal
     private function checkContent($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {
@@ -77,6 +79,7 @@ class ProjectValidation extends Validation
         }
     }
 
+    // Vérifie l'URL
     private function checkWebsite($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {

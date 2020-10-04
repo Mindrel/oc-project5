@@ -25,6 +25,7 @@ class Session
         }
     }
 
+    // Permet l'affichage d'avertissements dans les vues après opérations
     public function show($name)
     {
         if (isset($_SESSION[$name])) {
@@ -34,6 +35,7 @@ class Session
         }
     }
 
+    // Détruit la variable session
     public function remove($name)
     {
         unset($_SESSION[$name]);
@@ -44,7 +46,8 @@ class Session
     {
         session_start();
     }
-
+    
+    // Nécessaire pour déco utilisateur
     public function stop()
     {
         session_destroy();

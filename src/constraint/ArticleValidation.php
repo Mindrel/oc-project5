@@ -48,6 +48,7 @@ class ArticleValidation extends Validation
         }
     }
 
+    // Vérifie le champ titre
     private function checkTitle($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {
@@ -63,6 +64,7 @@ class ArticleValidation extends Validation
         }
     }
 
+    // Vérifie le champ contenu
     private function checkContent($name, $value)
     {
         if ($this->constraint->notBlank($name, $value)) {

@@ -16,6 +16,7 @@ class UserValidation extends Validation
         $this->constraint = new Constraint();
     }
 
+    // Méthode principale qui passe sur tous les paramètres et retourne array erreurs, utilisée dans Validation 
     public function check(Parameter $post)
     {
         foreach ($post->all() as $key => $value) {
@@ -24,6 +25,7 @@ class UserValidation extends Validation
         return $this->errors;
     }
 
+    // Contrôle les champs
     private function checkField($name, $value)
     {
         if ($name === "nickname") {
@@ -35,6 +37,7 @@ class UserValidation extends Validation
         }
     }
 
+    // Ajoute erreurs à l'array pour affichage plus tard
     private function addError($name, $error) {
         if ($error) {
             $this->errors += [
@@ -43,6 +46,7 @@ class UserValidation extends Validation
         }
     }
 
+    // Vérifie le pseudo
     private function checkNickname($name, $value) {
         if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank("pseudo", $value);
@@ -57,6 +61,7 @@ class UserValidation extends Validation
         }
     }
 
+    // Vérifie le mot de passe
     private function checkPass($name, $value) {
         if ($this->constraint->notBlank($name, $value)) {
             return $this->constraint->notBlank("mot de passe", $value);

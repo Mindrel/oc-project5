@@ -22,6 +22,7 @@ class SendEmail
         $this->checkErrorsEmail();
     }
 
+    // Validation du form contact
     public function checkErrorsEmail()
     {
         if (!empty($_POST)) {
@@ -47,6 +48,7 @@ class SendEmail
         }
     }
 
+    // Création de l'email (si check OK)
     public function generateEmail()
     {
         $mail = new PHPMailer();

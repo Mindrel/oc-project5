@@ -6,7 +6,7 @@ namespace Mich\Blog\src\constraint;
 
 class Validation
 {
-    // Méthode appelée depuis le contrôleur et renvoie vers la classe concernée
+    // Méthode appelée depuis le contrôleur et renvoie vers la classe concernée (si erreurs renvoie array de messages)
     public function validate($data, $name)
     {
         if ($name === "Project") {

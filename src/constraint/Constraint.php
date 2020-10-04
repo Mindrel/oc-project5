@@ -6,6 +6,7 @@ namespace Mich\Blog\src\constraint;
 
 class Constraint
 {
+    // Si champ vide renvoie un message
     public function notBlank($name, $value)
     {
         if (empty($value)) {
@@ -13,6 +14,7 @@ class Constraint
         }
     }
 
+    // Si pas assez de caractères renvoie un message
     public function minLength($name, $value, $minSize)
     {
         if (strlen($value) < $minSize) {
@@ -20,6 +22,7 @@ class Constraint
         }
     }
 
+    // Si trop de caractères renvoie un message
     public function maxLength($name, $value, $maxSize)
     {
         if (strlen($value) > $maxSize) {
@@ -27,6 +30,7 @@ class Constraint
         }
     }
 
+    // Si format URL non respecté renvoie un message
     public function urlFormat($name, $value)
     {
         if (!(filter_var($value, FILTER_VALIDATE_URL))) {
