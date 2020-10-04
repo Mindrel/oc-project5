@@ -5,6 +5,7 @@ class Position {
         this.status = document.getElementById("weather-content");
     }
 
+    // Déclenche l'API JS geolocation et affiche message selon réussite ou échec
     getPosition(success, error) {
         if (navigator.geolocation) {
             this.status.innerHTML = '<p>En attente de connaître votre position...</p>';
@@ -12,7 +13,7 @@ class Position {
         }
 
         else if (!navigator.geolocation) {
-            this.status.innerHTML = '<p>Dommage, vous n\'êtes pas en mesure d\'afficher la météo...</p>';
+            this.status.innerHTML = '<p>Dommage, le site n\'est pas en mesure de connaître votre position...</p>';
         }
     }
 }
