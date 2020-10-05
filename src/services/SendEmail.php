@@ -15,9 +15,9 @@ class SendEmail
 
     public function __construct()
     {
-        $this->name = $_POST['nom'];
-        $this->email = $_POST['email'];
-        $this->message = $_POST['message'];
+        $this->name = isset($_POST['nom']) ? $_POST['nom'] : null;
+        $this->email = isset($_POST['email']) ? $_POST['email'] : null;
+        $this->message = isset($_POST['message']) ? $_POST['message'] : null;
         $this->errors = [];
         $this->checkErrorsEmail();
     }
@@ -25,26 +25,20 @@ class SendEmail
     // Validation du form contact
     public function checkErrorsEmail()
     {
-        if (!empty($_POST)) {
-            $this->name;
-            $this->email;
-            $this->message;
+        if (empty($this->name) || $this->name == null) {
+            $this->errors["name"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ nom est vide</p>';
+        }
 
-            if (empty($this->name)) {
-                $this->errors["name"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ nom est vide</p>';
-            }
+        if (empty($this->email) || $this->email == null) {
+            $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ email est vide</p>';
+        } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le format d\'adresse email n\'est pas valide</p>';
+        }
 
-            if (empty($this->email)) {
-                $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ email est vide</p>';
-            } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-                $this->errors["email"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le format d\'adresse email n\'est pas valide</p>';
-            }
-
-            if (empty($this->message)) {
-                $this->errors["message"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ message est vide</p>';
-            } else {
-                $this->generateEmail();
-            }
+        if (empty($this->message) || $this->message == null) {
+            $this->errors["message"] = '<p class="error-message"><i class="fas fa-exclamation-circle"></i>Le champ message est vide</p>';
+        } else {
+            $this->generateEmail();
         }
     }
 
