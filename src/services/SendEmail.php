@@ -51,17 +51,18 @@ class SendEmail
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'quoted-printable';
 
-        // Param SMTP et email (CONST dans config.php)
+        // Param SMTP et email (dans config.php)
         $mail->isSMTP();
         $mail->Host = MAIL_HOST;
+        // $mail->SMTPDebug = 2; // A activer (+ erreurs PHP) si nécessité voir erreurs
         $mail->SMTPAuth = true;
         $mail->Username = MAIL_USERNAME;
         $mail->Password = MAIL_PASSWORD;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
-        $mail->setFrom(MAIL_SET_FROM, 'Formulaire de contact P5');
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Pour SSL 465 // PHPMailer::ENCRYPTION_STARTTLS; Pour TLS 587
+        $mail->Port = MAIL_PORT;
+        $mail->setFrom(MAIL_SET_FROM, 'Formulaire de contact MichDevWeb.fr');
         $mail->addAddress(MAIL_RECIPIENT, MAIL_RECIPIENT_NAME);
-        $mail->Subject = 'Nouveau message de ' . html_entity_decode($this->name); // Accents non pris en compte dans le nom expéditeur
+        $mail->Subject = 'Nouveau message de ' . html_entity_decode($this->name); // Sinon accents non pris en compte dans le nom expéditeur
 
         // Activation HTML nécessaire (mise en forme texte)
         $mail->isHTML(true);
