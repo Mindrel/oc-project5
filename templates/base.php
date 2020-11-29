@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="public/css/main.css" />
     <link rel="stylesheet" href="public/css/header.css" />
-    <link rel="stylesheet" href="public/css/footer" />
-    <link rel="stylesheet" href="public/css/weather" />
+    <link rel="stylesheet" href="public/css/footer.css" />
+    <link rel="stylesheet" href="public/css/weather.css" />
     <link rel="stylesheet" href="public/css/section1hero.css" />
     <link rel="stylesheet" href="public/css/section2hello.css" />
     <link rel="stylesheet" href="public/css/section3projects.css" />
@@ -135,7 +135,7 @@
                 <h4>Sur le web</h4>
 
                 <p>
-                    <a href="https://www.linkedin.com/in/michel-martin-dwj/" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/michel-martin-dw/" class="social"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Mindrel" class="social"><i class="fab fa-github"></i></a>
                 </p>
             </div>
@@ -153,7 +153,7 @@
 
         <!-- Barre copyright -->
         <div class="footer-copyright">
-            <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020</span> Portfolio & Blog de Michel Martin<span class="footer-logo-right-brace"> } </span></p>
+            <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020-<?php echo date('Y'); ?></span> MichDevWeb.fr<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
 

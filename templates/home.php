@@ -18,7 +18,7 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             <div class="white-divider-line"></div>
         </div>
 
-        <h2>Développeur Web Junior - Étudiant OpenClassrooms</h2>
+        <h2>Développeur Web - Passionné d'informatique et de technologies</h2>
 
         <!-- Météo -->
         <div id="weather">
@@ -50,14 +50,14 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             <p>
                 Petit padawan ou maître développeur, cador du recrutement ou simple visiteur, qui que vous soyez bienvenue sur mon humble portfolio !<br />
                 À vrai dire ce n'est pas qu'un simple portfolio... C'est une sorte de vitrine qui reflète mon niveau de compétences du moment.
-                Autrement dit, le niveau d'un développeur junior ! Le parcours OpenClassrooms impose la création de plusieurs projets de développement
-                de sites web. C'est au cours du dernier qu'il m'est venu l'idée de créer un site tel que celui-ci.
+                Mon parcours d'études m'imposait la création de plusieurs projets de développement de sites web. 
+                C'est au cours du dernier qu'il m'est venu l'idée de créer un site tel que celui-ci. Tout comme le blog, la partie projets est générée dynamiquement en PHP.
             </p>
 
             <p>
-                Passionné d'informatique, je suis un technicien un peu touche à tout qui a fini par s'intéresser au code.<br /> 
+                Passionné d'informatique, je suis un technicien un peu touche à tout qui a fini par s'intéresser au code.<br />
                 Résultat : une année d'études en ligne pour obtenir un diplôme au bout, tout en continuant à exercer un métier à temps plein en parallèle ! N'hésitez pas
-                à parcourir les pages de mes projets et à visiter les sites correspondants. Le blog est régulièrement mis à jour et vous pouvez même commenter 
+                à parcourir les pages de mes projets et à visiter les sites correspondants. Le blog est régulièrement mis à jour et vous pouvez même commenter
                 mes articles. En pied de page vous trouverez des liens vers mon profil LinkedIn et mon compte GitHub. Alors à très vite :)
             </p>
         </div>
@@ -136,7 +136,8 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
             </div>
 
             <footer class="latest-article-date">
-                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule ?></time>
+                <time datetime="<?= htmlspecialchars($latestArticle->getTimeTag()) ?>"><?= ucfirst(htmlspecialchars($latestArticle->getCreationDate())) // ucfirst 1ère lettre majuscule 
+                                                                                        ?></time>
                 <p>par <?= htmlspecialchars($latestArticle->getAuthor()) ?></p>
             </footer>
         </article>
@@ -164,13 +165,13 @@ $this->title = "Michel Martin - Le Portfolio | Accueil"
         <!-- Formulaire de contact -->
         <form method="post" action="index.php?route=sendEmail">
             <div class="contact-input">
-                <input type="text" id="nom" name="nom" placeholder="Nom" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nom'" />
-                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre nom'" />
+                <label for="nom">Votre nom</label>
             </div>
 
             <div class="contact-input">
-                <input type="email" id="email" name="email" placeholder="Email" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" />
-                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" spellcheck="false" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Votre email'" />
+                <label for="email">Votre email</label>
             </div>
 
             <div class="contact-input">
