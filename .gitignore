@@ -1,3 +1,4 @@
 /vendor
+/annexe
 config/prod.php
 src/services/config.php
