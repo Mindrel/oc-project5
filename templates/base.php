@@ -153,7 +153,7 @@
 
         <!-- Barre copyright -->
         <div class="footer-copyright">
-            <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020-<?php echo date('Y'); ?></span> MichDevWeb.fr<span class="footer-logo-right-brace"> } </span></p>
+            <p class="container"><span class="footer-logo-left-brace"> { </span><span class="footer-logo-text-spe">Copyright © 2020-<?php echo date('Y'); ?></span> LaBoîteÀMich.fr<span class="footer-logo-right-brace"> } </span></p>
         </div>
     </footer>
 

@@ -58,9 +58,9 @@ class SendEmail
         $mail->SMTPAuth = true;
         $mail->Username = MAIL_USERNAME;
         $mail->Password = MAIL_PASSWORD;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Pour SSL 465 // PHPMailer::ENCRYPTION_STARTTLS; Pour TLS 587
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // PHPMailer::ENCRYPTION_STARTTLS; Pour TLS
         $mail->Port = MAIL_PORT;
-        $mail->setFrom(MAIL_SET_FROM, 'Formulaire de contact MichDevWeb.fr');
+        $mail->setFrom(MAIL_SET_FROM, 'Formulaire de contact LaBoiteÀMich.fr');
         $mail->addAddress(MAIL_RECIPIENT, MAIL_RECIPIENT_NAME);
         $mail->Subject = 'Nouveau message de ' . html_entity_decode($this->name); // Sinon accents non pris en compte dans le nom expéditeur
 
